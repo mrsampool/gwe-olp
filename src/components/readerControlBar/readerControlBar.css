@@ -1,0 +1,45 @@
+/* Container */
+.ReaderControlBar{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    background-color: hsl(0,0%,0%,0.1);
+    box-shadow: 0 0 0.5rem dimgray;
+}
+
+/* Buttons */
+.readTranslate{
+    position: static;
+    padding: 0.5rem;
+}
+.close.reader{
+    position: static;
+    margin: 0.5rem;
+}
+
+#mobileClose{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    .ReaderControlBar{
+        display: flex;
+        flex-direction: column;
+    }
+    .mobileTop{
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #mobileClose{
+        display: block;
+        position: absolute;
+        right: 1rem;
+    }
+    #standardClose{
+        display: none;
+    }
+}

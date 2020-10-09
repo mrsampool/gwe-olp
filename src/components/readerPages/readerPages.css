@@ -1,0 +1,36 @@
+.ReaderPages{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+}
+.ReaderPages img{
+    border: 0.5rem solid white;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 1rem hsla(0,0%,0%,0.3)
+}
+
+/* WIDE DISPLAY */
+.ReaderPages.wide{
+    height: 85%;
+}
+.ReaderPages.wide img{
+    height: 100%;
+}
+
+/* TALL DISPLAY */
+.ReaderPages.tall{
+    width: 85%;
+}
+.ReaderPages.tall img{
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px){
+    #pageImg{
+        position: absolute;
+        width: 80%;
+        height: auto;
+        top: 16rem;
+    }
+}

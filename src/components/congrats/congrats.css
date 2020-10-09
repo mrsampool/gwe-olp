@@ -1,0 +1,84 @@
+#complete{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 6;
+}
+.completeWindow{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 0.5rem solid white;
+    background-color: lightgreen;
+}
+.completeMascotContainer{
+    display: inline-flex;
+    align-items: center;
+}
+.completeMascot{
+    margin: 1rem;
+    height: 200px;
+}
+.completeMascot img{
+    height: 100%;
+}
+.congratsOptions{
+    margin-top: 1rem;
+    display: inline-flex;
+}
+
+@media only screen and (max-width: 600px){
+    .completeWindow{
+        width: 80%;
+    }
+    .completeMascotContainer{
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    h1{
+        font-size: 1.5rem;;
+    }
+}
+
+@media only screen and (max-width: 600px) and (orientation: landscape){
+    .completeWindow{
+        width: 80%;
+    }
+    .completeMascotContainer{
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .completeMascot{
+        width: fit-content;
+    }
+    .speechBubble{
+        width: 5rem;
+    }
+}
+
+@media only screen and (max-height: 600px){
+    .completeWindow{
+        height: 80%;
+        justify-content: space-between;
+    }
+    .completeMascotContainer{
+        height: 40%;
+    }
+    .completeMascot{
+        height: 80%;
+    }
+    /*
+    .congratsOptionsContainer{
+        position: absolute;
+        bottom: 2rem;
+    }
+    */
+}

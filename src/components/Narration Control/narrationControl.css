@@ -1,0 +1,110 @@
+/*  Container  */
+.NarrationControl{
+    text-align: center;
+    display: block;
+    top: 70px;
+    padding: 0.25rem;
+    margin: 0.5rem;
+    color: dimgray;
+
+    background-color: hsla(0,0%,100%,0.2);
+    
+    justify-content: center;
+
+    border-radius: 1rem;
+
+    color: white;
+    box-shadow: 0 0 1rem dimgray;
+}
+.NarrationControl p{
+    color: dimgray;
+    font-weight: bold;
+    background-color: aliceblue;
+    border-radius: 1rem;
+}
+
+/* Button Container */
+.narrControls{
+    display: inline-flex;
+    align-items: center;
+}
+/* Play Button */
+.playButton{
+    padding: 0.4rem 0.4rem 0.4rem 0.6rem;
+    border-width: 0.2rem;
+    margin: 0.25rem;
+    box-shadow: 0 0 0.5rem;
+}
+.playSymbol{
+    width: 0; 
+    height: 0; 
+    margin: 0;
+
+    border-top: 0.5em solid transparent;
+    border-bottom: 0.5em solid transparent;
+    border-left: 1em solid white;
+}
+.playButton.disabled{
+    background-color: gray;
+    border-color: dimgray;
+    box-shadow: none;
+}
+.playButton.disabled .playSymbol{
+    border-left-color: dimgray;
+}
+/* Pause Button */
+.pauseButton{
+    display: inline-flex;
+    border-width: 0.2rem;
+    padding: 0.4rem 0.6rem 0.4rem 0.6rem;
+    margin: 0.25rem;
+    box-shadow: 0 0 0.5rem;
+}
+.pauseSymbol{
+    background-color: white;
+    width: 0.3em; 
+    height: 1em; 
+
+    margin: 0.1rem;
+}
+.pauseButton.disabled{
+    background-color: gray;
+    border-color: dimgray;
+    box-shadow: none;
+}
+.pauseButton.disabled .pauseSymbol{
+    background-color: dimgray;
+}
+/* Replay Button */
+.replayButton{
+    display: inline-flex;
+    border-width: 0.2rem;
+    padding: 0.4rem 0.6rem 0.4rem 0.4rem;
+    margin: 0.25rem;
+    box-shadow: 0 0 0.5rem;
+}
+.replaySymbolBar{
+    background-color: white;
+    width: 0.3em; 
+    height: 1em; 
+    margin: 0rem;
+}
+.replaySymbolTriangle{
+    width: 0; 
+    height: 0; 
+    margin: 0;
+    border-top: 0.5em solid transparent;
+    border-bottom: 0.5em solid transparent;
+    border-right: 1em solid white;
+}
+.replayButton.disabled{
+    background-color: gray;
+    border-color: dimgray;
+    box-shadow: none;
+}
+.replayButton.disabled .replaySymbolBar{
+    background-color: dimgray;
+}
+.replayButton.disabled .replaySymbolTriangle{
+    border-right-color: dimgray;
+}

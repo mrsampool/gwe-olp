@@ -1,0 +1,98 @@
+.ReaderStart{
+    max-width: 18rem;
+    background: hsla(200,30%,80%);
+    background: linear-gradient(180deg, hsla(200,70%,60%) 0%, hsla(200,70%,40%) 100%);
+    display: flexbox;
+    justify-content: center;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 0 1rem aliceblue;
+}
+#readerPhoto{
+    margin: 0.5rem 0 0.5rem 0;
+    height: 10em;
+    border-radius: 100%;
+    border: 0.2em solid hsl(0,0%,30%,0.2);
+    box-shadow: none;
+}
+.readerTitleAuthor, .readerReadBy{
+    background-color: hsla(0,0%,100%,0.2);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.readerTitleAuthor{
+    margin-bottom: 1rem;
+}
+.readerTitle{
+    margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 1200px){
+    .ReaderStart{
+        position: absolute;
+        right: 5rem;
+        bottom: 0;
+        max-width: 15rem;
+        background: linear-gradient(180deg, hsla(200,70%,60%) 0%, hsla(200,70%,40%) 100%);
+    }
+    .readerTitleAuthor{
+        display: none;
+    }
+    .readerReadBy{
+        display: inline-flex;
+    }
+    #readerPhoto{
+        height: 4em;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .ReaderStart{
+        position: fixed;
+        right: 0;
+        margin-right: 0;
+        margin-top: 3rem;
+    }
+    .readerTitleAuthor{
+        display: none;
+    }
+    .readerReadBy{
+        display: inline-flex;
+    }
+    #readerPhoto{
+        height: 4em;
+        width: auto;
+    }
+}
+
+@media only screen and (max-height: 500px) and (orientation: landscape){
+    .ReaderStart{
+        position: fixed;
+    }
+    .readerReadBy{
+        display: inline-flex;
+    }
+    .readerTitleAuthor{
+        margin-bottom: 0.5rem;
+    }
+    .readerReadBy{
+        display: inline-flex;
+        align-items: center;
+        margin: 0;
+        padding: 0.5rem;
+    }
+    .readByName{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        margin-left: 1rem;
+    }
+
+    #readerPhoto{
+        height: 3rem
+    }
+
+}

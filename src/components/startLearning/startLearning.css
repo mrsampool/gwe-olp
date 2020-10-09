@@ -1,0 +1,26 @@
+#start{
+    position: fixed;
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    margin: 2em auto;
+    z-index: 2;
+}
+#startButton{
+    display: flex;
+    align-items: center;
+    margin: 10% auto;
+    text-decoration: none;
+}
+#startLink{
+    text-decoration: none;
+}
+.startArrow{
+    width: 0; 
+    height: 0; 
+    margin: 0 0 0 1rem;
+
+    border-top: 1em solid transparent;
+    border-bottom: 1em solid transparent;
+    border-left: 1.5em solid white;
+}

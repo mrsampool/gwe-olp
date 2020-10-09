@@ -1,0 +1,60 @@
+/* Container */
+.ReaderProgress{
+    display: inline-flex;
+    width: 90%;
+    height: fit-content;
+    margin: 0.5rem;
+    padding: 0rem;
+    justify-content: center;
+    align-items: center;
+    background-color: hsla(0,0%,100%,0.2);
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    box-shadow: 0 0 0.5rem dimgray;
+}
+
+
+/* Page Box */
+.pageCounter{
+    display: inline-flex;
+    width: fit-content;
+    background-color: hsla(0,0%,100%,0.3);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    padding-right: 1rem;
+    box-shadow: 0 0 0.5rem dimgray;
+}
+#pageInput{
+    width: 3rem;
+    background-color: aliceblue;
+    border-radius: 1rem;
+    padding: 0;
+
+    text-align: center;
+}
+#totalPages{
+    width: fit-content;
+}
+label{
+    width: 5rem;
+}
+
+/* Slider */
+#progressSlider{
+    width: 90%;
+    margin: 1rem;
+    height: 1em;
+
+    border: 5px solid white;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+@media only screen and (max-width: 600px){
+    .ReaderProgress{
+        display: flex;
+        flex-direction: column;
+    }
+}

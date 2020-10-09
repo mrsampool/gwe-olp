@@ -1,0 +1,15 @@
+.LibraryList{
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-height: 500px) and (orientation: landscape){
+    .LibraryList{
+        width: 90%;
+        justify-content: flex-end;
+    }
+
+}

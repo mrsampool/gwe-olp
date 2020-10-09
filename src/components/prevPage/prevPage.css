@@ -1,0 +1,32 @@
+#prevPage{
+    position: fixed;
+    z-index: 5;
+    height: fit-content;
+    border-radius: 100%;
+    left: 0;
+    top: 50%;
+}
+.prevPageSymbol{
+    width: 0; 
+    height: 0; 
+    margin: 0 0.4rem 0 0;
+
+    border-top: 1em solid transparent;
+    border-bottom: 1em solid transparent;
+    border-right: 2em solid white;
+}
+#prevPage.disabled{
+    background-color: gray;
+    border-color: dimgray;
+}
+#prevPage.disabled .prevPageSymbol{
+    border-right-color: dimgray;
+}
+
+@media only screen and (max-width: 500px){
+    #prevPage{
+        /*
+        top: 28rem;
+        */
+    }
+}

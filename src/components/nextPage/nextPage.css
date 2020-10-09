@@ -1,0 +1,24 @@
+#nextPage{
+    position: fixed;
+    right: 0;
+    height: fit-content;
+    border-radius: 100%;
+    top: 50%;
+}
+.nextPageSymbol{
+    width: 0; 
+    height: 0; 
+    margin: 0 0 0 0.4rem;
+
+    border-top: 1em solid transparent;
+    border-bottom: 1em solid transparent;
+    border-left: 2em solid white;
+}
+
+@media only screen and (max-width: 500px){
+    /*
+    #nextPage{
+        top: 28rem;
+    }
+    */
+}

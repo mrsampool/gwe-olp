@@ -1,0 +1,124 @@
+.Summary{
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    width: fit-content;
+    height: fit-content;
+    margin: 1rem 1rem 2rem 1rem;
+    padding: 1rem;
+
+    background: hsla(200,30%,80%);
+    background: linear-gradient(180deg, hsla(200,70%,90%) 0%, hsla(200,70%,60%) 100%);
+
+    border-radius: 1rem;
+    box-shadow: 0rem 1rem 2rem hsla(0,0%,0%,0.5);
+}
+.summaryBody{
+    display: inline-flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.summaryRight{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+}
+/* SUMMARY TEXT */
+.summaryText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 20em;
+    margin: auto;
+    border-radius: 1rem;
+    text-align: center;
+}
+.summaryTitleAuthor{
+    width: 80%;
+    background-color: hsla(200,70%,100%,0.3);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+.summaryTitle{
+    margin: 0.1em auto;
+    font-weight: bold;
+}
+.summaryDesc{
+    margin-bottom: 1rem;
+    background-color: hsla(200,70%,100%,0.3);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+/* SUMMARY GRAPHIC */
+.summaryGraphic{
+    margin: 1em;
+    height: 30em;
+}
+.summaryGraphic img{
+    height: 100%;
+    border-radius: 1rem;
+    border: 0.25rem solid white;
+    box-shadow: 0 0 1rem dimgray;
+}
+
+@media only screen and (max-width: 950px){
+    .summaryBody{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: fit-content;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .Summary{
+        width: 100%;
+    }
+    .summaryGraphic{
+        width: 80%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    .summaryGraphic img{
+        width: 100%;
+        height: auto;
+    }
+    .summaryRight{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .summaryText{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 350px){
+    .Summary{
+        margin: 0;
+    }
+}
+
+@media only screen and (max-height: 500px) and (orientation: landscape){
+    .summaryBody{
+        display: inline-flex;
+        flex-wrap: nowrap;
+    }
+    .summaryGraphic{
+        height: 90vh;
+        width: fit-content;
+    }
+    .summaryGraphic img{
+        height: 100%;
+        width: auto;
+    }
+}
+
+

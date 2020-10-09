@@ -1,0 +1,77 @@
+#Library{
+    margin-top: 5em;
+    padding-top: 3rem;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('/images/graphics/backgrounds/big-cartoon-library-many-books-134765999.jpg');
+    background-position: bottom;
+    background-size: cover;
+}
+
+#mediaList{
+    width: 90%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.summaryBar{
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.speechBubble{
+    width: 10em;
+    background-color: white;
+}
+
+.libraryMascot{
+    width: 12em;
+    margin: 2rem;
+}
+
+.libraryMascot img{
+    width: 100%;
+
+}
+
+.libraryTitle{
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: aliceblue;
+    box-shadow: 0 0 1rem dimgray;
+    background: hsla(200,70%,50%);
+}
+
+hr{
+    border: 1px solid aliceblue;
+    width: 50%;
+}
+
+@media only screen and (max-width: 600px){
+    .libraryMascot{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-height: 500px){
+    .libraryMascot{
+        display: inline-flex;
+        width: 40%;
+    }
+}
+
+@media only screen and (max-height: 500px) and (orientation: landscape){
+    #Library{
+        margin-top: 0;
+        width: calc(100% - 165px);
+        margin-left: 165px;   
+    }
+}

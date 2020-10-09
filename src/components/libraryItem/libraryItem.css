@@ -1,0 +1,62 @@
+.mediaListEntry{
+    padding: 0.5em;
+    margin: 1em;
+    width: 20em;
+    height: fit-content;
+
+    border-radius: 1em;
+    border: 0;
+    box-shadow: 0 0 2rem hsla(0,0%,0%,1);
+
+    background: hsla(200,30%,80%);
+    background: linear-gradient(180deg, hsla(200,70%,90%) 0%, hsla(200,70%,60%) 100%);
+}
+
+.mediaGraphic{
+    width: 95%;
+    margin: auto;
+    margin-bottom: 0.5em;
+}
+
+.mediaGraphic img{
+    width: 95%;
+    border-radius: 1rem;
+    border: 0.25rem solid white;
+}
+
+.mediaDets{
+    background-color: hsla(0,0%,0%,0.2);
+    width: 90%;
+    margin: auto;
+    padding: 0.5em;
+    
+    border-radius: 1em;
+}
+
+.mediaDets p{
+    color: black;
+    margin: 0.5rem;
+}
+
+.mediaTitle{
+    font-weight: bold;
+}
+@media only screen and (max-height: 500px) and (orientation: landscape){
+    .mediaListEntry{
+        display: inline-flex;
+        width: 95%;
+        margin: 1rem;
+        margin-right: 0;
+    }
+    .mediaGraphic{
+        height: 90vh;
+        width: auto;
+    }
+    .mediaGraphic img{
+        height: 100%;
+        width: auto;
+    }
+    .mediaDets{
+        margin: auto 1rem;
+    }
+}

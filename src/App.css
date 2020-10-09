@@ -1,38 +1,85 @@
+/* APP GLOBAL */
 .App {
+  height: 100%;
+  font-weight: 400;
+  background-color: #2BD9FE;
+  min-height: 100%;
+  margin-bottom: 0;;
+}
+
+/*  PAGE CONTENT */
+#pageContent{
+  position: fixed;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  margin-top: 100px;
+  min-height: fit-content;
+  width: 100%;
+  height: fit-content;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* BUTTONS */
+button{
+  padding: 0.75rem;
+  margin: 0.5rem;
+
+  background-color: #52AA5E;
+
+  border: 0.25rem solid aliceblue;
+  border-radius: 1rem;
+
+  font-weight: bold;
   color: white;
+  box-shadow: 0 0 0.5rem dimgray;
+
+}
+button:hover{
+  transition: all 0.25s;
+  border-color: yellow;
+  border-width: 0.35rem;
 }
 
-.App-link {
-  color: #61dafb;
+label{
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* CLOSE BARS */
+.closeBar{
+  width: 100%;
+  height: fit-content;
+  display: inline-flex;
+  justify-content: flex-end;
+}
+.close{
+  margin: 0;
+  position: absolute;
+  right: 1rem;
+  background-color: hsl(0,50%,70%);
+}
+
+/* SPEECH BUBBLES */
+.speechBubble{
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 0.25rem solid aliceblue;
+  line-height: 2.3rem;
+  height: fit-content;
+}
+
+/* BACKGROUND COLORS */
+.lightTransparent{
+  background-color: hsla(0,0%,100%,0.5);
+}
+/*
+@media only screen and (max-height: 500px) and (orientation: landscape){
+  .App{
+      margin-top: 0;
+      width: calc(100% - 165px);
+      margin-left: 165px;   
   }
 }
+*/
