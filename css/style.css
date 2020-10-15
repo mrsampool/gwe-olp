@@ -1,0 +1,45 @@
+html,body,#root{
+    height: 100%;
+    font-family: 'Playfair Display', serif;
+    background-color: #2BD9FE;
+}
+
+h1,h2,h3,p,button,table, label{
+    font-family: 'Quicksand', sans-serif;
+}
+html { 
+    font-size: 100%;
+    line-height: 1.5em;
+ } /*16px*/
+h1 { 
+  font-size: 2.074em;
+  font-weight: 700;
+ }
+h2 { font-size: 1.728em; }
+h3 { font-size: 1.44em; }
+h4 { font-size: 1.2em; }
+p,input,label {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+small { font-size: 1em; }
+button{ font-size: 1em;}
+Link{
+  text-decoration: none;
+}
+
+@media screen and (min-width: 1400px) {
+  html { font-size: 125%; } /*20px*/
+}
+
+@media screen and (min-width: 2500px) {
+    html { font-size: 200%; } /*20px*/
+  }
+
+@media screen and (min-width: 3500px) {
+    html { font-size: 300%; } /*20px*/
+  }
+
+@media screen and (min-width: 4500px) {
+html { font-size: 350%; } /*20px*/
+}

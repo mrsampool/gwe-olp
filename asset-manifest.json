@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/gwe-olp/static/css/main.a0be0f8c.chunk.css",
+    "main.js": "/gwe-olp/static/js/main.106e0a67.chunk.js",
+    "main.js.map": "/gwe-olp/static/js/main.106e0a67.chunk.js.map",
+    "runtime-main.js": "/gwe-olp/static/js/runtime-main.e433e01a.js",
+    "runtime-main.js.map": "/gwe-olp/static/js/runtime-main.e433e01a.js.map",
+    "static/js/2.29d19be8.chunk.js": "/gwe-olp/static/js/2.29d19be8.chunk.js",
+    "static/js/2.29d19be8.chunk.js.map": "/gwe-olp/static/js/2.29d19be8.chunk.js.map",
+    "index.html": "/gwe-olp/index.html",
+    "precache-manifest.116ac00dcf49fad83462511cfe59b29d.js": "/gwe-olp/precache-manifest.116ac00dcf49fad83462511cfe59b29d.js",
+    "service-worker.js": "/gwe-olp/service-worker.js",
+    "static/css/main.a0be0f8c.chunk.css.map": "/gwe-olp/static/css/main.a0be0f8c.chunk.css.map",
+    "static/js/2.29d19be8.chunk.js.LICENSE.txt": "/gwe-olp/static/js/2.29d19be8.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/gwe-olp/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e433e01a.js",
+    "static/js/2.29d19be8.chunk.js",
+    "static/css/main.a0be0f8c.chunk.css",
+    "static/js/main.106e0a67.chunk.js"
+  ]
+}
