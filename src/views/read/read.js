@@ -1,4 +1,10 @@
 import React from 'react';
+import { 
+    BrowserRouter as Router, 
+    Route,
+    Redirect,
+    useHistory 
+} from 'react-router-dom';
 
 // Media Data
 import { Media } from '../../mediaContent';
@@ -11,13 +17,15 @@ import Congrats from '../../components/congrats/congrats';
 import ReaderControlBar from '../../components/readerControlBar/readerControlBar';
 import ReaderContent from '../../components/readerContent/readerContent';
 
+
 class Read extends React.Component{
     constructor(props){
         super(props);
         this.state ={
-            book: Media[this.props.book],
+            book: Media[ this.props.match.params.bookLabel ] ? 
+                    Media[ this.props.match.params.bookLabel ]
+                    : '',
             page: 1,
-            status: 'stop',
         }
         this.getPage = this.getPage.bind(this);
         this.getAudio = this.getAudio.bind(this);
@@ -55,6 +63,8 @@ class Read extends React.Component{
             //Start Load Screen
             const loadScreen = document.getElementById('loading');
             loadScreen.style.display = 'block';
+
+            return <Redirect to={`/read/${this.state.book.label}/${this.state.page}/reading`} />
             //Load new audio
             const audio = document.getElementById('narrator');
             audio.src = this.getAudio();
@@ -76,6 +86,7 @@ class Read extends React.Component{
     }
     clickNext(){
         console.log('click next');
+
         const audio = document.getElementById('narrator')
         audio.pause();
         this.setState( { status: 'stop' } );
@@ -182,7 +193,10 @@ class Read extends React.Component{
     render(){
         document.title = `GWE: "${this.state.book.title}"`;
         return(
-                <div className="Read">
+            <Router>
+            <Route path="/:reading" />
+
+            <div className="Read">
 
                     <Congrats readAgain={this.readAgain}/>
 
@@ -218,7 +232,9 @@ class Read extends React.Component{
                         status = {this.state.status}
                     />
 
-                </div>
+            </div>
+            </Router>
+            
         )
     }
 }

@@ -13,43 +13,51 @@ class ReaderPages extends React.Component{
         this.sizePage = this.sizePage.bind(this);  
     }
     sizePage(){
+        const loadScreen = document.getElementById('loading');
+        loadScreen.innerText = 'size change \n';
+        loadScreen.innerText += `Orientation: ${window.orientation}\n`;
+        // Get Window Dimesions
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+        loadScreen.innerText += `${`Screen Width: ${screenWidth}\n`}`;
+        loadScreen.innerText += `${`Screen Height: ${screenHeight}\n`}`;
 
-        console.log(window.orientation);
-        console.log('size change');
+        if (screenWidth > screenHeight){
+            loadScreen.innerText += `Wide Screen\n`;
+
+        } else if (screenHeight > screenWidth){
+            loadScreen.innerText += `Tall Screen\n`;
+        }
+
         // Get Window Dimesions
         const width = window.innerWidth;
         const height = window.innerHeight;
         const ratio = width / height;
-        console.log(`Window: ${width} x ${height}`);
 
         // Get Page Dimensions
         const page = document.getElementById('pageImg');
         let pageWidth = page.offsetWidth;
         let pageHeight = page.offsetHeight;
         let pageRatio = pageWidth / pageHeight;
-        console.log(`Image: ${pageWidth}W x ${pageHeight}H - PAGE RATIO: ${pageRatio}`);
 
         if ( ratio < pageRatio ){
-            console.log('Image wider than window');
             page.classList.remove('wide');
             page.classList.add('tall');
         }
 
         if ( ratio > pageRatio ){
-            console.log('Window wider than image');
             page.classList.add('wide');
             page.classList.remove('tall');
         }
         page.src = this.props.getPage();
-        
     }
     imageLoaded(){
-        console.log('image load');
-
         this.sizePage();
+        /*
 
         const loadScreen = document.getElementById('loading');
         loadScreen.style.display = 'none';
+        */
         if (this.props.status === 'playing'){
             const audio = document.getElementById('narrator');
             audio.play();

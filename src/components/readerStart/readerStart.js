@@ -36,7 +36,7 @@ class ReaderStart extends React.Component{
 
                 <button
                     id="playNarration" 
-                    onClick={this.props.playNarration}
+                    onClick={this.props.playNarration }
                     >Play Narration
                 </button>
 

@@ -1,10 +1,10 @@
+// React
 import React from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+
+// Sub-Components
+import { Link } from "react-router-dom";
+
+// Syle Sheet
 import './startLearning.css';
 
 class StartLearning extends React.Component{

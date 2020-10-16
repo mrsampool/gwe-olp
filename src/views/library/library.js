@@ -1,27 +1,30 @@
+//React
 import React from 'react';
-import './library.css';
-import Media from '../../mediaContent';
-import Summary from '../../components/summary/summary';
-import '../../components/summary/summary.css';
-import LibraryList from '../../components/libraryList/libraryList';
+
+// Sub-Components
 import TopNav from '../../components/topnav/topnav';
+import LibraryList from '../../components/libraryList/libraryList';
+import Summary from '../../components/summary/summary';
 import Mascot from '../../components/mascot/mascot';
+
+// Style Sheet
+import './library.css';
 
 class Library extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            currentBook: '',
+            currentBook: this.props.match.params.bookLabel ?
+                        this.props.match.params.bookLabel
+                        : '',
         }
-        this.selectBook = this.selectBook.bind(this);
-    }
-    selectBook(book){
-        this.setState({currentBook: 'Global Warming Express'});
     }
     componentDidMount(){
         if(this.props.currentBook){
-            const summary = document.getElementById('Summary');
-            summary.style.display = 'block';
+            if ( document.getElementById('Summary') ){
+                const summary = document.getElementById('Summary');
+                summary.style.display = 'block';
+            }
         }
     }
     render(){
@@ -40,7 +43,7 @@ class Library extends React.Component{
                     <div className="summaryBar">
 
                         <Summary id="Summary"
-                            currentBook={this.props.currentBook}
+                            currentBook={this.state.currentBook}
                             closeCurrent={this.props.closeCurrent} 
                         />
 

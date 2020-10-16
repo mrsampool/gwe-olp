@@ -1,23 +1,19 @@
+// React
 import React from 'react';
 
+// React Components
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link
+  Redirect,
 } from "react-router-dom";
 
-import logo from './logo.svg';
-
-import TopNav from './components/topnav/topnav';
+// Sub-Components
 import Splash from './views/splash/splash';
-import Translate from './components/translate/translate';
 import Library from './views/library/library';
 import Read from './views/read/read';
 
-
-import Summary from './components/summary/summary';
-
+// Style Sheet
 import './App.css';
 
 
@@ -42,8 +38,15 @@ class App extends React.Component{
       <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
 
-            <Route exact path="/" 
-              component={Splash}
+            <Route path="/library/:bookLabel" 
+              render={(props) =>(
+                <Library {...props} 
+                  currentBook={this.state.currentBook}
+                  changeBook={this.changeBook}
+                  closeCurrent={this.closeCurrent}
+                  key={`Library - Current Book: ${this.state.currentBook}`}
+                />
+              )}
             />
 
             <Route exact path="/library" 
@@ -57,22 +60,25 @@ class App extends React.Component{
               )}
             />
 
-            <Route exact path="/read" 
-            render={(props) =>(
-              <Read {...props}
-                book={this.state.currentBook}
-              />
-            )}
+            <Route path="/read/:bookLabel" 
+              render={(props) =>(
+                <Read {...props}
+                  book={this.state.currentBook}
+                />
+              )}
+            />
+
+            <Route exact path="/read">
+              <Redirect to="/library" />
+            </Route> 
+
+            <Route exact path="/" 
+              component={Splash}
             />
 
         </div>
 
       </Router>
-
-
-      
-        
-        
     )
   }
 

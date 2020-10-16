@@ -66,7 +66,12 @@ class Summary extends React.Component{
                             />
                         </div>
 
-                        <Link to="/read"><button>Start Reading</button></Link>
+                        <Link to={`/read/${book.label}`}>
+                            <button>
+                                Start Reading
+                            </button>
+                        </Link>
+                        
                     </div>
 
                 </div>
