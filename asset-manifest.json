@@ -1,23 +1,28 @@
 {
   "files": {
-    "main.css": "/gwe-olp/static/css/main.a0be0f8c.chunk.css",
-    "main.js": "/gwe-olp/static/js/main.5063f934.chunk.js",
-    "main.js.map": "/gwe-olp/static/js/main.5063f934.chunk.js.map",
+    "main.css": "/gwe-olp/static/css/main.66b8605e.chunk.css",
+    "main.js": "/gwe-olp/static/js/main.7f3391f5.chunk.js",
+    "main.js.map": "/gwe-olp/static/js/main.7f3391f5.chunk.js.map",
     "runtime-main.js": "/gwe-olp/static/js/runtime-main.e433e01a.js",
     "runtime-main.js.map": "/gwe-olp/static/js/runtime-main.e433e01a.js.map",
-    "static/js/2.29d19be8.chunk.js": "/gwe-olp/static/js/2.29d19be8.chunk.js",
-    "static/js/2.29d19be8.chunk.js.map": "/gwe-olp/static/js/2.29d19be8.chunk.js.map",
+    "static/js/2.bd63e99d.chunk.js": "/gwe-olp/static/js/2.bd63e99d.chunk.js",
+    "static/js/2.bd63e99d.chunk.js.map": "/gwe-olp/static/js/2.bd63e99d.chunk.js.map",
     "index.html": "/gwe-olp/index.html",
-    "precache-manifest.f8beefc942be943545fbd7e8201238bd.js": "/gwe-olp/precache-manifest.f8beefc942be943545fbd7e8201238bd.js",
+    "precache-manifest.4180c90d6c0e062b6a31547f3220b2ba.js": "/gwe-olp/precache-manifest.4180c90d6c0e062b6a31547f3220b2ba.js",
     "service-worker.js": "/gwe-olp/service-worker.js",
-    "static/css/main.a0be0f8c.chunk.css.map": "/gwe-olp/static/css/main.a0be0f8c.chunk.css.map",
-    "static/js/2.29d19be8.chunk.js.LICENSE.txt": "/gwe-olp/static/js/2.29d19be8.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/gwe-olp/static/media/logo.5d5d9eef.svg"
+    "static/css/main.66b8605e.chunk.css.map": "/gwe-olp/static/css/main.66b8605e.chunk.css.map",
+    "static/js/2.bd63e99d.chunk.js.LICENSE.txt": "/gwe-olp/static/js/2.bd63e99d.chunk.js.LICENSE.txt",
+    "static/media/Globe-Print-Logo-WEB.png": "/gwe-olp/static/media/Globe-Print-Logo-WEB.5deea097.png",
+    "static/media/library.css": "/gwe-olp/static/media/libraryBG.6525036e.jpg",
+    "static/media/logo.svg": "/gwe-olp/static/media/logo.5d5d9eef.svg",
+    "static/media/penguin.png": "/gwe-olp/static/media/penguin.7da8242b.png",
+    "static/media/polarbear.png": "/gwe-olp/static/media/polarbear.28f3c8f1.png",
+    "static/media/splash.css": "/gwe-olp/static/media/splashBG.7a8caf5a.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.e433e01a.js",
-    "static/js/2.29d19be8.chunk.js",
-    "static/css/main.a0be0f8c.chunk.css",
-    "static/js/main.5063f934.chunk.js"
+    "static/js/2.bd63e99d.chunk.js",
+    "static/css/main.66b8605e.chunk.css",
+    "static/js/main.7f3391f5.chunk.js"
   ]
 }
