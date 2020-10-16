@@ -11,8 +11,8 @@ import LibraryItem from '../libraryItem/libraryItem';
 
 
 class LibraryList extends React.Component{
-    getBookCover(contentLabel){
-        return `${process.env.PUBLIC_URL}assets/books/${contentLabel}/pages/1.jpg`;
+    getBookCover(bookLabel){
+        return `${process.env.PUBLIC_URL}/assets/books/${bookLabel}/pages/1.jpg`;
     }
     getLibraryList(){
         return MediaList.map( content =>{
