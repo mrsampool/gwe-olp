@@ -1,6 +1,6 @@
 import React from 'react';
 
-//Media Content
+// Media Data
 import { Media } from '../../mediaContent';
 
 // Style Sheet
@@ -10,7 +10,6 @@ import './read.css';
 import Congrats from '../../components/congrats/congrats';
 import ReaderControlBar from '../../components/readerControlBar/readerControlBar';
 import ReaderContent from '../../components/readerContent/readerContent';
-import '../../components/nextPage/nextPage.css';
 
 class Read extends React.Component{
     constructor(props){
@@ -35,10 +34,10 @@ class Read extends React.Component{
 
     // SOURCE PAGE IMG & AUDIO FILES
     getPage(){
-        return `/books/${this.state.book.label}/pages/${this.state.page}.jpg`;
+        return `${process.env.PUBLIC_URL}assets/books/${this.state.book.label}/pages/${this.state.page}.jpg`;
     }
     getAudio(){
-        return `/books/${this.state.book.label}/audio/${this.state.page}.mp3`;
+        return `${process.env.PUBLIC_URL}assets/books/${this.state.book.label}/audio/${this.state.page}.mp3`;
     }
 
     // PAGE INCREMENTORS
@@ -53,12 +52,20 @@ class Read extends React.Component{
             //Set State & Progress Bar
             this.setState( {page: (this.state.page + 1) } );
             this.setProgress();
+            //Start Load Screen
+            const loadScreen = document.getElementById('loading');
+            loadScreen.style.display = 'block';
+            //Load new audio
+            const audio = document.getElementById('narrator');
+            audio.src = this.getAudio();
             //Handle Narration
+            /*
             if (this.state.status === 'playing'){
                 const audio = document.getElementById('narrator');
                 audio.src = this.getAudio();
                 this.playNarration();
             }
+            */
             //Enable PrevPage Button;
             const prevPage = document.getElementById('prevPage');
             prevPage.classList.remove('disabled');
@@ -76,8 +83,11 @@ class Read extends React.Component{
     }
     prevPage(){
         if ( this.state.page > 1 ){
-            this.setState( {page: (this.state.page - 1), pageHasPlayed: false } );
+            this.setState( {page: (this.state.page - 1) } );
             this.setProgress();
+            //Start Load Screen
+            const loadScreen = document.getElementById('loading');
+            loadScreen.style.display = 'block';
             //Check For Disbabled PrevPage Button
             if (this.state.page === 1){
                 const prevPage = document.getElementById('prevPage');
@@ -95,6 +105,10 @@ class Read extends React.Component{
         const pageInput = document.getElementById('pageInput');
         if (pageInput.value > 0 && pageInput.value <= this.state.book.pages){
 
+            //Start Load Screen
+            const loadScreen = document.getElementById('loading');
+            loadScreen.style.display = 'block';
+
             pageInput.style.backgroundColor = "aliceBlue"
             this.setState( {page: Number(pageInput.value), status: 'stop' } );
             //Handle Narration
@@ -107,6 +121,9 @@ class Read extends React.Component{
     slidePage(){
         const progress = document.getElementById('progressSlider');
         this.setState({page: Number(progress.value), status: 'stop' });
+        //Start Load Screen
+        const loadScreen = document.getElementById('loading');
+        loadScreen.style.display = 'block';
         //Handle Narration
         const audio = document.getElementById('narrator');
         audio.src = this.getAudio();
@@ -156,6 +173,7 @@ class Read extends React.Component{
 
     // COMPONENT MOUNTING
     componentDidMount(){
+
         this.setProgress();
         if (this.state.status === 'playing'){
             this.playNarration();
@@ -197,6 +215,7 @@ class Read extends React.Component{
                         //Narration
                         narration = {this.state.book.narration}
                         playNarration = {this.playNarration}
+                        status = {this.state.status}
                     />
 
                 </div>

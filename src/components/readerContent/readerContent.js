@@ -21,6 +21,8 @@ class ReaderContent extends React.Component{
                     narration = {this.props.narration}
                     getPage = {this.props.getPage}
                     playNarration = {this.props.playNarration}
+                    status = {this.props.status}
+                    key = {window.orientation}
                 />
 
                 <NextPage nextPage={this.props.nextPage} />

@@ -1,29 +1,41 @@
 .ReaderPages{
+    height: 100%;
+    width: 100%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     margin: 2rem;
 }
-.ReaderPages img{
+.pageImg img{
     border: 0.5rem solid white;
     border-radius: 1rem;
     box-shadow: 0 1rem 1rem hsla(0,0%,0%,0.3)
 }
 
 /* WIDE DISPLAY */
-.ReaderPages.wide{
+.pageImg.wide{
     height: 85%;
 }
-.ReaderPages.wide img{
+.pageImg.wide img{
     height: 100%;
+    width: auto;
 }
 
 /* TALL DISPLAY */
-.ReaderPages.tall{
+.pageImg.tall{
     width: 85%;
 }
-.ReaderPages.tall img{
+.pageImg.tall img{
     width: 100%;
+    height: auto;
+}
+
+#loading{
+    display: none;
+    position: fixed;
+    background-color: lightgray;
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
 @media only screen and (max-width: 600px){

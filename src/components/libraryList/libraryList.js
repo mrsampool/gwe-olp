@@ -1,10 +1,19 @@
 import React from 'react';
-import { MediaList } from '../../mediaContent';
-import LibraryItem from '../libraryItem/libraryItem';
+
+// Style Sheet
 import './libraryList.css';
+
+// Media Data
+import { MediaList } from '../../mediaContent';
+
+// Sub - Components
+import LibraryItem from '../libraryItem/libraryItem';
 
 
 class LibraryList extends React.Component{
+    getBookCover(contentLabel){
+        return `${process.env.PUBLIC_URL}assets/books/${contentLabel}/pages/1.jpg`;
+    }
     getLibraryList(){
         return MediaList.map( content =>{
             return(
@@ -14,11 +23,10 @@ class LibraryList extends React.Component{
                     changeBook={this.props.changeBook}
                     key={content.label}
                     label={content.label}
-                    cover={`/books/${content.label}/pages/1.jpg`}
+                    cover={this.getBookCover(content.label)}
                 />
             )
         })
-        return this.list[0].Title;
     }
     render(){
         return(

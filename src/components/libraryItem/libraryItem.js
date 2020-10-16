@@ -1,4 +1,6 @@
 import React from 'react';
+
+//Style Sheet
 import './libraryItem.css';
 
 class LibraryItem extends React.Component{

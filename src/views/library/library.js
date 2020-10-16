@@ -5,6 +5,7 @@ import Summary from '../../components/summary/summary';
 import '../../components/summary/summary.css';
 import LibraryList from '../../components/libraryList/libraryList';
 import TopNav from '../../components/topnav/topnav';
+import Mascot from '../../components/mascot/mascot';
 
 class Library extends React.Component{
     constructor(props){
@@ -40,19 +41,15 @@ class Library extends React.Component{
 
                         <Summary id="Summary"
                             currentBook={this.props.currentBook}
-                            closeCurrent={this.props.closeCurrent} />
+                            closeCurrent={this.props.closeCurrent} 
+                        />
 
-                        <div className="libraryMascot">
-                            
-                            <div className="speechBubble library">
-                                <p>So many great options to choose from!</p>
-                            </div> 
+                        <Mascot
+                            character="penguin"
+                            type="library"
+                        />
 
-                            <img 
-                                src='/images/graphics/penguin.png'
-                                alt='GWE Logo'
-                            />
-                        </div>
+
                     </div>
                     
 

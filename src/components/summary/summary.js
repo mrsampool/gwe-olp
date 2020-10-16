@@ -1,13 +1,16 @@
 import React from 'react';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
     Link
   } from "react-router-dom";
 
+// StyleSheet
 import './summary.css';
+
+// Media Content
 import { Media } from '../../mediaContent';
+
+// Sub-Components
 import LibraryReadBy from '../libraryReadBy/libraryReadBy';
 
 class Summary extends React.Component{
@@ -23,6 +26,9 @@ class Summary extends React.Component{
         if (summary.style.display = 'block'){
             summary.scrollIntoView({behavior: "smooth", block: "start"}); 
         }
+    }
+    getSummaryGraphic(bookLabel){
+        return `${process.env.PUBLIC_URL}/assets/books/${bookLabel}/pages/1.jpg`
     }
     componentDidMount(){
     }
@@ -40,7 +46,7 @@ class Summary extends React.Component{
                 <div className="summaryBody">
 
                     <div className="summaryGraphic">
-                        <img src={`/books/${book.label}/pages/1.jpg`}/>
+                        <img src={ this.getSummaryGraphic(book.label) }/>
                     </div>
                     
                     <div className='summaryRight'>

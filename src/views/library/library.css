@@ -3,7 +3,7 @@
     padding-top: 3rem;
     width: 100%;
     min-height: 100vh;
-    background-image: url('/images/graphics/backgrounds/big-cartoon-library-many-books-134765999.jpg');
+    background-image: url('./libraryBG.jpg');
     background-position: bottom;
     background-size: cover;
 }
@@ -29,14 +29,14 @@
     background-color: white;
 }
 
-.libraryMascot{
-    width: 12em;
+.Mascot.library .mascotCharacter{
+    width: 16em;
     margin: 2rem;
+    background-color: black;
 }
 
 .libraryMascot img{
     width: 100%;
-
 }
 
 .libraryTitle{

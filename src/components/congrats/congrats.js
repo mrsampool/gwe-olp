@@ -24,7 +24,7 @@ class Congrats extends React.Component{
                         </div>
                         <div className="completeMascot">
                             <img 
-                                src='/images/graphics/polarbear.png'
+                                src={`${process.env.PUBLIC_URL}/assets/images/graphics/polarbear.png`}
                                 alt='GWE Logo'
                             />
                         </div>

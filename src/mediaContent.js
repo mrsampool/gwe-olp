@@ -58,9 +58,9 @@ const Media = {
     }
 
 const headshots = {
-    'Lori Gleria': '/images/headshots/LoriGleria.jpg',
-    'Magnificent "Mags" Farrell': '/images/headshots/MagsFarrell.jpg',
-    'Suki Wampler': '/images/headshots/SukiWampler.jpg'
+    'Lori Gleria': `${process.env.PUBLIC_URL}/assets/images/headshots/LoriGleria.jpg`,
+    'Magnificent "Mags" Farrell': `${process.env.PUBLIC_URL}/assets/images/headshots/MagsFarrell.jpg`,
+    'Suki Wampler': `${process.env.PUBLIC_URL}/assets/images/headshots/SukiWampler.jpg`
 }
 
 const MediaList = [

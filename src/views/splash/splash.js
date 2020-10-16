@@ -1,16 +1,13 @@
 import React from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+
+// Sub-Components
 import StartLearning from '../../components/startLearning/startLearning';
 import TopNav from '../../components/topnav/topnav';
+import Mascot from '../../components/mascot/mascot';
 
-import pageText from '../../data/pageText';
-import Library from '../library/library';
+//Style Sheet
 import './splash.css';
+
 
 class Splash extends React.Component{
     render(){
@@ -21,22 +18,10 @@ class Splash extends React.Component{
 
                 <StartLearning/>
 
-                
-                    <div className="splashMascot">
-
-                        <div className="speechBubble splash">
-                            <p>Ready to hop aboard?</p>
-                        </div>
-
-                        <div className="splashMascotCharacter">
-                            <img 
-                                src='./../images/graphics/polarbear.png'
-                                alt='GWE Logo'
-                            />
-                        </div>
-
-
-                    </div>
+                <Mascot
+                    character='polarbear'
+                    type="splash"
+                />
 
                 
 

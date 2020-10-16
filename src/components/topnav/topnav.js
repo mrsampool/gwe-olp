@@ -17,7 +17,7 @@ class TopNav extends React.Component{
                 <div className="logo">
                     <Link to="/">
                         <img 
-                            src='./../images/Globe-Print-Logo-WEB.png'
+                            src={require('./Globe-Print-Logo-WEB.png') }
                             alt='GWE Logo'
                             id="logo"
                         />

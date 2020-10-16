@@ -1,0 +1,20 @@
+.Mascot{
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.mascotCharacter{
+    width: 15em;
+}
+
+.mascotCharacter img{
+    width: 100%;
+    height: auto;
+}
+
+.splashMascot{
+    background-color: black;
+}
+
