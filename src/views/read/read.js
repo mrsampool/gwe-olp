@@ -34,10 +34,10 @@ class Read extends React.Component{
 
     // SOURCE PAGE IMG & AUDIO FILES
     getPage(){
-        return `${process.env.PUBLIC_URL}assets/books/${this.state.book.label}/pages/${this.state.page}.jpg`;
+        return `${process.env.PUBLIC_URL}/assets/books/${this.state.book.label}/pages/${this.state.page}.jpg`;
     }
     getAudio(){
-        return `${process.env.PUBLIC_URL}assets/books/${this.state.book.label}/audio/${this.state.page}.mp3`;
+        return `${process.env.PUBLIC_URL}/assets/books/${this.state.book.label}/audio/${this.state.page}.mp3`;
     }
 
     // PAGE INCREMENTORS
