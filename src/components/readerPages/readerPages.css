@@ -1,32 +1,36 @@
 .ReaderPages{
-    height: 100%;
-    width: 100%;
+    width: 80%;
     display: inline-flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin: 2rem;
 }
-.pageImg img{
+#pageImg{
     border: 0.5rem solid white;
     border-radius: 1rem;
-    box-shadow: 0 1rem 1rem hsla(0,0%,0%,0.3)
+    box-shadow: 0 1rem 1rem hsla(0,0%,0%,0.3);
 }
-
+.pageImgFrame{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
 /* WIDE DISPLAY */
-.pageImg.wide{
-    height: 85%;
+.pageImgFrame.tall{
+    height: 85vh;
 }
-.pageImg.wide img{
-    height: 100%;
+.pageImgFrame.tall img{
+    max-height: 100%;
     width: auto;
 }
 
 /* TALL DISPLAY */
-.pageImg.tall{
-    width: 85%;
-}
-.pageImg.tall img{
+.pageImgFrame.wide{
     width: 100%;
+}
+.pageImgFrame.wide img{
+    width: 95%;
     height: auto;
 }
 
@@ -39,11 +43,20 @@
     text-align: center;
 }
 
+
 @media only screen and (max-width: 600px){
-    #pageImg{
-        position: absolute;
-        width: 80%;
-        height: auto;
-        top: 16rem;
+    .pageImgFrame.tall{
+        width: 100%;
+        height: fit-content;
+    }
+    .pageImgFrame.tall img{
+        width: 100%;
+        height: auto;;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .ReaderPages{
+        width: 100%;
     }
 }

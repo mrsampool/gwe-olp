@@ -7,8 +7,9 @@ import {
 // StyleSheet
 import './summary.css';
 
-// Media Content
-import { Media } from '../../mediaContent';
+// Data
+import { Media } from '../../data/mediaContent';
+import pageText from '../../data/pageText';
 
 // Sub-Components
 import LibraryReadBy from '../libraryReadBy/libraryReadBy';
@@ -54,21 +55,22 @@ class Summary extends React.Component{
                         <div className='summaryText'>
                             
                             <div className="summaryTitleAuthor">
-                                <h2 className="summaryTitle">{book.title}</h2>
-                                <h3 className="summaryAuthor">by {book.author}</h3>
+                                <h2 className="summaryTitle">{book.title[ this.props.language ] }</h2>
+                                <h3 className="summaryAuthor">{ pageText.labels.byAuthor( book.author, this.props.language ) }</h3>
                             </div>
                             
-                            <p className='summaryDesc'>{book.description}</p>
+                            <p className='summaryDesc'>{book.description[ this.props.language ] }</p>
                             
                             <LibraryReadBy
                                 readBy={book.reader}
                                 narration={book.narration}
+                                language={ this.props.language }
                             />
                         </div>
 
                         <Link to={`/read/${book.label}`}>
                             <button>
-                                Start Reading
+                                { pageText.buttons.startReading[ this.props.language ] }
                             </button>
                         </Link>
                         

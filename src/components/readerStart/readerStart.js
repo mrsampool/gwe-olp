@@ -1,7 +1,8 @@
 import React from 'react';
-import { headshots, Media } from '../../mediaContent';
+import { headshots, Media } from '../../data/mediaContent';
 
 import './readerStart.css';
+import pageText from '../../data/pageText';
 
 class ReaderStart extends React.Component{
     getReaderPhoto(readBy){
@@ -19,8 +20,16 @@ class ReaderStart extends React.Component{
             <div className="ReaderStart">
                 
                 <div className="readerTitleAuthor">
-                    <h1 className="readerTitle">{book.title}</h1>
-                    <h2 className="readerAuthor">By {book.author}</h2>
+                    
+                    <h1 className="readerTitle">
+                        {book.title[this.props.language]}
+                    </h1>
+
+                    <hr/>
+
+                    <h2 className="readerAuthor">
+                        { pageText.labels.byAuthor( book.author, this.props.language ) }
+                    </h2>
                 </div>
 
                 <div className="readerReadBy">
@@ -28,17 +37,23 @@ class ReaderStart extends React.Component{
                     { this.getReaderPhoto( book.reader ) }
 
                     <div className="readByName">
-                        <h3>Read by</h3>
+                        <h3>{ pageText.labels.readBy[this.props.language]}</h3>
+                        <hr/>
                         <h3>{book.reader}</h3>
+
+                        <button
+                            id="playNarration" 
+                            onClick={this.props.playNarration }
+                            >{ pageText.buttons.playNarration[this.props.language] }
+                        </button>
+
                     </div>
+
+
 
                 </div>
 
-                <button
-                    id="playNarration" 
-                    onClick={this.props.playNarration }
-                    >Play Narration
-                </button>
+
 
             </div>
         )

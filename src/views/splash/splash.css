@@ -1,3 +1,4 @@
+/* Full Page Container */
 .Splash{
     position: fixed;
 
@@ -13,14 +14,15 @@
     background-position-y: bottom;
 }
 
+/* Mascot */
 .Mascot.splash{
     position: fixed;
+    align-items: center;
     bottom: 10px;
-    width: 100%;
+    width: calc(100% - 4rem);
     margin-bottom: 2rem;
 }
-
-.mascotCharacter{
+.Mascot.splash .mascotCharacter{
     width: 20rem;
 }
 
@@ -31,21 +33,17 @@
     }
   }
 
-@media only screen and (max-height: 475px){
+@media only screen and (max-height: 600px){
     #start{
         height: 100%;
         justify-content: flex-end;
         align-items: flex-start;
     }
-    .splashMascot{
-        justify-content: center;
+    .Mascot.splash{
+        flex-direction: row;
         display: inline-flex;
         flex-wrap: nowrap;
     }
-    .splashMascotCharacter{
-        width: 10em;
-    }
-    
   }
 
 @media only screen and (orientation: portrait) and (max-width: 550px){

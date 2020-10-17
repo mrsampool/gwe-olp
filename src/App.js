@@ -3,7 +3,7 @@ import React from 'react';
 
 // React Components
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Redirect,
 } from "react-router-dom";
@@ -22,16 +22,25 @@ class App extends React.Component{
     super(props);
     this.state = {
       currentBook: 'livingSunlight',
-      currentPage: 1
+      currentPage: 1,
+      language: 'eng'
     }
     this.changeBook = this.changeBook.bind(this);
     this.closeCurrent = this.closeCurrent.bind(this);
+    this.changeLanguage = this.changeLanguage.bind(this);
   }
   changeBook(event, book){
     this.setState( {currentBook: book} );
   }
   closeCurrent(){
     this.setState( {currentBook: '' } );
+  }
+  changeLanguage(){
+    if ( this.state.language === 'eng' ){
+      this.setState( { language: 'spa' } );
+    } else if (this.state.language === 'spa' ){
+      this.setState( { language: 'eng' } );
+    }
   }
   render(){
     return (
@@ -45,6 +54,8 @@ class App extends React.Component{
                   changeBook={this.changeBook}
                   closeCurrent={this.closeCurrent}
                   key={`Library - Current Book: ${this.state.currentBook}`}
+                  language={ this.state.language }
+                  changeLanguage={ this.changeLanguage }
                 />
               )}
             />
@@ -56,6 +67,8 @@ class App extends React.Component{
                   changeBook={this.changeBook}
                   closeCurrent={this.closeCurrent}
                   key={`Library - Current Book: ${this.state.currentBook}`}
+                  language={this.state.language}
+                  changeLanguage={ this.changeLanguage }
                 />
               )}
             />
@@ -64,6 +77,8 @@ class App extends React.Component{
               render={(props) =>(
                 <Read {...props}
                   book={this.state.currentBook}
+                  language={this.state.language}
+                  changeLanguage={this.changeLanguage}
                 />
               )}
             />
@@ -73,7 +88,12 @@ class App extends React.Component{
             </Route> 
 
             <Route exact path="/" 
-              component={Splash}
+              render={ ( props ) =>(
+                <Splash {...props}
+                  language={this.state.language}
+                  changeLanguage={this.changeLanguage}
+                />
+              )}
             />
 
         </div>

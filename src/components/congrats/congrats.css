@@ -1,3 +1,4 @@
+/* Full Screen BG Container */
 #complete{
     position: fixed;
     width: 100%;
@@ -8,6 +9,8 @@
     text-align: center;
     z-index: 6;
 }
+
+/* Congrats Window */
 .completeWindow{
     display: flex;
     flex-direction: column;
@@ -17,27 +20,22 @@
     border: 0.5rem solid white;
     background-color: lightgreen;
 }
-.completeMascotContainer{
-    display: inline-flex;
-    align-items: center;
-}
-.completeMascot{
-    margin: 1rem;
-    height: 200px;
-}
-.completeMascot img{
-    height: 100%;
-}
+
+/* Option Buttons Container */
 .congratsOptions{
+    width: 100%;
     margin-top: 1rem;
     display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
+/* Media Queries */
 @media only screen and (max-width: 600px){
     .completeWindow{
         width: 80%;
     }
-    .completeMascotContainer{
+    .Mascot.congrats{
         margin-top: 1rem;
         display: flex;
         flex-direction: column;
@@ -47,38 +45,24 @@
     }
 }
 
-@media only screen and (max-width: 600px) and (orientation: landscape){
-    .completeWindow{
-        width: 80%;
-    }
-    .completeMascotContainer{
-        width: 100%;
-        flex-direction: row;
-        justify-content: center;
-    }
-    .completeMascot{
-        width: fit-content;
-    }
-    .speechBubble{
-        width: 5rem;
-    }
-}
-
-@media only screen and (max-height: 600px){
+@media only screen and (max-height: 600px) and (orientation: landscape){
     .completeWindow{
         height: 80%;
         justify-content: space-between;
     }
-    .completeMascotContainer{
+    .Mascot.congrats{
+        flex-direction: row;
         height: 40%;
+        margin: 0;
+    }
+    .Mascot.congrats .mascotCharacter{
+        height: 100%;
+    }
+    .Mascot.congrats .mascotCharacter img{
+        height: 100%;
+        width: auto;
     }
     .completeMascot{
         height: 80%;
     }
-    /*
-    .congratsOptionsContainer{
-        position: absolute;
-        bottom: 2rem;
-    }
-    */
 }

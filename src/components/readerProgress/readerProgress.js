@@ -1,4 +1,5 @@
 import React from 'react';
+import pageText from '../../data/pageText';
 
 import './readerProgress.css';
 
@@ -9,7 +10,9 @@ class ReaderProgress extends React.Component{
             
                 <div className="pageCounter">
         
-                    <label for="pageInput">Page #:</label>
+                    <label for="pageInput">
+                        { pageText.labels.page[this.props.language] } #:
+                    </label>
                     <input type="number" 
                         id="pageInput" 
                         name="pageInput"

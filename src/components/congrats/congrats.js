@@ -1,40 +1,47 @@
+// React
 import React from 'react';
 
+// React Components
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
     Link
   } from "react-router-dom";
 
-import './congrats';
+// Sub - Components
+import Mascot from '../mascot/mascot';
 
+// Style Sheet
 import './congrats.css';
+import pageText from '../../data/pageText';
+
 class Congrats extends React.Component{
     render(){
         return(
             <div id="complete">
                 <div className="completeWindow">
 
-                    <h1>Congrats, you finished this book!</h1>
+                    <h1>{ pageText.messages.congrats[ this.props.language ] }</h1>
 
-                    <div className="completeMascotContainer">
-                        <div className="speechBubble">
-                            <p>I knew you could do it!</p>
-                        </div>
-                        <div className="completeMascot">
-                            <img 
-                                src={`${process.env.PUBLIC_URL}/assets/images/graphics/polarbear.png`}
-                                alt='GWE Logo'
-                            />
-                        </div>
-                    </div>
+                    <Mascot
+                        character="polarbear"
+                        type="congrats"
+                        language={this.props.language}
+                    />
 
                     <div className="congratsOptionsContainer">
-                        <h2>Read it again?</h2>
+                        <h2>{ pageText.messages.congrats[ this.props.language ] }</h2>
                         <div className="congratsOptions">
-                            <button onClick={this.props.readAgain }>Read it again</button>
-                            <Link to="/library"><button>Back to Library</button></Link>
+
+                            <button onClick={this.props.readAgain }>
+                                { pageText.buttons.readAgain[ this.props.language ] }
+                            </button>
+
+                            <Link to="/library">
+                                <button>
+                                    { pageText.buttons.backLibrary[ this.props.language ] }
+                                </button>
+                            </Link>
+
                         </div>
                     </div>
 

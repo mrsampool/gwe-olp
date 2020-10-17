@@ -9,18 +9,27 @@ import ReaderStart from '../readerStart/readerStart';
 class ReaderPages extends React.Component{
     constructor(props){
         super(props);
+        this.state = {
+            screenWidth: window.innerWidth,
+            screenHeight: window.innerHeight
+        }
         this.imageLoaded = this.imageLoaded.bind(this);
         this.sizePage = this.sizePage.bind(this);  
+
     }
     sizePage(){
+
+
+        /*
+        console.log('Size Change')
         const loadScreen = document.getElementById('loading');
         loadScreen.innerText = 'size change \n';
         loadScreen.innerText += `Orientation: ${window.orientation}\n`;
         // Get Window Dimesions
         const screenWidth = window.innerWidth;
         const screenHeight = window.innerHeight;
-        loadScreen.innerText += `${`Screen Width: ${screenWidth}\n`}`;
-        loadScreen.innerText += `${`Screen Height: ${screenHeight}\n`}`;
+        loadScreen.innerHTML += `${`Screen Width: ${screenWidth}\n`}`;
+        loadScreen.innerHTML += `${`Screen Height: ${screenHeight}\n`}`;
 
         if (screenWidth > screenHeight){
             loadScreen.innerText += `Wide Screen\n`;
@@ -50,9 +59,20 @@ class ReaderPages extends React.Component{
             page.classList.remove('tall');
         }
         page.src = this.props.getPage();
+        */
     }
     imageLoaded(){
-        this.sizePage();
+        const pageImg = document.getElementById('pageImg');
+        const pageImgFrame = document.getElementById('pageImgFrame');
+        const readerContent = document.getElementById('ReaderContent')
+
+        if (pageImg.naturalWidth < pageImg.naturalHeight){
+            pageImgFrame.className = 'pageImgFrame tall';
+            readerContent.className = 'ReaderContent tallContent';
+        } else {
+            pageImgFrame.className = 'pageImgFrame wide';
+            readerContent.className = 'ReaderContent wideContent';
+        }
         /*
 
         const loadScreen = document.getElementById('loading');
@@ -63,29 +83,27 @@ class ReaderPages extends React.Component{
             audio.play();
         }
     }
-    componentDidMount(){
-        this.sizePage();
-    }
     render(){
         return(
             <div className="ReaderPages" id="page">
-
-                <div id="loading">
-                    <p>Loading...</p>
-                </div>
-
-                <div className="pageImg wide" id="pageImg">
-                    <img src={ this.props.getPage() }  
-                        onLoad={this.imageLoaded} />
-                </div>
+                
+                <p id="loading">loading</p>
 
                 {
                     this.props.page === 1 && this.props.narration ? 
                     <ReaderStart
                         book={this.props.book}
-                        playNarration={this.props.playNarration}/> 
+                        playNarration={this.props.playNarration}
+                        language={this.props.language}
+                    /> 
                     : ''
                 }
+                
+                <div id="pageImgFrame">
+                    <img src={ this.props.getPage() }  
+                        onLoad={this.imageLoaded}
+                        id="pageImg" />
+                </div>
 
             </div>
         )

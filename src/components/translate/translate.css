@@ -1,3 +1,4 @@
 .translate{
     position: relative;
+    min-width: 8rem;
 }

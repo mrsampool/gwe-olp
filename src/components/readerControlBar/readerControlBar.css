@@ -1,4 +1,4 @@
-/* Container */
+/* Containers */
 .ReaderControlBar{
     display: inline-flex;
     justify-content: center;
@@ -7,6 +7,14 @@
     width: 100%;
     background-color: hsl(0,0%,0%,0.1);
     box-shadow: 0 0 0.5rem dimgray;
+}
+.mobileTop{
+    display: flex;
+    align-items: center;
+}
+.transNarrCont{
+    width: 100%;
+    display: flex;
 }
 
 /* Buttons */
@@ -18,21 +26,24 @@
     position: static;
     margin: 0.5rem;
 }
-
 #mobileClose{
     display: none;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 800px){
     .ReaderControlBar{
         display: flex;
         flex-direction: column;
     }
     .mobileTop{
         width: 100%;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+    }
+    .transNarrCont{
+        width: calc(100% - 5rem);
+        justify-content: space-evenly;
+        flex-direction: row-reverse;
+        
     }
     #mobileClose{
         display: block;
@@ -41,5 +52,27 @@
     }
     #standardClose{
         display: none;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .mobileTop{
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .transNarrCont{
+        flex-direction: column;
+        width: fit-content;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 350px){
+    .mobileTop{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    #mobileClose{
+        position: static;
     }
 }

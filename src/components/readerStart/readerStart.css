@@ -1,3 +1,4 @@
+/* Container */
 .ReaderStart{
     max-width: 18rem;
     background: hsla(200,30%,80%);
@@ -5,11 +6,35 @@
     display: flexbox;
     justify-content: center;
     padding: 1rem;
-    margin: 2rem;
+    margin: 1rem;
     border-radius: 1rem;
     text-align: center;
     box-shadow: 0 0 1rem aliceblue;
 }
+
+/* Detail Text */
+.readerTitleAuthor, .readerReadBy{
+    background-color: hsla(0,0%,100%,0.2);
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+.readerTitleAuthor{
+    margin-bottom: 0.5rem;
+}
+.readByName{
+    margin: 0.5rem;
+}
+hr{
+    border-color: hsla(0,0%,0%,0.2);
+    width: 60%;
+}
+
+/* Button */
+#playNarration{
+    margin-top: 1rem;
+}
+
+/* Reader Photo */
 #readerPhoto{
     margin: 0.5rem 0 0.5rem 0;
     height: 10em;
@@ -17,18 +42,36 @@
     border: 0.2em solid hsl(0,0%,30%,0.2);
     box-shadow: none;
 }
-.readerTitleAuthor, .readerReadBy{
-    background-color: hsla(0,0%,100%,0.2);
-    padding: 1rem;
-    border-radius: 1rem;
-}
-.readerTitleAuthor{
-    margin-bottom: 1rem;
-}
-.readerTitle{
-    margin-bottom: 0.5rem;
+
+/* Media Queries */
+@media only screen and (max-width: 1025px){
+    .ReaderStart{
+        max-width: 30rem;
+    }
+    .readerReadBy{
+        display: flex;
+        align-items: center;
+    }
+    #readerPhoto{
+        height: 7rem;
+    }
 }
 
+@media only screen and (max-width: 600px){
+    .ReaderStart{
+        max-width: 100%;
+    }
+    .readerReadBy{
+        flex-direction: column;
+        align-items: center;
+    }
+    #readerPhoto{
+        width: 100%;
+        height: auto;
+    }
+}
+
+/*
 @media only screen and (max-width: 1200px){
     .ReaderStart{
         position: absolute;
@@ -96,3 +139,4 @@
     }
 
 }
+*/

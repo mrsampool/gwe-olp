@@ -4,7 +4,7 @@ import React from 'react';
 import './libraryList.css';
 
 // Media Data
-import { MediaList } from '../../mediaContent';
+import { MediaList } from '../../data/mediaContent';
 
 // Sub - Components
 import LibraryItem from '../libraryItem/libraryItem';
@@ -18,7 +18,7 @@ class LibraryList extends React.Component{
         return MediaList.map( content =>{
             return(
                 <LibraryItem
-                    title={content.title}
+                    title={content.title[this.props.language]}
                     author={content.author}
                     changeBook={this.props.changeBook}
                     key={content.label}

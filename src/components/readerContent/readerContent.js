@@ -11,7 +11,7 @@ import PrevPage from '../prevPage/prevPage';
 class ReaderContent extends React.Component{
     render(){
         return(
-            <div className="ReaderContent">
+            <div className="ReaderContent" id="ReaderContent">
 
                 <PrevPage prevPage={this.props.prevPage} key={this.props.page} page={this.props.page}/>
 
@@ -22,7 +22,7 @@ class ReaderContent extends React.Component{
                     getPage = {this.props.getPage}
                     playNarration = {this.props.playNarration}
                     status = {this.props.status}
-                    key = {window.orientation}
+                    language = {this.props.language}
                 />
 
                 <NextPage nextPage={this.props.nextPage} />

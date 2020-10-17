@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { headshots } from '../../mediaContent';
+import { headshots } from '../../data/mediaContent';
 
 import './libraryReadBy.css';
+import pageText from '../../data/pageText';
 
 class LibraryReadBy extends React.Component{
     getReaderPhoto(readBy){
@@ -26,7 +27,7 @@ class LibraryReadBy extends React.Component{
                         { this.getReaderPhoto( this.props.readBy) }
 
                         <div className="libReadByName">
-                            <p>Read by</p> 
+                            <p>{ pageText.labels.readBy[ this.props.language ] }</p> 
                             <p>{this.props.readBy}</p>
                         </div>
 
@@ -34,7 +35,7 @@ class LibraryReadBy extends React.Component{
 
                     :
                     <div className="libReadByName">
-                        <p>Narration Coming Soon</p> 
+                        <p>{ pageText.labels.narrComing[this.props.language ] }</p> 
                     </div>
                 }
             </div>

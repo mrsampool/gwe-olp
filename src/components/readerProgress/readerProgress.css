@@ -51,7 +51,12 @@ label{
     border-radius: 1rem;
     background-color: white;
 }
-
+@media only screen and (max-width: 800px){
+    .ReaderProgress{
+        margin: 0.5rem;
+        margin-top: 0;
+    }
+}
 @media only screen and (max-width: 600px){
     .ReaderProgress{
         display: flex;

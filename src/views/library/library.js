@@ -9,6 +9,7 @@ import Mascot from '../../components/mascot/mascot';
 
 // Style Sheet
 import './library.css';
+import pageText from '../../data/pageText';
 
 class Library extends React.Component{
     constructor(props){
@@ -31,25 +32,33 @@ class Library extends React.Component{
         return(
                 <div id="Library">
 
-                    <TopNav/>
+                    <TopNav
+                        language={ this.props.language }
+                        changeLanguage={ this.props.changeLanguage }
+                    />
 
-                    <h1 className="libraryTitle">Learning Library</h1>
+                    <h1 className="libraryTitle">
+                        {pageText.pageTitles.library[ this.props.language ] }
+                    </h1>
 
                     <LibraryList
                         changeBook={this.props.changeBook}
                         currentBook={this.props.currentBook}
+                        language={this.props.language}
                     />
 
                     <div className="summaryBar">
 
                         <Summary id="Summary"
                             currentBook={this.state.currentBook}
-                            closeCurrent={this.props.closeCurrent} 
+                            closeCurrent={this.props.closeCurrent}
+                            language={this.props.language} 
                         />
 
                         <Mascot
                             character="penguin"
                             type="library"
+                            language={this.props.language}
                         />
 
 

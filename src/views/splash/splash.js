@@ -14,13 +14,17 @@ class Splash extends React.Component{
         return(
             <div className='Splash'>
 
-                <TopNav/>
+                <TopNav
+                    language={this.props.language}
+                    changeLanguage={this.props.changeLanguage}
+                />
 
-                <StartLearning/>
+                <StartLearning language={this.props.language} />
 
                 <Mascot
                     character='polarbear'
                     type="splash"
+                    language={this.props.language}
                 />
 
                 

@@ -8,6 +8,7 @@ import {
   } from "react-router-dom";
 import Translate from '../translate/translate';
 import './topnav.css';
+import pageText from '../../data/pageText';
 
 class TopNav extends React.Component{
     render(){
@@ -24,9 +25,16 @@ class TopNav extends React.Component{
                     </Link>
                 </div>
 
+                <Translate
+                    language={ this.props.language }
+                    changeLanguage={this.props.changeLanguage}
+                />
+
                 <div className="topNavButtons">
                     <a href="https://www.theglobalwarmingexpress.org/" id="homeLink" target="_blank">
-                        <button>About GWE</button>
+                        <button>
+                            { pageText.buttons.aboutGWE[ this.props.language ] }
+                        </button>
                     </a>
                 </div>
 

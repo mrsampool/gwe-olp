@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Page Text
+import pageText from '../../data/pageText';
+
 // Style Sheet
 import './mascot.css';
 
@@ -10,6 +13,10 @@ import penguin from './penguin.png';
 class Mascot extends React.Component{
     constructor(props){
         super(props);
+        this.getSpeech = this.getSpeech.bind(this);
+    }
+    getSpeech(){
+        return pageText.speechBubbles.getSpeech(this.props.type, this.props.language)
     }
     render(){
         const characters = {
@@ -20,7 +27,7 @@ class Mascot extends React.Component{
             <div className={`Mascot ${this.props.type ? this.props.type : ''}`} id="Mascot">
 
                 <div className="speechBubble">
-                    <p>Ready to hop aboard?</p>
+                    <p>{ this.getSpeech() }</p>
                 </div>
 
                 <div className="mascotCharacter">

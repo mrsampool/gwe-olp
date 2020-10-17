@@ -1,4 +1,5 @@
 import React from 'react';
+import pageText from '../../data/pageText';
 
 import './narrationControl.css';
 
@@ -39,7 +40,7 @@ class NarrationControl extends React.Component{
     render(){
         return(
             <div className="NarrationControl" id="controls">
-                <p>Narration</p>
+                <p>{ pageText.labels.narration[ this.props.language ] }</p>
 
                 <div className="narrControls">
 

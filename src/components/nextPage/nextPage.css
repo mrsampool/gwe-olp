@@ -1,5 +1,4 @@
 #nextPage{
-    position: fixed;
     right: 0;
     height: fit-content;
     border-radius: 100%;
@@ -16,9 +15,7 @@
 }
 
 @media only screen and (max-width: 500px){
-    /*
     #nextPage{
-        top: 28rem;
+        position: fixed;
     }
-    */
 }

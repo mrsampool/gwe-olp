@@ -1,13 +1,13 @@
 import React from 'react';
 import { 
-    BrowserRouter as Router, 
+    HashRouter as Router, 
     Route,
     Redirect,
     useHistory 
 } from 'react-router-dom';
 
 // Media Data
-import { Media } from '../../mediaContent';
+import { Media } from '../../data/mediaContent';
 
 // Style Sheet
 import './read.css';
@@ -25,6 +25,7 @@ class Read extends React.Component{
             book: Media[ this.props.match.params.bookLabel ] ? 
                     Media[ this.props.match.params.bookLabel ]
                     : '',
+            status: 'stop',
             page: 1,
         }
         this.getPage = this.getPage.bind(this);
@@ -64,7 +65,6 @@ class Read extends React.Component{
             const loadScreen = document.getElementById('loading');
             loadScreen.style.display = 'block';
 
-            return <Redirect to={`/read/${this.state.book.label}/${this.state.page}/reading`} />
             //Load new audio
             const audio = document.getElementById('narrator');
             audio.src = this.getAudio();
@@ -90,7 +90,7 @@ class Read extends React.Component{
         const audio = document.getElementById('narrator')
         audio.pause();
         this.setState( { status: 'stop' } );
-        setTimeout(this.nextPage, 1);
+        setTimeout(this.nextPage(), 1);
     }
     prevPage(){
         if ( this.state.page > 1 ){
@@ -193,14 +193,17 @@ class Read extends React.Component{
     render(){
         document.title = `GWE: "${this.state.book.title}"`;
         return(
-            <Router>
-            <Route path="/:reading" />
 
             <div className="Read">
 
-                    <Congrats readAgain={this.readAgain}/>
+                    <Congrats 
+                        readAgain={this.readAgain}
+                        language={ this.props.language } />
 
                     <ReaderControlBar
+                        // Translate
+                        language = { this.props.language }
+                        changeLanguage = {this.props.changeLanguage}
                         // Audio Player
                         getAudio = {this.getAudio}
                         nextPage = {this.nextPage}
@@ -223,6 +226,7 @@ class Read extends React.Component{
                         page = {this.state.page}
                         book = {this.state.book.label}
                         getPage = {this.getPage}
+                        language = {this.props.language}
                         // Page Navigation
                         nextPage = {this.clickNext}
                         prevPage = {this.prevPage}
@@ -233,7 +237,6 @@ class Read extends React.Component{
                     />
 
             </div>
-            </Router>
             
         )
     }

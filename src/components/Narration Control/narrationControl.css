@@ -1,7 +1,10 @@
 /*  Container  */
 .NarrationControl{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     text-align: center;
-    display: block;
     top: 70px;
     padding: 0.25rem;
     margin: 0.5rem;
@@ -107,4 +110,14 @@
 }
 .replayButton.disabled .replaySymbolTriangle{
     border-right-color: dimgray;
+}
+
+@media only screen and (max-width: 400px){
+    .NarrationControl{
+        width: 100%;
+        margin-top: 0;;
+    }
+    .narrControls{
+        justify-content: space-evenly;
+    }
 }

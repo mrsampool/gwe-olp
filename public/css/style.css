@@ -12,12 +12,12 @@ html {
     line-height: 1.5em;
  } /*16px*/
 h1 { 
-  font-size: 2.074em;
+  font-size: 1.5em;
   font-weight: 700;
  }
-h2 { font-size: 1.728em; }
-h3 { font-size: 1.44em; }
-h4 { font-size: 1.2em; }
+h2 { font-size: 1.3em; }
+h3 { font-size: 1.2em; }
+h4 { font-size: 1.1em; }
 p,input,label {
     font-size: 1em;
     line-height: 1.5em;
