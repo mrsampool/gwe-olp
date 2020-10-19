@@ -11,14 +11,13 @@ class LibraryItem extends React.Component{
     }
     scrollTo(){
         if ( document.getElementById('Summary') ){
-            const summary = document.getElementById('Summary');
-            summary.scrollIntoView( { behavior: 'smooth' } );
+            const libraryList = document.getElementById('libraryList');
+            libraryList.scrollIntoView( { block: 'end', behavior: 'smooth' } );
         }
     }
     setBook(event){
-        console.log(this.props.Label)
         this.props.changeBook(event, this.props.label);
-        setTimeout(this.scrollTo,100)
+        // setTimeout(this.scrollTo,100)
     }
     render(){
         return(

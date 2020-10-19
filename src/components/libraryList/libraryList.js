@@ -30,7 +30,7 @@ class LibraryList extends React.Component{
     }
     render(){
         return(
-            <div className="LibraryList">
+            <div className="LibraryList" id="libaryList">
                 {this.getLibraryList()}
             </div>
         )

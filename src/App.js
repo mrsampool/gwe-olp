@@ -47,6 +47,15 @@ class App extends React.Component{
       <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
 
+        <Route exact path="/" 
+              render={ ( props ) =>(
+                <Splash {...props}
+                  language={this.state.language}
+                  changeLanguage={this.changeLanguage}
+                />
+              )}
+            />
+
             <Route path="/library/:bookLabel" 
               render={(props) =>(
                 <Library {...props} 
@@ -87,14 +96,7 @@ class App extends React.Component{
               <Redirect to="/library" />
             </Route> 
 
-            <Route exact path="/" 
-              render={ ( props ) =>(
-                <Splash {...props}
-                  language={this.state.language}
-                  changeLanguage={this.changeLanguage}
-                />
-              )}
-            />
+
 
         </div>
 

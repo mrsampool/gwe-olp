@@ -47,7 +47,7 @@ class Library extends React.Component{
                         language={this.props.language}
                     />
 
-                    <div className="summaryBar">
+                    <div className="summaryBar" id="summaryBar">
 
                         <Summary id="Summary"
                             currentBook={this.state.currentBook}

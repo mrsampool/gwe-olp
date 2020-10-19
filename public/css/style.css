@@ -23,12 +23,33 @@ p,input,label {
     font-size: 1em;
     line-height: 1.5em;
 }
-small { font-size: 1em; }
+
+/* Buttons */
 button{ font-size: 1em;}
-Link{
+button:hover{
+  transform: scale(1.1);
+}
+button:hover:after{
+  transform: scale(1.1);
+}
+button:active{
+  animation-name: click;
+  animation-duration: 250ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+}
+@keyframes click{
+  from {
+    transform: scale(1.1);
+  } to {
+    transform: scale(0.9);
+  }
+}
+Link,a{
   text-decoration: none;
 }
 
+/* Media Queries */
 @media screen and (min-width: 1400px) {
   html { font-size: 125%; } /*20px*/
 }

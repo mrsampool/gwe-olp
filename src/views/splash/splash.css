@@ -57,5 +57,19 @@
     .Splash{
         height: 100%;
         top: 0;
+        margin-left: 10rem;
+        width: calc(100% - 10rem);
+    }
+    .Mascot.splash{
+        height: 30%;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+    .Mascot.splash .mascotCharacter{
+        height: 100%;
+    }
+    .Mascot.splash .mascotCharacter img{
+        height: 100%;
+        width: auto;
     }
 }

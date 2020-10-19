@@ -45,8 +45,6 @@
     .mediaListEntry{
         display: inline-flex;
         width: 95%;
-        margin: 1rem;
-        margin-right: 0;
     }
     .mediaGraphic{
         height: 90vh;

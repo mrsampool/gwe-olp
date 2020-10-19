@@ -7,7 +7,9 @@
     background-image: url('./libraryBG.jpg');
     background-position: bottom;
     background-size: cover;
+    z-index: 10;
 }
+
 
 /* Page Title */
 .libraryTitle{
@@ -20,6 +22,7 @@
     box-shadow: 0 0 1rem dimgray;
     background: hsla(200,70%,50%);
 }
+
 
 /* Library Entries */
 #mediaList{
@@ -70,8 +73,11 @@ hr{
 
 @media only screen and (max-height: 500px) and (orientation: landscape){
     #Library{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-top: 0;
-        width: calc(100% - 165px);
-        margin-left: 165px;   
+        width: calc(100% - 10rem);
+        margin-left: 10rem;   
     }
 }

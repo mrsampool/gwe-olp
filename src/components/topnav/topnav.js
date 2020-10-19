@@ -1,24 +1,41 @@
+// React
 import React from 'react';
 
+// React Components
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link
   } from "react-router-dom";
-import Translate from '../translate/translate';
-import './topnav.css';
+
+// Data
 import pageText from '../../data/pageText';
+
+// Sub-Components
+import Translate from '../translate/translate';
+
+// Style Sheet
+import './topnav.css';
+
+// Images
+import GWElogo from './GWElogo.png';
+import GWEicon from './GWEicon.png';
 
 class TopNav extends React.Component{
     render(){
+        let logo;
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+        if (screenHeight < 500){
+            logo = GWEicon;
+        } else {
+            logo = GWElogo;
+        }
         return(
             <div className="TopNav">
 
                 <div className="logo">
                     <Link to="/">
                         <img 
-                            src={require('./Globe-Print-Logo-WEB.png') }
+                            src={ logo }
                             alt='GWE Logo'
                             id="logo"
                         />

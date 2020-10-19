@@ -8,8 +8,8 @@
 
 @media only screen and (max-height: 500px) and (orientation: landscape){
     .LibraryList{
-        width: 90%;
-        justify-content: flex-end;
+        width: 95%;
+        justify-content: center;
     }
 
 }

@@ -33,19 +33,16 @@
         flex-direction: column;
         padding: 0.5rem;
         align-items: center;
-        width: fit-content;
+        justify-content: flex-start;
+        width: 10rem;
         height: 100%;
     }
-    .topNavButtons{
-        justify-content: center;
+    .logo{
+        width: 80%;
+        height: fit-content;
     }
     #logo{
-        content: url('/images/GWElogoV.png');
         width: 100%;
         height: auto;
-    }
-    .logo{
-        width: 90%;
-        height: fit-content;
     }
 }

@@ -4,7 +4,20 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+
+    animation-name: slide-up;
+    animation-duration: 1200ms;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(.54,.88,.76,.94);
 }
+@keyframes slide-up{
+    from {
+        margin-top: 100vh;
+    } to {
+        margin-top: 0vh;
+    }
+}
+
 #pageImg{
     border: 0.5rem solid white;
     border-radius: 1rem;

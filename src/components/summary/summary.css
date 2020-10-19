@@ -13,6 +13,19 @@
 
     border-radius: 1rem;
     box-shadow: 0rem 1rem 2rem hsla(0,0%,0%,0.5);
+
+    animation-name: slide-in;
+    animation-duration: 1000ms;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(.54,.88,.76,.94);
+}
+
+@keyframes slide-in{
+    from {
+        right: 100vw;
+    } to {
+        right: 0vw;
+    }
 }
 .summaryBody{
     display: inline-flex;

@@ -23,15 +23,21 @@ class Summary extends React.Component{
         this.props.closeCurrent();
     }
     scrollIn(){
+        if ( document.getElementById('Summary') ){
+
+        }
         const summary = document.getElementById('Summary');
         if (summary.style.display = 'block'){
-            summary.scrollIntoView({behavior: "smooth", block: "start"}); 
+            summary.scrollIntoView({behavior: "smooth", block: "end"}); 
         }
     }
     getSummaryGraphic(bookLabel){
         return `${process.env.PUBLIC_URL}/assets/books/${bookLabel}/pages/1.jpg`
     }
     componentDidMount(){
+        if ( document.getElementById('Summary') ){
+            setTimeout(this.scrollIn(),200);
+        }
     }
     render(){
         if (this.props.currentBook){
@@ -39,15 +45,17 @@ class Summary extends React.Component{
         return(
             <div className="Summary" id="Summary">
 
-                <button className="close"
-                    onClick={this.closeCurrent}
-                    >X
-                </button>
+                <Link to={`/read/`}>
+                    <button className="close"
+                        onClick={this.closeCurrent}
+                        >X
+                    </button>
+                </Link>
                 
                 <div className="summaryBody">
 
-                    <div className="summaryGraphic">
-                        <img src={ this.getSummaryGraphic(book.label) }/>
+                    <div className="summaryGraphic" >
+                        <img id="summaryGraphic" src={ this.getSummaryGraphic(book.label) }/>
                     </div>
                     
                     <div className='summaryRight'>
