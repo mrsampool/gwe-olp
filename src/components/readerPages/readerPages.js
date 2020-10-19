@@ -1,10 +1,15 @@
 import React from 'react';
 
-// Style Sheet
-import './readerPages.css';
+
 
 // Sub-Components
 import ReaderStart from '../readerStart/readerStart';
+
+// Style Sheet
+import './readerPages.css';
+
+// Icon
+import loadIcon from './loadIcon.png';
 
 class ReaderPages extends React.Component{
     constructor(props){
@@ -73,11 +78,10 @@ class ReaderPages extends React.Component{
             pageImgFrame.className = 'pageImgFrame wide';
             readerContent.className = 'ReaderContent wideContent';
         }
-        /*
 
         const loadScreen = document.getElementById('loading');
         loadScreen.style.display = 'none';
-        */
+        
         if (this.props.status === 'playing'){
             const audio = document.getElementById('narrator');
             audio.play();
@@ -87,7 +91,9 @@ class ReaderPages extends React.Component{
         return(
             <div className="ReaderPages" id="page">
                 
-                <p id="loading">loading</p>
+                <div id="loading">
+                    <img src={loadIcon}/>
+                </div>
 
                 {
                     this.props.page === 1 && this.props.narration ? 

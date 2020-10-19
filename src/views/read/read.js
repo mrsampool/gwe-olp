@@ -191,7 +191,7 @@ class Read extends React.Component{
         }
     }
     render(){
-        document.title = `GWE: "${this.state.book.title}"`;
+        document.title = `GWE: "${this.state.book.title[this.props.language]}"`;
         return(
 
             <div className="Read">
