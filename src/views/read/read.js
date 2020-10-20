@@ -1,10 +1,4 @@
 import React from 'react';
-import { 
-    HashRouter as Router, 
-    Route,
-    Redirect,
-    useHistory 
-} from 'react-router-dom';
 
 // Media Data
 import { Media } from '../../data/mediaContent';

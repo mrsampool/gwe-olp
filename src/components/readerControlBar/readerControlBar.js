@@ -10,7 +10,6 @@ import './readerControlBar.css';
 // Sub-Components
 import ReactAudioPlayer from 'react-audio-player';
 import NarrationControl from '../Narration Control/narrationControl';
-import ReadTranslate from '../readTranslate/readTranslate';
 import ReaderProgress from '../readerProgress/readerProgress';
 import Translate from '../translate/translate';
 

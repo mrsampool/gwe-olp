@@ -9,6 +9,7 @@ import { MediaList } from '../../data/mediaContent';
 // Sub - Components
 import LibraryItem from '../libraryItem/libraryItem';
 
+import './libraryList.css';
 
 class LibraryList extends React.Component{
     getBookCover(bookLabel){

@@ -32,11 +32,6 @@ class Library extends React.Component{
         return(
                 <div id="Library">
 
-                    <TopNav
-                        language={ this.props.language }
-                        changeLanguage={ this.props.changeLanguage }
-                    />
-
                     <h1 className="libraryTitle">
                         {pageText.pageTitles.library[ this.props.language ] }
                     </h1>
@@ -63,9 +58,6 @@ class Library extends React.Component{
 
 
                     </div>
-                    
-
-
 
                 </div>
         )

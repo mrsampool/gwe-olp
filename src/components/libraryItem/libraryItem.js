@@ -28,7 +28,7 @@ class LibraryItem extends React.Component{
                     onClick={this.setBook}>
 
                     <div className="mediaGraphic">
-                        <img src={this.props.cover}/>
+                        <img src={this.props.cover} alt="Book Cover"/>
                     </div>
 
                     <div className='mediaDets'>

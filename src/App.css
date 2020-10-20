@@ -3,84 +3,31 @@
   height: 100%;
   width: 100%;
   font-weight: 400;
-  background-color: #2BD9FE;
-  min-height: 100%;
-  margin-bottom: 0;;
+  background-color: white;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 /*  PAGE CONTENT */
-#pageContent{
-  position: fixed;
-  text-align: center;
-  margin-top: 100px;
-  min-height: fit-content;
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* BUTTONS */
-button{
-  padding: 0.75rem;
-  margin: 0.5rem;
-
-  background-color: #52AA5E;
-
-  border: 0.25rem solid aliceblue;
-  border-radius: 1rem;
-
-  font-weight: bold;
-  color: white;
-  box-shadow: 0 0 0.5rem dimgray;
-
-}
-button:hover{
-  transition: all 0.25s;
-  border-color: yellow;
-  border-width: 0.35rem;
-}
-
-label{
-  
-}
-
-/* CLOSE BARS */
-.closeBar{
-  width: 100%;
-  height: fit-content;
-  display: inline-flex;
-  justify-content: flex-end;
-}
-.close{
+.pageContent{
   margin: 0;
-  position: absolute;
-  right: 1rem;
-  background-color: hsl(0,50%,70%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 6rem;
 }
 
-/* SPEECH BUBBLES */
-.speechBubble{
-  background-color: white;
-  color: black;
-  padding: 1rem;
-  border-radius: 1rem;
-  border: 0.25rem solid aliceblue;
-  line-height: 2.3rem;
-  height: fit-content;
-}
-
-/* BACKGROUND COLORS */
-.lightTransparent{
-  background-color: hsla(0,0%,100%,0.5);
-}
-/*
-@media only screen and (max-height: 500px) and (orientation: landscape){
-  .App{
-      margin-top: 0;
-      width: calc(100% - 165px);
-      margin-left: 165px;   
+@media only screen and (max-width: 450px){
+  .pageContent{
+    top: 0;
   }
 }
-*/
+
+@media only screen and (max-height: 500px) and (orientation: landscape){
+  .pageContent{
+    flex-direction: column;
+    top: 0;
+    left: 11rem;
+    width: calc(100% - 11rem);;
+  }
+}

@@ -1,3 +1,17 @@
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* GLOBAL */
+html,body,#root{
+  height: 100%;
+  width: 100%;
+  font-family: 'Quicksand', serif;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   height: 100%;
@@ -5,12 +19,110 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html,body,.root{
-  font-family: 'Playfair Display', serif;
-  font-weight: 400;
+/* FONTS */
+h1,h2,h3,p,button,table, label{
+  font-family: 'Quicksand', sans-serif;
+}
+html { 
+  font-size: 100%;
+  line-height: 1.5em;
+}
+h1 { 
+font-size: 1.5em;
+font-weight: 700;
+}
+h2 { font-size: 1.3em; }
+h3 { font-size: 1.2em; }
+h4 { font-size: 1.1em; }
+p,input,label {
+  font-size: 1em;
+  line-height: 1.5em;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* BUTTONS */
+button{
+padding: 0.75rem;
+margin: 0.5rem;
+
+background-color: #52AA5E;
+
+border: 0.25rem solid aliceblue;
+border-radius: 1rem;
+
+font-weight: bold;
+font-size: 1em;
+color: white;
+box-shadow: 0 0 0.5rem dimgray;
+}
+button:hover{
+transition: all 0.25s;
+border-color: yellow;
+border-width: 0.35rem;
+transform: scale(1.1);
+}
+button:hover:after{
+transform: scale(1.1);
+}
+button:active{
+animation-name: click;
+animation-duration: 250ms;
+animation-iteration-count: 1;
+animation-timing-function: ease-out;
+}
+@keyframes click{
+from {
+  transform: scale(1.1);
+} to {
+  transform: scale(0.9);
+}
+}
+Link,a{
+text-decoration: none;
+}
+
+/* CLOSE BARS */
+.closeBar{
+width: 100%;
+height: fit-content;
+display: inline-flex;
+justify-content: flex-end;
+}
+.close{
+margin: 0;
+position: absolute;
+right: 1rem;
+background-color: hsl(0,50%,70%);
+}
+
+/* SPEECH BUBBLES */
+.speechBubble{
+background-color: white;
+color: black;
+padding: 1rem;
+border-radius: 1rem;
+border: 0.25rem solid aliceblue;
+line-height: 2.3rem;
+height: fit-content;
+}
+
+/* BACKGROUND COLORS */
+.lightTransparent{
+background-color: hsla(0,0%,100%,0.5);
+}
+
+/* Media Queries */
+@media screen and (min-width: 1400px) {
+html { font-size: 125%; } /*20px*/
+}
+
+@media screen and (min-width: 2500px) {
+  html { font-size: 200%; } /*20px*/
+}
+
+@media screen and (min-width: 3500px) {
+  html { font-size: 300%; } /*20px*/
+}
+
+@media screen and (min-width: 4500px) {
+html { font-size: 350%; } /*20px*/
 }

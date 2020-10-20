@@ -10,7 +10,8 @@ class ReaderStart extends React.Component{
             return (
                 <img 
                 id="readerPhoto"
-                src={headshots[readBy]}/>
+                src={headshots[readBy]}
+                alt={`Narrator`}/>
             )
         }
     }

@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    BrowserRouter as Router,
     Link
   } from "react-router-dom";
 
@@ -27,7 +26,7 @@ class Summary extends React.Component{
 
         }
         const summary = document.getElementById('Summary');
-        if (summary.style.display = 'block'){
+        if (summary.style.display === 'block'){
             summary.scrollIntoView({behavior: "smooth", block: "end"}); 
         }
     }
@@ -55,7 +54,7 @@ class Summary extends React.Component{
                 <div className="summaryBody">
 
                     <div className="summaryGraphic" >
-                        <img id="summaryGraphic" src={ this.getSummaryGraphic(book.label) }/>
+                        <img id="summaryGraphic" src={ this.getSummaryGraphic(book.label) } alt="Book Cover" />
                     </div>
                     
                     <div className='summaryRight'>

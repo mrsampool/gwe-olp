@@ -10,7 +10,7 @@ class LibraryReadBy extends React.Component{
         if (headshots[readBy]){
             return (
             <div className="libReadByPhoto">
-                <img src={headshots[readBy] }/>
+                <img src={headshots[readBy]} alt="Narrator"/>
             </div>
                 )
         }

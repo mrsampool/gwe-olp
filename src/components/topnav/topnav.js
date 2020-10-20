@@ -22,7 +22,7 @@ import GWEicon from './GWEicon.png';
 class TopNav extends React.Component{
     render(){
         let logo;
-        const screenWidth = window.innerWidth;
+        // const screenWidth = window.innerWidth;
         const screenHeight = window.innerHeight;
         if (screenHeight < 500){
             logo = GWEicon;
@@ -31,30 +31,38 @@ class TopNav extends React.Component{
         }
         return(
             <div className="TopNav">
+                
 
                 <div className="logo">
                     <Link to="/">
                         <img 
-                            src={ logo }
+                            src={ GWElogo }
                             alt='GWE Logo'
                             id="logo"
                         />
                     </Link>
                 </div>
 
-                <Translate
-                    language={ this.props.language }
-                    changeLanguage={this.props.changeLanguage}
-                />
+                <div className="mobileButtons">
 
-                <div className="topNavButtons">
-                    <a href="https://www.theglobalwarmingexpress.org/" id="homeLink" target="_blank">
-                        <button>
-                            { pageText.buttons.aboutGWE[ this.props.language ] }
-                        </button>
-                    </a>
+                    <Translate
+                        language={ this.props.language }
+                        changeLanguage={this.props.changeLanguage}
+                    />
+
+                    <div className="topNavButtons">
+                        <a href="https://www.theglobalwarmingexpress.org/" 
+                            id="homeLink" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >
+                            <button>
+                                { pageText.buttons.aboutGWE[ this.props.language ] }
+                            </button>
+                        </a>
+                    </div>
+
                 </div>
-
 
             </div>
         )

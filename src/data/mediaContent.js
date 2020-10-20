@@ -1,6 +1,3 @@
-import React from 'react';
-import LibraryItem from '../components/libraryItem/libraryItem';
-
 const Media = {
         commonGround: {
             title: {
@@ -102,9 +99,9 @@ const Media = {
     }
 
 const headshots = {
-    'Lori Gleria': `${process.env.PUBLIC_URL}/assets/images/headshots/LoriGleria.jpg`,
-    'Magnificent "Mags" Farrell': `${process.env.PUBLIC_URL}/assets/images/headshots/MagsFarrell.jpg`,
-    'Suki Wampler': `${process.env.PUBLIC_URL}/assets/images/headshots/SukiWampler.jpg`
+    'Lori Gleria': `${process.env.PUBLIC_URL}/assets/images/headshots/LoriGleria.png`,
+    'Magnificent "Mags" Farrell': `${process.env.PUBLIC_URL}/assets/images/headshots/MagsFarrell.png`,
+    'Suki Wampler': `${process.env.PUBLIC_URL}/assets/images/headshots/SukiWampler.png`
 }
 
 const MediaList = [
@@ -115,23 +112,5 @@ const MediaList = [
     Media.buriedSunlight,
     Media.riversOfSunlight
 ]
-/*
-    getLibraryList(){
-        return this.list.map( content =>{
-            return(
-                <LibraryItem
-                    title={content.title}
-                    author={content.author}
-                    changeBook={this.changeBook}
-                />
-            )
-        })
-        return this.list[0].title;
-    },
-    getPage(book, page){
-        return `/books/${book}/pages/${page}.jpg`
-    }
-}
-*/
 
 export { Media, MediaList, headshots };

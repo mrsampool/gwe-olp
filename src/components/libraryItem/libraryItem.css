@@ -1,4 +1,6 @@
 .mediaListEntry{
+    display: flex;
+    flex-direction: column;
     padding: 0.5em;
     margin: 1em;
     width: 20em;
@@ -41,14 +43,27 @@
 .mediaTitle{
     font-weight: bold;
 }
+
+@media only screen and (max-width: 400px){
+    .mediaListEntry{
+        width: 90%;
+        margin: 0 auto 1rem auto;
+    }
+}
+
+
 @media only screen and (max-height: 500px) and (orientation: landscape){
     .mediaListEntry{
-        display: inline-flex;
-        width: 95%;
+        width: fit-content;
+        height: fit-content;
+        margin-bottom: 1rem;
+    }
+    .mediaDets{
+        width: 10rem;
     }
     .mediaGraphic{
-        height: 90vh;
-        width: auto;
+        height: 60vh;
+        width: fit-content;
     }
     .mediaGraphic img{
         height: 100%;

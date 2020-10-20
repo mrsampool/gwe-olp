@@ -92,7 +92,8 @@ class ReaderPages extends React.Component{
             <div className="ReaderPages" id="page">
                 
                 <div id="loading">
-                    <img src={loadIcon}/>
+                    <img src={loadIcon}
+                    alt="loading" />
                 </div>
 
                 {
@@ -108,7 +109,8 @@ class ReaderPages extends React.Component{
                 <div id="pageImgFrame">
                     <img src={ this.props.getPage() }  
                         onLoad={this.imageLoaded}
-                        id="pageImg" />
+                        id="pageImg" 
+                        alt="Current Page"/>
                 </div>
 
             </div>
