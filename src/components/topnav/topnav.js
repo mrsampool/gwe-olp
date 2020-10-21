@@ -29,8 +29,9 @@ class TopNav extends React.Component{
         } else {
             logo = GWElogo;
         }
+        
         return(
-            <div className="TopNav">
+            <div className={`TopNav ${this.props.type ? this.props.type : ''}`} id="topNav">
                 
 
                 <div className="logo">
@@ -43,27 +44,23 @@ class TopNav extends React.Component{
                     </Link>
                 </div>
 
-                <div className="mobileButtons">
+                <div className="navButtons">
 
                     <Translate
                         language={ this.props.language }
                         changeLanguage={this.props.changeLanguage}
                     />
-
-                    <div className="topNavButtons">
-                        <a href="https://www.theglobalwarmingexpress.org/" 
-                            id="homeLink" 
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            >
-                            <button>
-                                { pageText.buttons.aboutGWE[ this.props.language ] }
-                            </button>
-                        </a>
-                    </div>
+                    <a href="https://www.theglobalwarmingexpress.org/" 
+                        id="homeLink" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >
+                        <button>
+                            { pageText.buttons.aboutGWE[ this.props.language ] }
+                        </button>
+                    </a>
 
                 </div>
-
             </div>
         )
     }

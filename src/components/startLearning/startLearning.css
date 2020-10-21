@@ -1,15 +1,12 @@
-#start{
-    position: fixed;
-    display: inline-flex;
-    justify-content: center;
-    width: 100%;
-    margin: 2em auto;
+#startLink{
+    height: fit-content;
+    
     z-index: 2;
 }
 #startButton{
     display: flex;
     align-items: center;
-    margin: 10% auto;
+    
     text-decoration: none;
 }
 #startLink{

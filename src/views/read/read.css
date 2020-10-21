@@ -1,13 +1,14 @@
 .Read{
-    position: fixed;
+    position: absolute;
     display: block;
     justify-content: center;
     height: 100%;
     width: 100%;
     top: 0;
-    z-index: 2;
+    z-index: 5;
     overflow: scroll;
 
     background: hsl(200,70%,80%);
     background: linear-gradient(180deg, hsl(200,900%,80%) 0%, hsl(200,900%,50%) 100%);
 }
+

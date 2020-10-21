@@ -2,32 +2,33 @@ import React from 'react';
 
 // Sub-Components
 import StartLearning from '../../components/startLearning/startLearning';
-import TopNav from '../../components/topnav/topnav';
 import Mascot from '../../components/mascot/mascot';
 
 //Style Sheet
 import './splash.css';
 
+import splashBG from './splashBG copy.jpg';
 
 class Splash extends React.Component{
     render(){
         return(
             <div className='Splash'>
 
-                <TopNav
-                    language={this.props.language}
-                    changeLanguage={this.props.changeLanguage}
-                />
+                <div className="splashBG">
+                    <img src={ splashBG } />
+                </div>
 
-                <StartLearning language={this.props.language} />
+                <div className="splashElements">
 
-                <Mascot
-                    character='polarbear'
-                    type="splash"
-                    language={this.props.language}
-                />
+                    <StartLearning language={this.props.language} />
 
-                
+                    <Mascot
+                        character='polarbear'
+                        type="splash"
+                        language={this.props.language}
+                    />
+
+                </div>
 
             </div>
         )

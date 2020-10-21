@@ -1,75 +1,73 @@
 /* Full Page Container */
 .Splash{
-    position: fixed;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
 
-    top: 7em;
     width: 100%;
-    height: calc(100% - 100px);
+    height: 100%;
     
-    margin: 0;
-    background-image: url('./splashBG.jpg');
+    /* background-image: url('./splashBG.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: left;
     background-position-y: bottom;
 }
+.splashElements{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    
+    width: fit-content;
+}
+
+.splashBG{
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: fit-content;
+    position: relative;
+}
+.splashBG img{
+    height: 100%;
+    width: auto;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
 
 /* Mascot */
 .Mascot.splash{
-    position: fixed;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     align-items: center;
-    bottom: 10px;
-    width: calc(100% - 4rem);
-    margin-bottom: 2rem;
+    bottom: 5%;
+    height: 50%;
+    width: fit-content;
+    z-index: 3;
 }
 .Mascot.splash .mascotCharacter{
-    width: 20rem;
+    height: 80%;
+    width: fit-content;
+}
+.Mascot.splash .mascotCharacter img{
+    height: 80%;
+    width: auto;
 }
 
-@media only screen and (max-width: 1000px){
-    .Splash{
-        background-position-x: center;
-        background-position-y: bottom;
-    }
-  }
-
-@media only screen and (max-height: 600px){
-    #start{
-        height: 100%;
-        justify-content: flex-end;
-        align-items: flex-start;
-    }
+@media only screen and (max-height: 350px){
     .Mascot.splash{
         flex-direction: row;
-        display: inline-flex;
-        flex-wrap: nowrap;
-    }
-  }
-
-@media only screen and (orientation: portrait) and (max-width: 550px){
-    .Splash{
-        background-position-x: center;
-        background-position-y: bottom;
-    }
-}
-
-@media only screen and (max-height: 500px) and (orientation: landscape){
-    .Splash{
-        height: 100%;
-        top: 0;
-        margin-left: 10rem;
-        width: calc(100% - 10rem);
-    }
-    .Mascot.splash{
-        height: 30%;
-        margin: 0;
-        margin-bottom: 1rem;
-    }
-    .Mascot.splash .mascotCharacter{
-        height: 100%;
-    }
-    .Mascot.splash .mascotCharacter img{
-        height: 100%;
-        width: auto;
     }
 }

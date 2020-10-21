@@ -1,5 +1,7 @@
 /* APP GLOBAL */
 .App {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
   font-weight: 400;
@@ -8,26 +10,30 @@
   box-sizing: border-box;
 }
 
-/*  PAGE CONTENT */
-.pageContent{
-  margin: 0;
-  position: relative;
+.page{
   display: flex;
   flex-direction: column;
-  top: 6rem;
+  height: 100%;
 }
 
-@media only screen and (max-width: 450px){
-  .pageContent{
-    top: 0;
-  }
+/*  PAGE CONTENT */
+.pageContent{
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  width: 100%;
+  
+  z-index: 1;
 }
 
 @media only screen and (max-height: 500px) and (orientation: landscape){
-  .pageContent{
-    flex-direction: column;
-    top: 0;
-    left: 11rem;
-    width: calc(100% - 11rem);;
+  .App{
+    flex-direction: row;
   }
 }

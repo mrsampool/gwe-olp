@@ -48,24 +48,45 @@ class App extends React.Component{
 
         <div className="App">
 
-            <TopNav
-              language={this.state.language}
-              changeLanguage={this.changeLanguage}
-            />
+          {/* SPLASH PAGE */}
 
-            <div className="pageContent">
+          <Route exact path="/" 
+            render={ ( props ) =>(
 
-              <Route exact path="/" 
-                    render={ ( props ) =>(
-                      <Splash {...props}
-                        language={this.state.language}
-                        changeLanguage={this.changeLanguage}
-                      />
-                    )}
+              <div className="page">
+
+                <TopNav
+                  language={this.state.language}
+                  changeLanguage={this.changeLanguage}
+                  type=""
+                />
+
+                <div className="pageContent">
+                  <Splash {...props}
+                    language={this.state.language}
+                    changeLanguage={this.changeLanguage}
                   />
+                </div>
 
-              <Route path="/library/:bookLabel" 
-                render={(props) =>(
+              </div>
+            )}
+          />
+
+          {/* LIBRARY PAGE */}
+
+          <Route path="/library/:bookLabel" 
+            render={(props) =>(
+
+              <div className="page">
+
+                <TopNav
+                  language={this.state.language}
+                  changeLanguage={this.changeLanguage}
+                  type=""
+                />
+
+                <div className="pageContent">
+
                   <Library {...props} 
                     currentBook={this.state.currentBook}
                     changeBook={this.changeBook}
@@ -74,11 +95,25 @@ class App extends React.Component{
                     language={ this.state.language }
                     changeLanguage={ this.changeLanguage }
                   />
-                )}
-              />
 
-              <Route exact path="/library" 
-                render={(props) =>(
+                </div>
+              </div>
+            )}
+          />
+
+          <Route exact path="/library" 
+            render={(props) =>(
+
+              <div className="page">
+
+                <TopNav
+                  language={this.state.language}
+                  changeLanguage={this.changeLanguage}
+                  type=""
+                />
+
+                <div className="pageContent">
+
                   <Library {...props} 
                     currentBook={this.state.currentBook}
                     changeBook={this.changeBook}
@@ -87,32 +122,32 @@ class App extends React.Component{
                     language={this.state.language}
                     changeLanguage={ this.changeLanguage }
                   />
-                )}
+
+                </div>
+              </div>
+            )}
+          />
+
+          {/* READ PAGE */}
+
+          <Route path="/read/:bookLabel" 
+            render={(props) =>(
+              <Read {...props}
+                book={this.state.currentBook}
+                language={this.state.language}
+                changeLanguage={this.changeLanguage}
               />
+            )}
+          />
 
-              <Route path="/read/:bookLabel" 
-                render={(props) =>(
-                  <Read {...props}
-                    book={this.state.currentBook}
-                    language={this.state.language}
-                    changeLanguage={this.changeLanguage}
-                  />
-                )}
-              />
-
-              <Route exact path="/read">
-                <Redirect to="/library" />
-              </Route> 
-
-            </div>
-
-
+          <Route exact path="/read">
+            <Redirect to="/library" />
+          </Route> 
 
           </div>
         </Router>
     )
   }
-
 }
 
 export default App;

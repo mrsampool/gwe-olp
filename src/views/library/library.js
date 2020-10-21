@@ -2,7 +2,6 @@
 import React from 'react';
 
 // Sub-Components
-import TopNav from '../../components/topnav/topnav';
 import LibraryList from '../../components/libraryList/libraryList';
 import Summary from '../../components/summary/summary';
 import Mascot from '../../components/mascot/mascot';
@@ -20,12 +19,19 @@ class Library extends React.Component{
                         : '',
         }
     }
+    scrollToSummary(){
+        if ( document.getElementById('Summary') ){
+            const summary = document.getElementById('Summary');
+            summary.scrollIntoView( { block: 'start', behavior: 'smooth' } );
+        }
+    }
     componentDidMount(){
         if(this.props.currentBook){
             if ( document.getElementById('Summary') ){
                 const summary = document.getElementById('Summary');
                 summary.style.display = 'block';
             }
+            setTimeout(this.scrollToSummary, 100)
         }
     }
     render(){

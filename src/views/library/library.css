@@ -1,5 +1,6 @@
 /* Page Container */
 #Library{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,12 +18,16 @@
 /* Page Title */
 .libraryTitle{
     width: fit-content;
+
     margin: 2rem;
     padding: 1rem;
+
     border-radius: 1rem;
-    color: aliceblue;
-    box-shadow: 0 0 1rem dimgray;
     background: hsla(200,70%,50%);
+    box-shadow: 0 0 1rem dimgray;
+
+    text-align: center;
+    color: aliceblue;
 }
 
 
