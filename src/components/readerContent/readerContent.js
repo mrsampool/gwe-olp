@@ -16,13 +16,21 @@ class ReaderContent extends React.Component{
                 <PrevPage prevPage={this.props.prevPage} key={this.props.page} page={this.props.page}/>
 
                 <ReaderPages
+                    language = {this.props.language}
+                    //Book & Page Info
                     page = {this.props.page}
                     book = {this.props.book}
-                    narration = {this.props.narration}
                     getPage = {this.props.getPage}
+                    getNextPage = {this.props.getNextPage}
+                    //Narration
                     playNarration = {this.props.playNarration}
+                    narration = {this.props.narration}
                     status = {this.props.status}
-                    language = {this.props.language}
+                    // Load Monitors
+                    loadedInitialPage = {this.props.loadedInitialPage }
+                    loadedInitialAudio = {this.props.loadedInitialAudio}
+                    loadedReaderPhoto = {this.props.loadedReaderPhoto}
+                    updateLoadStatus = {this.props.updateLoadStatus}
                 />
 
                 <NextPage nextPage={this.props.nextPage} />

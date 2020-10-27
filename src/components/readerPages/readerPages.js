@@ -1,76 +1,37 @@
 import React from 'react';
 
-
+// Data
+import { Media } from '../../data/mediaContent';
 
 // Sub-Components
 import ReaderStart from '../readerStart/readerStart';
+import Loading from '../loading/loading';
 
 // Style Sheet
 import './readerPages.css';
 
-// Icon
-import loadIcon from './loadIcon.png';
+import '../nextPage/nextPage.css';
 
 class ReaderPages extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             screenWidth: window.innerWidth,
-            screenHeight: window.innerHeight
+            screenHeight: window.innerHeight,
+            otherPages: [],
+            loading: 1
         }
         this.imageLoaded = this.imageLoaded.bind(this);
-        this.sizePage = this.sizePage.bind(this);  
-
-    }
-    sizePage(){
-
-
-        /*
-        console.log('Size Change')
-        const loadScreen = document.getElementById('loading');
-        loadScreen.innerText = 'size change \n';
-        loadScreen.innerText += `Orientation: ${window.orientation}\n`;
-        // Get Window Dimesions
-        const screenWidth = window.innerWidth;
-        const screenHeight = window.innerHeight;
-        loadScreen.innerHTML += `${`Screen Width: ${screenWidth}\n`}`;
-        loadScreen.innerHTML += `${`Screen Height: ${screenHeight}\n`}`;
-
-        if (screenWidth > screenHeight){
-            loadScreen.innerText += `Wide Screen\n`;
-
-        } else if (screenHeight > screenWidth){
-            loadScreen.innerText += `Tall Screen\n`;
-        }
-
-        // Get Window Dimesions
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-        const ratio = width / height;
-
-        // Get Page Dimensions
-        const page = document.getElementById('pageImg');
-        let pageWidth = page.offsetWidth;
-        let pageHeight = page.offsetHeight;
-        let pageRatio = pageWidth / pageHeight;
-
-        if ( ratio < pageRatio ){
-            page.classList.remove('wide');
-            page.classList.add('tall');
-        }
-
-        if ( ratio > pageRatio ){
-            page.classList.add('wide');
-            page.classList.remove('tall');
-        }
-        page.src = this.props.getPage();
-        */
+        this.loadOtherPages = this.loadOtherPages.bind(this);
     }
     imageLoaded(){
+        console.log('Initial Page Loaded')
+        // Select Page & Containers
         const pageImg = document.getElementById('pageImg');
         const pageImgFrame = document.getElementById('pageImgFrame');
         const readerContent = document.getElementById('ReaderContent')
 
+        // Determine Page Dimentions
         if (pageImg.naturalWidth < pageImg.naturalHeight){
             pageImgFrame.className = 'pageImgFrame tall';
             readerContent.className = 'ReaderContent tallContent';
@@ -78,23 +39,51 @@ class ReaderPages extends React.Component{
             pageImgFrame.className = 'pageImgFrame wide';
             readerContent.className = 'ReaderContent wideContent';
         }
-
-        const loadScreen = document.getElementById('loading');
-        loadScreen.style.display = 'none';
-        
+        // Start Next Audio
         if (this.props.status === 'playing'){
             const audio = document.getElementById('narrator');
             audio.play();
         }
+        this.props.updateLoadStatus( 'initialPage', 1)
+    }
+    otherPageLoaded(){
+        console.log(`Image Loaded`);
+    }
+    loadOtherPages(){
+        const total = Media[this.props.book].pages;
+        const pagesArr = [];
+        for ( let page = 1; page < total; page++){
+            pagesArr.push( {URL: this.props.getNextPage( page ), order: page });
+        }
+        console.log(pagesArr);
+        pagesArr.forEach( (page) =>{
+            let pageImg = new Image();
+            pageImg.src = page.URL;
+            pageImg.onload = this.otherPageLoaded;
+        });
+    }
+    handleLoaded(){
+
+    }
+    getTranslation(book,page){
+        return Media[book]['translations'][page].map( phrase =>{
+            return <p>{phrase}</p>
+        })
+    }
+    componentDidMount(){
+        window.addEventListener('load', this.loadOtherPages );
     }
     render(){
         return(
             <div className="ReaderPages" id="page">
-                
-                <div id="loading">
-                    <img src={loadIcon}
-                    alt="loading" />
-                </div>
+
+                <Loading
+                    status={this.state.loading}
+                    // Load Monitors
+                    loadedInitalPage = {this.props.loadedInitialPage}
+                    loadedInitialAudio = {this.props.loadedInitialAudio}
+                    loadedReaderPhoto = {this.props.loadedReaderPhoto}
+                />
 
                 {
                     this.props.page === 1 && this.props.narration ? 
@@ -102,16 +91,25 @@ class ReaderPages extends React.Component{
                         book={this.props.book}
                         playNarration={this.props.playNarration}
                         language={this.props.language}
+                        updateLoadStatus={this.props.updateLoadStatus}
                     /> 
                     : ''
                 }
                 
-                <div id="pageImgFrame">
+                <div id="pageImgFrame" className="pageImgFrame wide">
                     <img src={ this.props.getPage() }  
                         onLoad={this.imageLoaded}
                         id="pageImg" 
                         alt="Current Page"/>
                 </div>
+
+                {
+                    this.props.language !== 'eng' ?
+                    <div className="translatedText">
+                        { this.getTranslation( this.props.book, this.props.page ) }
+                    </div>
+                    : ''
+                }
 
             </div>
         )

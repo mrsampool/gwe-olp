@@ -5,6 +5,7 @@ import React from 'react';
 import LibraryList from '../../components/libraryList/libraryList';
 import Summary from '../../components/summary/summary';
 import Mascot from '../../components/mascot/mascot';
+import TopNav from '../../components/topnav/topnav';
 
 // Style Sheet
 import './library.css';
@@ -18,41 +19,56 @@ class Library extends React.Component{
                         this.props.match.params.bookLabel
                         : '',
         }
+        this.changeBook = this.changeBook.bind(this);
+        this.closeCurrent = this.closeCurrent.bind(this);
     }
     scrollToSummary(){
-        if ( document.getElementById('Summary') ){
+        if(document.getElementById('Summary')){
             const summary = document.getElementById('Summary');
             summary.scrollIntoView( { block: 'start', behavior: 'smooth' } );
         }
+
     }
-    componentDidMount(){
+    changeBook(bookLabel){
+        this.setState( { currentBook: bookLabel });
+
         if(this.props.currentBook){
             if ( document.getElementById('Summary') ){
                 const summary = document.getElementById('Summary');
                 summary.style.display = 'block';
             }
-            setTimeout(this.scrollToSummary, 100)
+            setTimeout(this.scrollToSummary, 100);
         }
+    }
+    closeCurrent(){
+        this.setState( { currentBook: '' });
+    }
+    componentDidMount(){
     }
     render(){
         return(
                 <div id="Library">
+
+                    <TopNav
+                        language={this.props.language}
+                        changeLanguage={this.props.changeLanguage}
+                    />
 
                     <h1 className="libraryTitle">
                         {pageText.pageTitles.library[ this.props.language ] }
                     </h1>
 
                     <LibraryList
-                        changeBook={this.props.changeBook}
+                        changeBook={this.changeBook}
                         currentBook={this.props.currentBook}
                         language={this.props.language}
                     />
 
                     <div className="summaryBar" id="summaryBar">
 
-                        <Summary id="Summary"
+                        <Summary
                             currentBook={this.state.currentBook}
-                            closeCurrent={this.props.closeCurrent}
+                            closeCurrent={this.closeCurrent}
                             language={this.props.language} 
                         />
 
@@ -61,7 +77,6 @@ class Library extends React.Component{
                             type="library"
                             language={this.props.language}
                         />
-
 
                     </div>
 

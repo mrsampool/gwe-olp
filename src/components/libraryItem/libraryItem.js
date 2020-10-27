@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 //Style Sheet
 import './libraryItem.css';
@@ -11,18 +10,19 @@ class LibraryItem extends React.Component{
     }
     scrollTo(){
         if ( document.getElementById('Summary') ){
-            const libraryList = document.getElementById('libraryList');
-            libraryList.scrollIntoView( { block: 'end', behavior: 'smooth' } );
+            const summary = document.getElementById('Summary');
+            summary.scrollIntoView( { block: 'start', behavior: 'smooth' } );
         }
     }
-    setBook(event){
-        this.props.changeBook(event, this.props.label);
-        // setTimeout(this.scrollTo,100)
+    setBook(){
+        console.log('SetBook')
+        this.props.changeBook(this.props.label);
+        setTimeout(this.scrollTo,500)
     }
     render(){
         return(
             
-            <Link to={`/library/${this.props.label}`}>
+            
                 <button 
                     className="mediaListEntry"
                     onClick={this.setBook}>
@@ -38,7 +38,7 @@ class LibraryItem extends React.Component{
                     </div>
 
                 </button>
-            </Link>
+            
             
         )        
     }

@@ -35,34 +35,13 @@
     .completeWindow{
         width: 80%;
     }
-    .Mascot.congrats{
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: column;
-    }
     h1{
         font-size: 1.5rem;;
     }
 }
-
 @media only screen and (max-height: 600px) and (orientation: landscape){
     .completeWindow{
         height: 80%;
         justify-content: space-between;
-    }
-    .Mascot.congrats{
-        flex-direction: row;
-        height: 40%;
-        margin: 0;
-    }
-    .Mascot.congrats .mascotCharacter{
-        height: 100%;
-    }
-    .Mascot.congrats .mascotCharacter img{
-        height: 100%;
-        width: auto;
-    }
-    .completeMascot{
-        height: 80%;
     }
 }

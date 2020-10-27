@@ -1,0 +1,106 @@
+/*   LIBRARY MASCOT (PENGUIN)   */
+
+/* Container */
+.Mascot.library:hover .mascotCharacter{
+    animation: hopfast 250ms ease-in infinite;
+}
+.Mascot.library:hover .speechBubble{
+    animation: bouncefast 250ms ease-in infinite;
+}
+
+/* Character Container*/
+.Mascot.library .mascotCharacter{
+    width: 16em;
+    animation: hop 1s linear infinite;
+}
+.Mascot.library .mascotCharacter:hover{
+    animation: hopfast 250ms ease-in infinite;
+}
+
+/*Speech Bubble */
+.Mascot.library .speechBubble{
+    /* animation */
+    animation: bounce 1s linear infinite;
+}
+
+
+/* Media Queries */
+@media only screen and (max-width: 600px){
+    .Mascot.library{
+        width: 100%;
+    }
+    .Mascot.library .mascotCharacter{
+        width: 90%;
+        margin: auto;
+    }
+}
+@media only screen and (max-height: 500px){
+    .Mascot.library{
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 80%;
+    }
+}
+
+/*   ANIMATIONS   */
+/* Hop (Penguin) */
+@keyframes hop {
+    0% {
+        transform: translate(0);
+        transform: scale(1.1,1);
+    }
+    5%{
+        transform: translate(0,-1.5rem);
+        transform: scale(1.05,1.1);
+    }
+    10%{
+        transform: translate(0,-2rem);
+    }
+    20%{
+        transform: translate(0);
+        transform: scale(1,1);
+    }
+    25%{
+        transform: scale(1.1, 1);
+    }
+    100%{
+        transform: translate(0);
+        transform: scale(1.1,1);
+    }
+}
+@keyframes hopfast {
+    0% {
+        transform: translate(0);
+        transform: scale(1.1,1);
+    }
+    50%{
+        transform: translate(0,-3rem);
+    }
+    70%{
+        transform: translate(0rem);
+    }
+    100%{
+        transform: scale(1.1,1);
+    }
+}
+
+/* Bounce (Speech Bubble) */
+@keyframes bounce {
+    0%,20%,100% {
+        transform: translate(0);
+    }
+    5%{
+        transform: translate(0,-.5rem);
+    }
+    10%{
+        transform: translate(0,-.75rem);
+    }
+}
+@keyframes bouncefast {
+    0%,100% {
+        transform: translate(0);
+    }
+    50%{
+        transform: translate(0,-.75rem);
+    }
+}

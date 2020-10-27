@@ -1,0 +1,25 @@
+/*  CONGRATS MASCOT (POLAR BEAR)   */
+@media only screen and (max-width: 600px){
+    .Mascot.congrats{
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media only screen and (max-height: 600px) and (orientation: landscape){
+    .Mascot.congrats{
+        flex-direction: row;
+        height: 40%;
+        margin: 0;
+    }
+    .Mascot.congrats .mascotCharacter{
+        height: 100%;
+    }
+    .Mascot.congrats .mascotCharacter img{
+        height: 100%;
+        width: auto;
+    }
+    .completeMascot{
+        height: 80%;
+    }
+}

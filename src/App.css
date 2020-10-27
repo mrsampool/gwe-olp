@@ -1,7 +1,17 @@
 /* APP GLOBAL */
 .App {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-direction: normal;
+  -moz-box-orient: vertical;
   flex-direction: column;
+
   height: 100%;
   width: 100%;
   font-weight: 400;
@@ -14,12 +24,15 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
 }
 
 /*  PAGE CONTENT */
 .pageContent{
+  /* Position */
   position: relative;
-
+  top: 0;
+  /* Display */
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -31,9 +44,15 @@
   
   z-index: 1;
 }
-
-@media only screen and (max-height: 500px) and (orientation: landscape){
+/*
+@media only screen and (max-height: 500px){
   .App{
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -moz-box-orient: horizontal;
+
     flex-direction: row;
   }
 }
+*/

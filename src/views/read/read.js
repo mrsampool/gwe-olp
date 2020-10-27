@@ -21,18 +21,31 @@ class Read extends React.Component{
                     : '',
             status: 'stop',
             page: 1,
+            loaded: {
+                initialPage: 0,
+                initialAudio: 0,
+                readerPhoto: 0
+            }
         }
+        // Source Page Img & Audio Files
         this.getPage = this.getPage.bind(this);
         this.getAudio = this.getAudio.bind(this);
+        this.getNextPage = this.getNextPage.bind(this);
+        // Page Incrementors
         this.nextPage = this.nextPage.bind(this);
         this.clickNext = this.clickNext.bind(this);
         this.prevPage = this.prevPage.bind(this);
+        // Navigation Elements
+        this.inputPage = this.inputPage.bind(this);
+        this.slidePage = this.slidePage.bind(this);
+        // Audio Narration
         this.playNarration = this.playNarration.bind(this);
         this.pauseNarration = this.pauseNarration.bind(this);
         this.restartPage = this.restartPage.bind(this);
-        this.slidePage = this.slidePage.bind(this);
-        this.inputPage = this.inputPage.bind(this);
+        // Restart Page
         this.readAgain = this.readAgain.bind(this);
+        // Load Status
+        this.updateLoadStatus = this.updateLoadStatus.bind(this);
     }
 
     // SOURCE PAGE IMG & AUDIO FILES
@@ -40,68 +53,63 @@ class Read extends React.Component{
         return `${process.env.PUBLIC_URL}/assets/books/${this.state.book.label}/pages/${this.state.page}.jpg`;
     }
     getAudio(){
-        return `${process.env.PUBLIC_URL}/assets/books/${this.state.book.label}/audio/${this.state.page}.mp3`;
+        return `${process.env.PUBLIC_URL}/assets/books/${this.state.book.label}/audio/${this.props.language}/${this.state.page}.mp3`;
+    }
+    getNextPage(num){
+        return `${process.env.PUBLIC_URL}/assets/books/${this.state.book.label}/pages/${this.state.page + num}.jpg`;
     }
 
     // PAGE INCREMENTORS
     nextPage(){
         //Check For Completed Book
         if (this.state.page >= this.state.book.pages){
-            console.log('congrats');
             const congrats = document.getElementById('complete');
             congrats.style.display = 'inline-flex';
         }
         else {
             //Set State & Progress Bar
-            this.setState( {page: (this.state.page + 1) } );
+            const loadedState = this.state.loaded;
+            loadedState.initialPage = 0;
+            loadedState.initialAudio = 0;
+            this.setState( {
+                page: (this.state.page + 1), 
+                loaded: loadedState
+            } );
             this.setProgress();
-            //Start Load Screen
-            const loadScreen = document.getElementById('loading');
-            loadScreen.style.display = 'block';
 
             //Load new audio
             const audio = document.getElementById('narrator');
             audio.src = this.getAudio();
-            //Handle Narration
-            /*
-            if (this.state.status === 'playing'){
-                const audio = document.getElementById('narrator');
-                audio.src = this.getAudio();
-                this.playNarration();
-            }
-            */
-            //Enable PrevPage Button;
-            const prevPage = document.getElementById('prevPage');
-            prevPage.classList.remove('disabled');
+
         }
         //Clear Page Input
         const pageInput = document.getElementById('pageInput');
         pageInput.value = '';
     }
     clickNext(){
-        console.log('click next');
-
+        // Stop Narration
         const audio = document.getElementById('narrator')
         audio.pause();
         this.setState( { status: 'stop' } );
+
+        // Next Page
         setTimeout(this.nextPage(), 1);
     }
     prevPage(){
         if ( this.state.page > 1 ){
+            //Set State & Progress Bar
             this.setState( {page: (this.state.page - 1) } );
             this.setProgress();
+
             //Start Load Screen
             const loadScreen = document.getElementById('loading');
             loadScreen.style.display = 'block';
-            //Check For Disbabled PrevPage Button
-            if (this.state.page === 1){
-                const prevPage = document.getElementById('prevPage');
-                prevPage.classList.add('disabled');
-            }
         }
         //Clear Page Input
         const pageInput = document.getElementById('pageInput');
         pageInput.value = '';
+
+        // Set Status
         this.setState( { status: 'stop' } );
     }
 
@@ -124,21 +132,18 @@ class Read extends React.Component{
         }
     }
     slidePage(){
+        //Set State
         const progress = document.getElementById('progressSlider');
         this.setState({page: Number(progress.value), status: 'stop' });
+
         //Start Load Screen
         const loadScreen = document.getElementById('loading');
         loadScreen.style.display = 'block';
+
         //Handle Narration
         const audio = document.getElementById('narrator');
         audio.src = this.getAudio();
-        //Check For First Page
-        const prevPage = document.getElementById('prevPage');
-        if (this.state.page === 1){
-            prevPage.classList.add('disabled');
-        } else {
-            prevPage.classList.remove('disabled');
-        }
+
         //Clear Page Input
         const pageInput = document.getElementById('pageInput');
         pageInput.value = '';
@@ -153,32 +158,43 @@ class Read extends React.Component{
         //Play Audio
         const audio = document.getElementById('narrator');
         audio.play();
-        //Set Status State
+        //Set Status
         this.setState( { status: 'playing' } );
     }
     pauseNarration(){
+        // Pause Audio
         let audio = document.getElementById('narrator');
         audio.pause();
+        //Set Status
         this.setState( {status: 'pause'});
-
     }
     restartPage(){
+        //Pause Narration
         this.pauseNarration();
+        //Restart Narration
         let audio = document.getElementById('narrator');
         audio.src = this.getAudio();
+        //Set Status
         this.setState({ status: 'stop'})
     }
 
     // RESTART BOOK
     readAgain(){
+        //Set State
         this.setState({page: 1});
+        //Remove Congrats Window
         const congrats = document.getElementById('complete');
         congrats.style.display = 'none';
     }
 
+    updateLoadStatus( loadedElement, loadedValue ){
+        const loadState = this.state.loaded;
+        loadState[loadedElement] = loadedValue;
+        this.setState( { loaded: loadState } );
+    }
+
     // COMPONENT MOUNTING
     componentDidMount(){
-
         this.setProgress();
         if (this.state.status === 'playing'){
             this.playNarration();
@@ -190,8 +206,6 @@ class Read extends React.Component{
         return(
 
             <div className="Read">
-
-                
 
                     <Congrats 
                         readAgain={this.readAgain}
@@ -216,6 +230,8 @@ class Read extends React.Component{
                         totalPages = {this.state.book.pages}
                         inputPage = {this.inputPage}
                         slidePage = {this.slidePage}
+                        // Load Monitor
+                        updateLoadStatus = {this.updateLoadStatus}
                     />
 
                     <ReaderContent
@@ -224,13 +240,19 @@ class Read extends React.Component{
                         book = {this.state.book.label}
                         getPage = {this.getPage}
                         language = {this.props.language}
+                        getNextPage = {this.getNextPage}
                         // Page Navigation
                         nextPage = {this.clickNext}
                         prevPage = {this.prevPage}
-                        //Narration
+                        // Narration
                         narration = {this.state.book.narration}
                         playNarration = {this.playNarration}
                         status = {this.state.status}
+                        // Load Monitors
+                        loadedInitialPage = {this.state.loaded.initialPage}
+                        loadedReaderPhoto = {this.state.loaded.readerPhoto}
+                        loadedInitialAudio = {this.state.loaded.initialAudio}
+                        updateLoadStatus = {this.updateLoadStatus}
                     />
 
             </div>

@@ -10,23 +10,33 @@ const pageText = {
                 'No time to waste!'
             ],
             spa: [
-                `Spa: Ready to hop aboard?`,
+                `¿Listos para abordar?`,
+                `¡Todos Abordo!`,
+                `¡Mucho que hacer hoy!`,
+                `¡Te hemos estado esperando!`,
+                `¡No hay tiempo que perder!`
             ]
         },
         library: {
             eng: [
-                'So many great options to choose from!'
+                'So many great options to choose from!',
+                `Which do you want to read today?`
             ],
             spa: [
-                'Spa: So many great options to choose from!'
+                `¡Tantas buenas opciones para elegir!`,
+                `¿Cuál quieres leer hoy?`
             ]
         },
         congrats: {
             eng: [
-                'I knew you could do it!'
+                'I knew you could do it!',
+                `Wasn't that a great one?`,
+                `You're a great reader!`
             ],
             spa: [
-                'Spa: I knew you could do it!'
+                '¡Sabía que lo podías hacer!',
+                `¿Verdad que es bueno?`,
+                `¡Lees muy bien!`
             ]
         },
         getSpeech(type,language){
@@ -37,71 +47,71 @@ const pageText = {
     },
     buttons: {
         translate: {
-            eng: 'Spa: Click For Spanish',
+            eng: 'En Español',
             spa: 'Click for English'
         },
         startLearning: {
             eng: 'Start Learning',
-            spa: 'Spa: Start Learning'
+            spa: 'Comienza a Aprender'
         },
         aboutGWE: {
             eng: 'About GWE',
-            spa: 'Spa: About GWE'
+            spa: 'Sobre GWE'
         },
         startReading: {
             eng: 'Start Reading',
-            spa: 'Spa: Start Reading'
+            spa: 'Comienza a Leer'
         },
         readAgain: {
             eng: 'Read it again',
-            spa: 'Spa: Read it again'
+            spa: 'Lee de Nuevo'
         },
         backLibrary: {
             eng: 'Back to Library',
-            spa: 'Spa: Back to Library'
+            spa: 'De Nuevo a la Biblioteca'
         },
         playNarration: {
             eng: 'Play Narration',
-            spa: 'Spa: Play Narration'
+            spa: 'Escuchar Narración'
         }
     },
     labels: {
         byAuthor(author,language){
             return language === 'eng' ?
-                `by ${author}`
-                : `spa: By ${author}`
+                `By ${author}`
+                : `Por ${author}`
         },
         readBy: {
             eng: 'Read by',
-            spa: 'Spa: Read by'
+            spa: 'Leído por'
         },
         narration: {
             eng: 'Narration',
-            spa: 'Spa: Narration'
+            spa: 'Narración'
         },
         page: {
             eng: 'Page',
-            spa: 'Spa: Page'
+            spa: 'Página'
         },
         narrComing: {
             eng: 'Narration Coming Soon',
-            spa: 'Spa: Narration Coming Soon'
+            spa: 'Narración Próximamente'
         }
     },
     pageTitles: {
         library: {
             eng: 'Learning Library',
-            spa: 'Spa: Learning Library'
+            spa: 'Biblioteca Educativa'
         }
     },
     messages: {
         congrats: {
             eng: 'Congrats, you finished this book!',
-            spa: 'Spa: Congrats, you finished this book!'
+            spa: '¡Felicidades, terminaste el libro!'
         },
         readAgain: {
             eng: 'Read it again?',
-            spa: 'Spa: Read it again?'
+            spa: '¿Leerlo de nuevo?'
         }
     }
 }

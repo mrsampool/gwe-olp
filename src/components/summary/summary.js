@@ -23,11 +23,10 @@ class Summary extends React.Component{
     }
     scrollIn(){
         if ( document.getElementById('Summary') ){
-
         }
         const summary = document.getElementById('Summary');
         if (summary.style.display === 'block'){
-            summary.scrollIntoView({behavior: "smooth", block: "end"}); 
+            summary.scrollIntoView({behavior: "smooth", block: "start"}); 
         }
     }
     getSummaryGraphic(bookLabel){
@@ -35,7 +34,7 @@ class Summary extends React.Component{
     }
     componentDidMount(){
         if ( document.getElementById('Summary') ){
-            setTimeout(this.scrollIn(),200);
+            setTimeout(this.scrollIn(),500);
         }
     }
     render(){
@@ -44,12 +43,10 @@ class Summary extends React.Component{
         return(
             <div className="Summary" id="Summary">
 
-                <Link to={`/read/`}>
-                    <button className="close"
-                        onClick={this.closeCurrent}
-                        >X
-                    </button>
-                </Link>
+                <button className="close"
+                    onClick={this.closeCurrent}
+                    >X
+                </button>
                 
                 <div className="summaryBody">
 
@@ -69,7 +66,11 @@ class Summary extends React.Component{
                             <p className='summaryDesc'>{book.description[ this.props.language ] }</p>
                             
                             <LibraryReadBy
-                                readBy={book.reader}
+                                readBy={
+                                    book.reader ?
+                                    book.reader[this.props.language] 
+                                    : 0
+                                }
                                 narration={book.narration}
                                 language={ this.props.language }
                             />

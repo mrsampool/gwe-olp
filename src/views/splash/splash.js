@@ -8,25 +8,35 @@ import Mascot from '../../components/mascot/mascot';
 import './splash.css';
 
 import splashBG from './splashBG copy.jpg';
+import TopNav from '../../components/topnav/topnav';
 
 class Splash extends React.Component{
     render(){
         return(
             <div className='Splash'>
+                
+                <TopNav
+                    language={this.props.language}
+                    changeLanguage={this.props.changeLanguage}
+                />
 
-                <div className="splashBG">
-                    <img src={ splashBG } />
-                </div>
+                <div className="pageContent">
 
-                <div className="splashElements">
+                    <div className="splashBG">
+                        <img src={ splashBG } alt=''/>
+                    </div>
 
-                    <StartLearning language={this.props.language} />
+                    <div className="splashElements">
 
-                    <Mascot
-                        character='polarbear'
-                        type="splash"
-                        language={this.props.language}
-                    />
+                        <StartLearning language={this.props.language} />
+
+                        <Mascot
+                            character='polarbear'
+                            type="splash"
+                            language={this.props.language}
+                        />
+
+                    </div>
 
                 </div>
 

@@ -1,0 +1,30 @@
+/*   SPLASH MASCOT (POLAR BEAR)   */
+
+/*Container*/
+.Mascot.splash{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    bottom: 5%;
+    height: 50%;
+    width: fit-content;
+    z-index: 3;
+}
+/*Character Container*/
+.Mascot.splash .mascotCharacter{
+    height: 80%;
+    width: fit-content;
+}
+/*Character Image*/
+.Mascot.splash .mascotCharacter img{
+    height: 80%;
+    width: auto;
+}
+/*Media Queries */
+@media only screen and (max-height: 350px){
+    .Mascot.splash{
+        flex-direction: row;
+    }
+}

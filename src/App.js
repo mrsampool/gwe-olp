@@ -9,7 +9,6 @@ import {
 } from "react-router-dom";
 
 // Sub-Components
-import TopNav from './components/topnav/topnav';
 import Splash from './views/splash/splash';
 import Library from './views/library/library';
 import Read from './views/read/read';
@@ -48,103 +47,63 @@ class App extends React.Component{
 
         <div className="App">
 
-          {/* SPLASH PAGE */}
+              {/* SPLASH PAGE */}
 
-          <Route exact path="/" 
-            render={ ( props ) =>(
+              <Route exact path="/" 
+                render={ ( props ) =>(
+                    
+                      <Splash {...props}
+                        language={this.state.language}
+                        changeLanguage={this.changeLanguage}
+                      />
+                )}
+              />
 
-              <div className="page">
+              {/* LIBRARY PAGE */}
 
-                <TopNav
-                  language={this.state.language}
-                  changeLanguage={this.changeLanguage}
-                  type=""
-                />
+              <Route path="/library/:bookLabel" 
+                render={(props) =>(
 
-                <div className="pageContent">
-                  <Splash {...props}
+                      <Library {...props} 
+                        
+                        closeCurrent={this.closeCurrent}
+                        language={ this.state.language }
+                        changeLanguage={ this.changeLanguage }
+                      />
+                )}
+              />
+
+              <Route exact path="/library" 
+                render={(props) =>(
+
+                      <Library {...props} 
+                        currentBook={this.state.currentBook}
+                        
+                        language={this.state.language}
+                        changeLanguage={ this.changeLanguage }
+                      />
+                )}
+              />
+
+              {/* READ PAGE */}
+
+              <Route path="/read/:bookLabel" 
+                render={(props) =>(
+                  <Read {...props}
+                    book={this.state.currentBook}
                     language={this.state.language}
                     changeLanguage={this.changeLanguage}
                   />
-                </div>
-
-              </div>
-            )}
-          />
-
-          {/* LIBRARY PAGE */}
-
-          <Route path="/library/:bookLabel" 
-            render={(props) =>(
-
-              <div className="page">
-
-                <TopNav
-                  language={this.state.language}
-                  changeLanguage={this.changeLanguage}
-                  type=""
-                />
-
-                <div className="pageContent">
-
-                  <Library {...props} 
-                    currentBook={this.state.currentBook}
-                    changeBook={this.changeBook}
-                    closeCurrent={this.closeCurrent}
-                    key={`Library - Current Book: ${this.state.currentBook}`}
-                    language={ this.state.language }
-                    changeLanguage={ this.changeLanguage }
-                  />
-
-                </div>
-              </div>
-            )}
-          />
-
-          <Route exact path="/library" 
-            render={(props) =>(
-
-              <div className="page">
-
-                <TopNav
-                  language={this.state.language}
-                  changeLanguage={this.changeLanguage}
-                  type=""
-                />
-
-                <div className="pageContent">
-
-                  <Library {...props} 
-                    currentBook={this.state.currentBook}
-                    changeBook={this.changeBook}
-                    closeCurrent={this.closeCurrent}
-                    key={`Library - Current Book: ${this.state.currentBook}`}
-                    language={this.state.language}
-                    changeLanguage={ this.changeLanguage }
-                  />
-
-                </div>
-              </div>
-            )}
-          />
-
-          {/* READ PAGE */}
-
-          <Route path="/read/:bookLabel" 
-            render={(props) =>(
-              <Read {...props}
-                book={this.state.currentBook}
-                language={this.state.language}
-                changeLanguage={this.changeLanguage}
+                )}
               />
-            )}
-          />
 
-          <Route exact path="/read">
-            <Redirect to="/library" />
-          </Route> 
+              <Route exact path="/read">
+                <Redirect to="/library" />
+              </Route> 
+
 
           </div>
+          
         </Router>
     )
   }

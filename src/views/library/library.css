@@ -1,13 +1,14 @@
 /* Page Container */
 #Library{
-    position: relative;
+    position: absolute;
+    top: 0;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 
     width: 100%;
     height: fit-content;
-    min-height: 100vh;
 
     background-image: url('./libraryBG.jpg');
     background-position: bottom;
@@ -46,6 +47,7 @@ hr{
 
 /* Summary & Mascot Container */
 .summaryBar{
+
     display: inline-flex;
     width: 100%;
     justify-content: center;
@@ -53,51 +55,11 @@ hr{
     flex-wrap: wrap;
 }
 
-/* Mascot */
-.Mascot.library .mascotCharacter{
-    width: 16em;
-}
-
-
-/* Media Queries */
-@media only screen and (max-width: 600px){
-    .Mascot.library{
-        width: 100%;
-    }
-    .Mascot.library .mascotCharacter{
-        width: 90%;
-        margin: auto;
-    }
-}
-
-@media only screen and (max-width: 450px){
-    #Library{
-        margin-top: 0;
-        padding-top: 0;
-    }
-}
-
-@media only screen and (max-height: 500px){
-    .Mascot.library{
-        flex-direction: row;
-        flex-wrap: nowrap;
-        width: 80%;
-    }
-
-}
-
 @media only screen and (max-height: 500px) and (orientation: landscape){
     #Library{
-        flex-direction: column;
         align-items: center;
         margin-top: 0;
-        padding-top: 0;
+        padding-top: 60;
         width: 100%;
-        height: 100%;
-    }
-    .pageBody{
-        height: 100%;
-        width: calc(100% - 10rem);
-        overflow: scroll;
     }
 }

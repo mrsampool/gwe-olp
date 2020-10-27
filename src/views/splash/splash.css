@@ -3,6 +3,7 @@
     position: absolute;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     z-index: 1;
 
@@ -29,45 +30,13 @@
     
     width: fit-content;
 }
-
 .splashBG{
     position: absolute;
-    bottom: 0;
+    left: 0;
     height: 100%;
     width: fit-content;
-    position: relative;
 }
 .splashBG img{
     height: 100%;
     width: auto;
-    position: relative;
-    bottom: 0;
-    left: 0;
-}
-
-/* Mascot */
-.Mascot.splash{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    bottom: 5%;
-    height: 50%;
-    width: fit-content;
-    z-index: 3;
-}
-.Mascot.splash .mascotCharacter{
-    height: 80%;
-    width: fit-content;
-}
-.Mascot.splash .mascotCharacter img{
-    height: 80%;
-    width: auto;
-}
-
-@media only screen and (max-height: 350px){
-    .Mascot.splash{
-        flex-direction: row;
-    }
 }

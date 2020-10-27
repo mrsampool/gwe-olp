@@ -10,6 +10,50 @@
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(.54,.88,.76,.94);
 }
+
+/* Page Image & Container */
+.pageImgFrame{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+#pageImg{
+    border: 0.5rem solid white;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 1rem hsla(0,0%,0%,0.3);
+}
+
+/* Tall Pages */
+.pageImgFrame.tall{
+    height: 75vh;
+}
+.pageImgFrame.tall img{
+    max-height: 100%;
+    width: auto;
+}
+
+/* Wide Pages */
+.pageImgFrame.wide{
+    width: 100%;
+}
+.pageImgFrame.wide img{
+    width: 80%;
+    height: auto;
+}
+
+/* Translation */
+.translatedText{
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    background-color: hsl(0,0%,100%,0.5);
+
+    text-align: center;
+}
+
+/* Animations */
 @keyframes slide-up{
     from {
         margin-top: 100vh;
@@ -18,71 +62,10 @@
     }
 }
 
-#pageImg{
-    border: 0.5rem solid white;
-    border-radius: 1rem;
-    box-shadow: 0 1rem 1rem hsla(0,0%,0%,0.3);
-}
-.pageImgFrame{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem;
-}
-/* WIDE DISPLAY */
-.pageImgFrame.tall{
-    height: 85vh;
-}
-.pageImgFrame.tall img{
-    max-height: 100%;
-    width: auto;
-}
-
-/* TALL DISPLAY */
-.pageImgFrame.wide{
-    width: 100%;
-}
-.pageImgFrame.wide img{
-    width: 95%;
-    height: auto;
-}
-
-#loading{
-    position: absolute;
-    display: none;
-    width: 4rem;
-    height: 4rem;
-    background-color: hsla(0,0%,100%,0.6);
-    padding: 0.5rem;
-    margin: 0;
-    border-radius: 100%;
-    line-height: 1.5em;
-    text-align: center;
-
-    animation-name: spin;
-    animation-duration: 2500ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-#loading img{
-    width: 100%;
-    height: auto;
-    padding: 0;
-    margin: 0;
-}
-
-
+/* Media Queries */
 @media only screen and (max-width: 600px){
     .pageImgFrame.tall{
-        width: 100%;
+        width: 80%;
         height: fit-content;
     }
     .pageImgFrame.tall img{
@@ -92,7 +75,4 @@
 }
 
 @media only screen and (max-width: 500px){
-    .ReaderPages{
-        width: 100%;
-    }
 }

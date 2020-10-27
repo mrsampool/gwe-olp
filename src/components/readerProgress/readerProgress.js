@@ -10,7 +10,7 @@ class ReaderProgress extends React.Component{
             
                 <div className="pageCounter">
         
-                    <label for="pageInput">
+                    <label htmlFor="pageInput">
                         { pageText.labels.page[this.props.language] } #:
                     </label>
                     <input type="number" 
@@ -20,7 +20,7 @@ class ReaderProgress extends React.Component{
                         onChange={this.props.inputPage}
                         />
         
-                    <label for="pageInput"
+                    <label htmlFor="pageInput"
                         id="totalPages"
                         >/{this.props.totalPages}
                     </label>

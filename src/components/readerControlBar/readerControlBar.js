@@ -14,6 +14,18 @@ import ReaderProgress from '../readerProgress/readerProgress';
 import Translate from '../translate/translate';
 
 class ReaderControlBar extends React.Component{
+    constructor(props){
+        super(props);
+        this.handleAudioLoad = this.handleAudioLoad.bind(this);
+    }
+    handleAudioLoad(){
+        this.props.updateLoadStatus( 'initialAudio', 1);
+    }
+    componentDidMount(){
+        const narrator = document.getElementById('narrator');
+        narrator.addEventListener('canplaythrough', this.handleAudioLoad )
+
+    }
     render(){
         return(
             <div className="ReaderControlBar">

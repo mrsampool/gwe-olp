@@ -3,12 +3,16 @@ import React from 'react';
 // Page Text
 import pageText from '../../data/pageText';
 
-// Style Sheet
+// Style Sheets
 import './mascot.css';
+import './mascotSplash.css';
+import './mascotLibrary.css';
+import './mascotCongrats.css';
 
 // Images
 import polarbear from './polarbear.png'; 
 import penguin from './penguin.png';
+
 
 class Mascot extends React.Component{
     constructor(props){

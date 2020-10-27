@@ -5,14 +5,29 @@ import './readerStart.css';
 import pageText from '../../data/pageText';
 
 class ReaderStart extends React.Component{
+    constructor(props){
+        super(props);
+        this.readerLoaded = this.readerLoaded.bind(this);
+    }
+    readerLoaded(){
+        this.props.updateLoadStatus('readerPhoto', 1);
+    }
     getReaderPhoto(readBy){
         if ( headshots[readBy]){
             return (
                 <img 
-                id="readerPhoto"
-                src={headshots[readBy]}
-                alt={`Narrator`}/>
+                    id="readerPhoto"
+                    src={headshots[readBy]}
+                    alt={`Narrator`}
+                    onLoad={this.readerLoaded}
+                />
             )
+        }
+    }
+    componentDidMount(){
+        const book = Media[this.props.book];
+        if ( !headshots[ book.reader ] ){
+            this.readerLoaded();
         }
     }
     render(){
@@ -35,12 +50,12 @@ class ReaderStart extends React.Component{
 
                 <div className="readerReadBy">
 
-                    { this.getReaderPhoto( book.reader ) }
+                    { this.getReaderPhoto( book.reader[this.props.language] ) }
 
                     <div className="readByName">
                         <h3>{ pageText.labels.readBy[this.props.language]}</h3>
                         <hr/>
-                        <h3>{book.reader}</h3>
+                        <h3>{book.reader[this.props.language]}</h3>
 
                         <button
                             id="playNarration" 
