@@ -13,6 +13,7 @@ class ReaderStart extends React.Component{
         this.props.updateLoadStatus('readerPhoto', 1);
     }
     getReaderPhoto(readBy){
+        console.log(readBy);
         if ( headshots[readBy]){
             return (
                 <img 
