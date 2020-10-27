@@ -44,15 +44,3 @@
   
   z-index: 1;
 }
-/*
-@media only screen and (max-height: 500px){
-  .App{
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -moz-box-direction: normal;
-    -moz-box-orient: horizontal;
-
-    flex-direction: row;
-  }
-}
-*/

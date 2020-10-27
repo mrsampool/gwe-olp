@@ -53,6 +53,13 @@
     text-align: center;
 }
 
+.readerPageAndTranslation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Animations */
 @keyframes slide-up{
     from {

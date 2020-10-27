@@ -23,7 +23,8 @@ class ReaderControlBar extends React.Component{
     }
     componentDidMount(){
         const narrator = document.getElementById('narrator');
-        narrator.addEventListener('canplaythrough', this.handleAudioLoad )
+        narrator.addEventListener('canplaythrough', this.handleAudioLoad );
+        narrator.load();
 
     }
     render(){
@@ -42,6 +43,7 @@ class ReaderControlBar extends React.Component{
                         <Translate
                             language={this.props.language}
                             changeLanguage={this.props.changeLanguage}
+                            restartPage={this.props.restartPage}
                         />
 
                         {

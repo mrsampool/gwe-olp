@@ -80,7 +80,6 @@ class Read extends React.Component{
             //Load new audio
             const audio = document.getElementById('narrator');
             audio.src = this.getAudio();
-
         }
         //Clear Page Input
         const pageInput = document.getElementById('pageInput');
@@ -100,10 +99,6 @@ class Read extends React.Component{
             //Set State & Progress Bar
             this.setState( {page: (this.state.page - 1) } );
             this.setProgress();
-
-            //Start Load Screen
-            const loadScreen = document.getElementById('loading');
-            loadScreen.style.display = 'block';
         }
         //Clear Page Input
         const pageInput = document.getElementById('pageInput');
@@ -118,10 +113,6 @@ class Read extends React.Component{
         const pageInput = document.getElementById('pageInput');
         if (pageInput.value > 0 && pageInput.value <= this.state.book.pages){
 
-            //Start Load Screen
-            const loadScreen = document.getElementById('loading');
-            loadScreen.style.display = 'block';
-
             pageInput.style.backgroundColor = "aliceBlue"
             this.setState( {page: Number(pageInput.value), status: 'stop' } );
             //Handle Narration
@@ -135,10 +126,6 @@ class Read extends React.Component{
         //Set State
         const progress = document.getElementById('progressSlider');
         this.setState({page: Number(progress.value), status: 'stop' });
-
-        //Start Load Screen
-        const loadScreen = document.getElementById('loading');
-        loadScreen.style.display = 'block';
 
         //Handle Narration
         const audio = document.getElementById('narrator');
@@ -186,11 +173,12 @@ class Read extends React.Component{
         const congrats = document.getElementById('complete');
         congrats.style.display = 'none';
     }
-
+    // LOAD STATUS
     updateLoadStatus( loadedElement, loadedValue ){
         const loadState = this.state.loaded;
         loadState[loadedElement] = loadedValue;
         this.setState( { loaded: loadState } );
+        console.log( `Loaded: ${loadedElement}` );
     }
 
     // COMPONENT MOUNTING

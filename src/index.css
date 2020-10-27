@@ -43,16 +43,18 @@ p,input,label {
 button{
 padding: 0.75rem;
 margin: 0.5rem;
+height: fit-content;
 
 background-color: #52AA5E;
 
 border: 0.25rem solid aliceblue;
 border-radius: 1rem;
+box-shadow: 0 0 0.5rem dimgray;
 
 font-weight: bold;
 font-size: 1em;
 color: white;
-box-shadow: 0 0 0.5rem dimgray;
+
 }
 button:hover{
 transition: all 0.25s;

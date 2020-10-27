@@ -44,7 +44,16 @@ class ReaderPages extends React.Component{
             const audio = document.getElementById('narrator');
             audio.play();
         }
-        this.props.updateLoadStatus( 'initialPage', 1)
+        // Update Load Statuses
+        this.props.updateLoadStatus( 'initialPage', 1);
+
+        const narrator = document.getElementById('narrator');
+        narrator.load();
+
+        if (!this.props.narration){
+            this.props.updateLoadStatus( 'readerPhoto', 1);
+            this.props.updateLoadStatus( 'initialAudio', 1);
+        }
     }
     otherPageLoaded(){
         console.log(`Image Loaded`);
@@ -62,16 +71,19 @@ class ReaderPages extends React.Component{
             pageImg.onload = this.otherPageLoaded;
         });
     }
-    handleLoaded(){
-
-    }
     getTranslation(book,page){
-        return Media[book]['translations'][page].map( phrase =>{
-            return <p>{phrase}</p>
-        })
+        if ( Media[book]['translations'] ){
+            return Media[book]['translations'][page].map( phrase =>{
+                return <p>{phrase}</p>
+            })
+        }
     }
     componentDidMount(){
         window.addEventListener('load', this.loadOtherPages );
+        if (!this.props.narration){
+            this.props.updateLoadStatus( 'readerPhoto', 1);
+            this.props.updateLoadStatus( 'initialAudio', 1);
+        }
     }
     render(){
         return(
@@ -95,22 +107,25 @@ class ReaderPages extends React.Component{
                     /> 
                     : ''
                 }
-                
-                <div id="pageImgFrame" className="pageImgFrame wide">
-                    <img src={ this.props.getPage() }  
-                        onLoad={this.imageLoaded}
-                        id="pageImg" 
-                        alt="Current Page"/>
-                </div>
 
-                {
-                    this.props.language !== 'eng' ?
-                    <div className="translatedText">
-                        { this.getTranslation( this.props.book, this.props.page ) }
+                <div className="readerPageAndTranslation">
+
+                    <div id="pageImgFrame" className="pageImgFrame wide">
+                        <img src={ this.props.getPage() }  
+                            onLoad={this.imageLoaded}
+                            id="pageImg" 
+                            alt="Current Page"/>
                     </div>
-                    : ''
-                }
 
+                    {
+                        this.props.language !== 'eng' ?
+                        <div className="translatedText">
+                            { this.getTranslation( this.props.book, this.props.page ) }
+                        </div>
+                        : ''
+                    }
+
+                </div>
             </div>
         )
     }
