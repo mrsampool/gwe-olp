@@ -19,12 +19,11 @@
 .pageCounter{
     display: inline-flex;
     width: fit-content;
-    background-color: hsla(0,0%,100%,0.3);
+    background-color: hsla(0,0%,100%,0.4);
     border-radius: 1rem;
     padding: 0.5rem;
     margin: 0.5rem;
     padding-right: 1rem;
-    box-shadow: 0 0 0.5rem dimgray;
 }
 #pageInput{
     width: 3rem;

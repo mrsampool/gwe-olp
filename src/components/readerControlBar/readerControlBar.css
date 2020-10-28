@@ -5,8 +5,8 @@
     align-items: center;
     height: fit-content;
     width: 100%;
-    background-color: hsl(0,0%,0%,0.1);
-    box-shadow: 0 0 0.5rem dimgray;
+    
+    
 }
 .mobileTop{
     display: flex;

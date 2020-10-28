@@ -1,7 +1,5 @@
 #startLink{
     height: fit-content;
-    
-    z-index: 2;
 }
 #startButton{
     display: flex;

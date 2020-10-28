@@ -1,0 +1,9 @@
+.splashNav{
+    /* Position */
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    /* Display & Size */
+    display: flex;
+    flex-direction: column;
+}

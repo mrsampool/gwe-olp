@@ -3,42 +3,53 @@ import React from 'react';
 // Sub-Components
 import StartLearning from '../../components/startLearning/startLearning';
 import Mascot from '../../components/mascot/mascot';
+import TopNav from '../../components/topnav/topnav';
 
 //Style Sheet
 import './splash.css';
 
+// Images
 import splashBG from './splashBG copy.jpg';
-import TopNav from '../../components/topnav/topnav';
+import TRAIN from './TRAIN.png';
+import SplashNav from '../../components/splashNav/splashNav';
 
 class Splash extends React.Component{
     render(){
         return(
             <div className='Splash'>
-                
-                <TopNav
+
+                <div className="splashBG">
+                    <img src={ TRAIN } alt=''/>
+                </div>
+
+                <div className="bubbleContainer">
+                    <div className="bubble"/>
+                </div>
+
+                <div className="bubbleContainer two">
+                    <div className="bubble"/>
+                </div>
+
+                <div className="bubbleContainer three">
+                    <div className="bubble"/>
+                </div>
+
+                <div className="bubbleContainer four">
+                    <div className="bubble"/>
+                </div>
+
+                <div className="bubbleContainer five">
+                    <div className="bubble"/>
+                </div>
+
+                <div className="bubbleContainer six">
+                    <div className="bubble"/>
+                </div>
+
+                <SplashNav
                     language={this.props.language}
                     changeLanguage={this.props.changeLanguage}
                 />
-
-                <div className="pageContent">
-
-                    <div className="splashBG">
-                        <img src={ splashBG } alt=''/>
-                    </div>
-
-                    <div className="splashElements">
-
-                        <StartLearning language={this.props.language} />
-
-                        <Mascot
-                            character='polarbear'
-                            type="splash"
-                            language={this.props.language}
-                        />
-
-                    </div>
-
-                </div>
 
             </div>
         )

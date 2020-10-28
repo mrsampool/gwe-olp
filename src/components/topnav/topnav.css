@@ -45,32 +45,3 @@
         height: auto;
     }
 }
-
-
-/* SMALL HORIZONTAL SCREENS*/
-
-/*
-@media only screen and (max-height: 500px) and (orientation: landscape){
-    .TopNav{
-        flex-direction: column;
-        justify-content: flex-start;
-        width: fit-content;
-        height: 100%;
-        padding: 0.5rem;
-    }
-    .navButtons{
-        flex-direction: column;
-    }
-    .logo{
-        width: 80%;
-        height: fit-content;
-    }
-    #logo{
-        width: 100%;
-        height: auto;
-    }
-}
-.TopNav.read{
-    display: none;
-}
-*/
