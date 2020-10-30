@@ -1,0 +1,36 @@
+/* Container */
+.splashLogo{
+    /* Position */
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    /* Size */
+    width: 15rem;
+    height: fit-content;
+    padding: 0.5rem;
+    /* Background & Border */
+    border-radius: 2rem;
+    background-color: hsla(0,0%,100%,0.6);
+    box-shadow: 0 0 1rem hsla(0,0%,100%,0.5);
+    /* Animation */
+    animation: slideDown 1.5s ease-out;
+}
+/* Image */
+.splashLogo img{
+    width: 100%;
+    height: auto;
+}
+
+@keyframes slideDown{
+    0%{
+        transform: translateY(-100%);
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .splashLogo{
+        left: 50%;
+        margin-left: -7.5rem;
+    }
+}
+

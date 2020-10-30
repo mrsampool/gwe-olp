@@ -31,7 +31,7 @@ class LibraryItem extends React.Component{
                         <img src={this.props.cover} alt="Book Cover"/>
                     </div>
 
-                    <div className='mediaDets'>
+                    <div className='libraryTitle' id="summaryMediaDets">
                         <h2 className='mediaTitle'>{this.props.title}</h2>
                         <hr/>
                         <h3 className='mediaAuthor'>{this.props.author}</h3>

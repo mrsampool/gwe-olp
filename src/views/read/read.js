@@ -11,6 +11,9 @@ import Congrats from '../../components/congrats/congrats';
 import ReaderControlBar from '../../components/readerControlBar/readerControlBar';
 import ReaderContent from '../../components/readerContent/readerContent';
 
+// Background Image
+import libraryBGlandscapeRepeat from './libraryBGlandscapeRepeat.jpg';
+
 
 class Read extends React.Component{
     constructor(props){
@@ -46,6 +49,7 @@ class Read extends React.Component{
         this.readAgain = this.readAgain.bind(this);
         // Load Status
         this.updateLoadStatus = this.updateLoadStatus.bind(this);
+        this.handleAudioLoad = this.handleAudioLoad.bind(this);
     }
 
     // SOURCE PAGE IMG & AUDIO FILES
@@ -79,7 +83,9 @@ class Read extends React.Component{
 
             //Load new audio
             const audio = document.getElementById('narrator');
+            //audio.addEventListener('canplaythrough', this.handleAudioLoad );
             audio.src = this.getAudio();
+            audio.load();
         }
         //Clear Page Input
         const pageInput = document.getElementById('pageInput');
@@ -92,7 +98,7 @@ class Read extends React.Component{
         this.setState( { status: 'stop' } );
 
         // Next Page
-        setTimeout(this.nextPage(), 1);
+        setTimeout(this.nextPage(), 10);
     }
     prevPage(){
         if ( this.state.page > 1 ){
@@ -118,6 +124,7 @@ class Read extends React.Component{
             //Handle Narration
             const audio = document.getElementById('narrator');
             audio.src = this.getAudio();
+            audio.load();
         } else {
             pageInput.style.backgroundColor = "hsl(0,70%,70%)"
         }
@@ -130,6 +137,7 @@ class Read extends React.Component{
         //Handle Narration
         const audio = document.getElementById('narrator');
         audio.src = this.getAudio();
+        audio.load();
 
         //Clear Page Input
         const pageInput = document.getElementById('pageInput');
@@ -161,6 +169,7 @@ class Read extends React.Component{
         //Restart Narration
         let audio = document.getElementById('narrator');
         audio.src = this.getAudio();
+        audio.load();
         //Set Status
         this.setState({ status: 'stop'})
     }
@@ -180,6 +189,9 @@ class Read extends React.Component{
         this.setState( { loaded: loadState } );
         console.log( `Loaded: ${loadedElement}` );
     }
+    handleAudioLoad(){
+        this.updateLoadStatus( 'initialAudio', 1);
+    }
 
     // COMPONENT MOUNTING
     componentDidMount(){
@@ -187,12 +199,14 @@ class Read extends React.Component{
         if (this.state.status === 'playing'){
             this.playNarration();
         }
+        const audio = document.getElementById('narrator');
+        audio.src = this.getAudio();
+        audio.load();
     }
     render(){
         document.title = `GWE: "${this.state.book.title[this.props.language]}"`;
         
         return(
-
             <div className="Read">
 
                     <Congrats 

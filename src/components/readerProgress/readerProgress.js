@@ -6,9 +6,9 @@ import './readerProgress.css';
 class ReaderProgress extends React.Component{
     render(){
         return(
-            <div className="ReaderProgress">
+            <div className="ReaderProgress controlBox">
             
-                <div className="pageCounter">
+                <div className="pageCounter label">
         
                     <label htmlFor="pageInput">
                         { pageText.labels.page[this.props.language] } #:
@@ -26,14 +26,18 @@ class ReaderProgress extends React.Component{
                     </label>
                     
                 </div>
+
+                <div className="progressSliderWrap label">
+                    <input type="range" 
+                        min="1" 
+                        max={this.props.totalPages}
+                        value={this.props.page} 
+                        id="progressSlider"
+                        onChange={this.props.slidePage }
+                    />
+                </div>
         
-                <input type="range" 
-                    min="1" 
-                    max={this.props.totalPages}
-                    value={this.props.page} 
-                    id="progressSlider"
-                    onChange={this.props.slidePage }
-                />
+
     
             </div>
         )

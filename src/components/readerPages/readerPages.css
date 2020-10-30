@@ -1,14 +1,16 @@
 .ReaderPages{
     width: 80%;
+    height: fit-content;
     display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-
+/*
     animation-name: slide-up;
     animation-duration: 1200ms;
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(.54,.88,.76,.94);
+    */
 }
 
 /* Page Image & Container */
@@ -44,13 +46,19 @@
 
 /* Translation */
 .translatedText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Size */
     margin-bottom: 1rem;
-    padding: 1rem;
-    border-radius: 1rem;
+    padding: 0.5rem;
 
-    background-color: hsl(0,0%,100%,0.5);
-
-    text-align: center;
+}
+.translatedText p{
+    width: fit-content;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
 .readerPageAndTranslation{
@@ -71,6 +79,9 @@
 
 /* Media Queries */
 @media only screen and (max-width: 600px){
+    .ReaderPages{
+        width: 60%;
+    }
     .pageImgFrame.tall{
         width: 80%;
         height: fit-content;

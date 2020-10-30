@@ -1,52 +1,53 @@
 // React
 import React from 'react';
 
-// React Components
-import {
-    Link
-  } from "react-router-dom";
-
-// Data
-import pageText from '../../data/pageText';
-
 // Sub-Components
 import Translate from '../translate/translate';
+import NavHome from '../navHome';
+import AboutGWE from '../aboutGWE/aboutGWE';
 
 // Style Sheet
 import './topnav.css';
 
-// Images
-import GWElogo from './GWElogo.png';
-
 class TopNav extends React.Component{
+    getLogo(){
+        return `${process.env.PUBLIC_URL}/assets/images/logos/GWElogo.png`;
+    }
     render(){
         return(
             <div className={`TopNav ${this.props.type ? this.props.type : ''}`} id="topNav">
                 
+                <div className="logoWrap">
+                    <img 
+                        src={ this.getLogo() }
+                        alt='GWE Logo'
+                        id="logo"
+                    />
+                </div>
+
+                <div className="topButtons">
 
 
-                <div className="navButtons">
+
+                    <div className="navButtons">
+
+                        <NavHome
+                            language={ this.props.language }
+                        />
+
+                        <AboutGWE
+                            language={this.props.language}
+                        />
+
+                    </div>
 
                     <Translate
                         language={ this.props.language }
                         changeLanguage={this.props.changeLanguage}
                     />
 
-                    <a href="https://www.theglobalwarmingexpress.org/" 
-                        id="homeLink" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <button className="logo">
-                            <img 
-                                src={ GWElogo }
-                                alt='GWE Logo'
-                                id="logo"
-                            />
-                        </button>
-                    </a>
-
                 </div>
+
             </div>
         )
     }

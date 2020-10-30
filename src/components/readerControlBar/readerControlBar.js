@@ -12,6 +12,7 @@ import ReactAudioPlayer from 'react-audio-player';
 import NarrationControl from '../Narration Control/narrationControl';
 import ReaderProgress from '../readerProgress/readerProgress';
 import Translate from '../translate/translate';
+import CloseButton from '../closeButton/closeButton';
 
 class ReaderControlBar extends React.Component{
     constructor(props){
@@ -23,9 +24,9 @@ class ReaderControlBar extends React.Component{
     }
     componentDidMount(){
         const narrator = document.getElementById('narrator');
-        narrator.addEventListener('canplaythrough', this.handleAudioLoad );
-        narrator.load();
-
+        //narrator.addEventListener('canplaythrough', this.handleAudioLoad );
+        //narrator.load();
+        
     }
     render(){
         return(
@@ -33,18 +34,13 @@ class ReaderControlBar extends React.Component{
 
                 <ReactAudioPlayer
                     id="narrator"
-                    src={this.props.getAudio() }
+                    key={this.props.page}
+                    src={ this.props.getAudio() }
+                    onCanPlayThrough={ this.handleAudioLoad }
                     onEnded={this.props.nextPage}
                 />
 
                 <div className="mobileTop">
-                    <div className="transNarrCont">
-
-                        <Translate
-                            language={this.props.language}
-                            changeLanguage={this.props.changeLanguage}
-                            restartPage={this.props.restartPage}
-                        />
 
                         {
                             this.props.narration ?
@@ -55,18 +51,16 @@ class ReaderControlBar extends React.Component{
                                 status = {this.props.status}
                                 key={this.props.status}
                                 pageHasPlayed = {this.props.pageHasPlayed}
+                                // Language
                                 language={this.props.language}
+                                changeLanguage={this.props.changeLanguage}
+                                restartPage={this.props.restartPage}
                             />
                             : ''
                         }
 
-                    </div>
-
                     <Link to="/library" id="mobileClose">
-                        <button
-                            className="close reader">
-                                X
-                        </button>
+                        <CloseButton/>
                     </Link>
 
                 </div>
@@ -80,10 +74,7 @@ class ReaderControlBar extends React.Component{
                 />
             
                 <Link to="/library"  id="standardClose">
-                    <button
-                        className="close reader">
-                            X
-                    </button>
+                    <CloseButton/>
                 </Link>
         
         </div>

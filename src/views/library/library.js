@@ -2,14 +2,12 @@
 import React from 'react';
 
 // Sub-Components
-import LibraryList from '../../components/libraryList/libraryList';
-import Summary from '../../components/summary/summary';
-import Mascot from '../../components/mascot/mascot';
 import TopNav from '../../components/topnav/topnav';
+import LibraryRepeat from '../../components/libraryRepeat/libraryRepeat';
+import LibraryBottom from '../../components/libraryBottom/libraryBottom';
 
 // Style Sheet
 import './library.css';
-import pageText from '../../data/pageText';
 
 class Library extends React.Component{
     constructor(props){
@@ -18,6 +16,9 @@ class Library extends React.Component{
             currentBook: this.props.match.params.bookLabel ?
                         this.props.match.params.bookLabel
                         : '',
+            windowOrientation: window.innerWidth > window.innerHeight ?
+                'landscape'
+                : 'portrait'
         }
         this.changeBook = this.changeBook.bind(this);
         this.closeCurrent = this.closeCurrent.bind(this);
@@ -54,31 +55,20 @@ class Library extends React.Component{
                         changeLanguage={this.props.changeLanguage}
                     />
 
-                    <h1 className="libraryTitle">
-                        {pageText.pageTitles.library[ this.props.language ] }
-                    </h1>
-
-                    <LibraryList
-                        changeBook={this.changeBook}
-                        currentBook={this.props.currentBook}
+                    <LibraryRepeat
                         language={this.props.language}
+                        currentBook={this.state.currentBook}
+                        changeBook={this.changeBook}
+                        closeCurrent={this.closeCurrent}
+                    />
+
+                    <LibraryBottom
+                        language={this.props.language}
+                        currentBook={this.state.currentBook}
                     />
 
                     <div className="summaryBar" id="summaryBar">
-
-                        <Summary
-                            currentBook={this.state.currentBook}
-                            closeCurrent={this.closeCurrent}
-                            language={this.props.language} 
-                        />
-
-                        <Mascot
-                            character="penguin"
-                            type="library"
-                            language={this.props.language}
-                        />
-
-                    </div>
+                        </div>
 
                 </div>
         )

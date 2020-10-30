@@ -1,4 +1,5 @@
 #prevPage{
+    position: relative;
     z-index: 5;
     height: fit-content;
     border-radius: 100%;
@@ -15,8 +16,12 @@
     border-right: 2em solid white;
 }
 #prevPage.disabled{
-    background-color: gray;
-    border-color: dimgray;
+    background: hsla(200,0%,80%);
+    background: linear-gradient(180deg, 
+        hsla(200,0%,80%) 0%, 
+        hsla(200,0%,50%) 100%);
+    border-color:  hsl(200,0%,70%);
+    box-shadow: none;
 }
 #prevPage.disabled .prevPageSymbol{
     border-right-color: dimgray;

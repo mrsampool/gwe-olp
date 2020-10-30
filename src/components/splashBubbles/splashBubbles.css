@@ -1,0 +1,98 @@
+.bubbleContainer{
+    display: none;
+    /* Position */
+    position: absolute;
+    bottom: 75%;
+    left: 37%;
+
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+
+    animation: bubbleFloatRight 3s infinite ease-in;
+}
+.bubble{
+    display: none;
+    content: '';
+    /* Position */
+    /* Size & Shape */
+    width: 7rem;
+    height: 7rem;
+    border-radius: 100%;
+    /* Color */
+    background-color: aliceblue;
+    
+    animation: bubbleFloatUp 3s infinite ease-out, fade 3s infinite linear;
+}
+
+.bubbleContainer.two{
+    animation-delay: 0.5s;
+}
+.bubbleContainer.two .bubble{
+    animation-delay: 0.5s;
+}
+
+.bubbleContainer.three{
+    animation-delay: 1s;
+}
+.bubbleContainer.three .bubble{
+    animation-delay: 1s;
+}
+
+.bubbleContainer.four{
+    animation-delay: 1.5s;
+}
+.bubbleContainer.four .bubble{
+    animation-delay: 1.5s;
+}
+
+.bubbleContainer.five{
+    animation-delay: 2s;
+}
+.bubbleContainer.five .bubble{
+    animation-delay: 2s;
+}
+
+.bubbleContainer.six{
+    animation-delay: 2.5s;
+}
+.bubbleContainer.six .bubble{
+    animation-delay: 2.5s;
+}
+
+@keyframes bubbleFloatRight{
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(400%) scale(0.3);
+    }
+}
+@keyframes bubbleFloatUp{
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-150%);
+        opacity: 0;
+    }
+}
+@keyframes fade {
+    0%,100%{
+        opacity:0;
+    }
+    20%,90%{
+        opacity: 0.8;
+    }
+}
+
+@media only screen and (max-width: 1000px) and (orientation: portrait){
+    .bubbleContainer{
+        left: 25%;
+    }
+}
+@media only screen and (max-width: 500px) and (orientation: portrait){
+    .bubbleContainer{
+        left: 10%;
+    }
+}

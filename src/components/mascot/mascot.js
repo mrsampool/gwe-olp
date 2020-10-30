@@ -11,7 +11,7 @@ import './mascotCongrats.css';
 
 // Images
 import polarbear from './polarbear.png'; 
-import penguin from './penguin.png';
+import penguin from './thefluff.png';
 
 
 class Mascot extends React.Component{
@@ -20,7 +20,7 @@ class Mascot extends React.Component{
         this.getSpeech = this.getSpeech.bind(this);
     }
     getSpeech(){
-        return pageText.speechBubbles.getSpeech(this.props.type, this.props.language)
+        return pageText.speechBubbles.getSpeech(this.props.message, this.props.language)
     }
     render(){
         const characters = {
@@ -34,7 +34,7 @@ class Mascot extends React.Component{
                     <p>{ this.getSpeech() }</p>
                 </div>
 
-                <div className="mascotCharacter">
+                <div className="mascotCharacter" id={this.props.id ? this.props.id : ''}>
                     <img 
                         src={ characters[this.props.character] }
                         alt='GWE Logo'

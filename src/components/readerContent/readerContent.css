@@ -1,6 +1,8 @@
 .ReaderContent{
+    top: 0;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: fit-content;
 }

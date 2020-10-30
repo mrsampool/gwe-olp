@@ -1,0 +1,41 @@
+.libraryRepeat{
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Background */
+    background-image: url('./libraryBGlandscapeRepeat.jpg');
+    background-position: bottom;
+    background-repeat: repeat-y;
+    background-size: 100%;
+}
+
+/* Page Title */
+.libraryTitle{
+    /* Size */
+    width: fit-content;
+    margin: 2rem;
+    padding: 1rem;
+    /* Border & Background */
+    border-radius: 1rem;
+    background: hsla(200,30%,80%);
+    background: linear-gradient(180deg, hsla(200,70%,70%) 0%, hsla(200,70%,45%) 100%);
+    box-shadow: 0 0.5rem 1rem dimgray;
+    /* Text */
+    text-align: center;
+    color: aliceblue;
+    text-shadow: 0 0.2rem 0.2rem dimgray;
+    /* Animation */
+    animation: slowGrowPulse 5s infinite linear;
+}
+@keyframes slowGrowPulse {
+    50%{
+        transform: scale(1.2);
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .libraryRepeat{
+        background-image: url('./libraryBGportraitRepeat.jpg');
+    }
+}

@@ -27,6 +27,16 @@ const pageText = {
                 `¿Cuál quieres leer hoy?`
             ]
         },
+        summary: {
+            eng: [
+                `That's one of my favorites!`,
+                `That's a great one!`
+            ],
+            spa: [
+                `¡Ese es uno de mis favoritos!`,
+                `¡Ese es buenísimo!`
+            ]
+        },
         congrats: {
             eng: [
                 'I knew you could do it!',
@@ -50,13 +60,17 @@ const pageText = {
             eng: 'En Español',
             spa: 'Click for English'
         },
-        startLearning: {
-            eng: 'Start Learning',
-            spa: 'Comienza a Aprender'
+        home: {
+            eng: 'Home',
+            spa: 'Casa'
         },
         aboutGWE: {
             eng: 'About GWE',
             spa: 'Sobre GWE'
+        },
+        startLearning: {
+            eng: 'Start Learning',
+            spa: 'Comienza a Aprender'
         },
         startReading: {
             eng: 'Start Reading',
@@ -112,7 +126,8 @@ const pageText = {
         readAgain: {
             eng: 'Read it again?',
             spa: '¿Leerlo de nuevo?'
-        }
+        },
+        spanishComing: `Próximamente Traducción en Español`
     }
 }
 

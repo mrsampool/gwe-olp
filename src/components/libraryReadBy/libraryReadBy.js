@@ -17,7 +17,7 @@ class LibraryReadBy extends React.Component{
     }
     render(){
         return (
-            <div className="LibraryReadBy">
+            <div className="LibraryReadBy label">
 
                 {
                     this.props.narration ?

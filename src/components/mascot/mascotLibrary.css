@@ -1,44 +1,53 @@
 /*   LIBRARY MASCOT (PENGUIN)   */
 
 /* Container */
-.Mascot.library:hover .mascotCharacter{
-    animation: hopfast 250ms ease-in infinite;
+.Mascot.library{
+    position: absolute;
+    bottom: 2rem;
+    width: 20%;
+    height: fit-content;
+    margin: 1rem 0 0 0;
 }
-.Mascot.library:hover .speechBubble{
-    animation: bouncefast 250ms ease-in infinite;
-}
-
-/* Character Container*/
-.Mascot.library .mascotCharacter{
-    width: 16em;
+/* Character Container */
+#libraryPenguin{
+    width: 100%;
     animation: hop 1s linear infinite;
 }
-.Mascot.library .mascotCharacter:hover{
-    animation: hopfast 250ms ease-in infinite;
+/* Character Image */
+.Mascot.library .mascotCharacter img{
+    width: 100%;
 }
-
 /*Speech Bubble */
 .Mascot.library .speechBubble{
+    /* Position */
+    position: absolute;
+    top: -5rem;
+    left: -5rem;
     /* animation */
     animation: bounce 1s linear infinite;
 }
 
+/* HOVER ANIMATION */
+/* Character Container */
+.Mascot.library:hover #libraryPenguin{
+    animation: hopfast 250ms ease-in infinite;
+}
+/* Speech Bubble */
+.Mascot.library:hover .speechBubble{
+    animation: bouncefast 250ms ease-in infinite;
+}
 
-/* Media Queries */
+/* MEDIA QUERIES */
+/* SMALL SCREENS */
+/* Portrait */
 @media only screen and (max-width: 600px){
     .Mascot.library{
-        width: 100%;
     }
-    .Mascot.library .mascotCharacter{
-        width: 90%;
-        margin: auto;
-    }
+
 }
+/* Landscape */
 @media only screen and (max-height: 500px){
     .Mascot.library{
-        flex-direction: row;
-        flex-wrap: nowrap;
-        width: 80%;
     }
 }
 
@@ -50,11 +59,10 @@
         transform: scale(1.1,1);
     }
     5%{
-        transform: translate(0,-1.5rem);
-        transform: scale(1.05,1.1);
+        transform: translate(0,-2.5rem);
     }
     10%{
-        transform: translate(0,-2rem);
+        transform: translate(0,-3rem);
     }
     20%{
         transform: translate(0);

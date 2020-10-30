@@ -1,119 +1,13 @@
 /* Full Page Container */
 .Splash{
+    /* Position */
     position: relative;
     overflow: hidden;
+    /* Display */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    z-index: 1;
-
+    /* Size */
     width: 100%;
     height: 100%;
-    
-    /* background-image: url('./splashBG.jpg'); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-x: left;
-    background-position-y: bottom;
-}
-.splashBG{
-    height: 100%;
-    width: 100%;
-}
-.splashBG img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-.speechBubble{
-    position: absolute;
-    top: 42%;
-    left: 47%;
-}
-
-.bubbleContainer{
-    /* Position */
-    position: absolute;
-    top: 12%;
-    left: 35%;
-
-    width: 5rem;
-    height: 5rem;
-    border-radius: 100%;
-
-    animation: bubbleFloatRight 3s infinite ease-in;
-}
-.bubble{
-    content: '';
-    /* Position */
-    /* Size & Shape */
-    width: 7rem;
-    height: 7rem;
-    border-radius: 100%;
-    /* Color */
-    background-color: aliceblue;
-    
-    animation: bubbleFloatUp 3s infinite ease-out, fade 3s infinite linear;
-}
-
-.bubbleContainer.two{
-    animation-delay: 0.5s;
-}
-.bubbleContainer.two .bubble{
-    animation-delay: 0.5s;
-}
-
-.bubbleContainer.three{
-    animation-delay: 1s;
-}
-.bubbleContainer.three .bubble{
-    animation-delay: 1s;
-}
-
-.bubbleContainer.four{
-    animation-delay: 1.5s;
-}
-.bubbleContainer.four .bubble{
-    animation-delay: 1.5s;
-}
-
-.bubbleContainer.five{
-    animation-delay: 2s;
-}
-.bubbleContainer.five .bubble{
-    animation-delay: 2s;
-}
-
-.bubbleContainer.six{
-    animation-delay: 2.5s;
-}
-.bubbleContainer.six .bubble{
-    animation-delay: 2.5s;
-}
-
-@keyframes bubbleFloatRight{
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(400%) scale(0.3);
-    }
-}
-@keyframes bubbleFloatUp{
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-150%);
-        opacity: 0;
-    }
-}
-@keyframes fade {
-    0%,100%{
-        opacity:0;
-    }
-    20%,90%{
-        opacity: 0.8;
-    }
 }

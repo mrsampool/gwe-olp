@@ -17,17 +17,23 @@
     align-items: center;
     padding: 1rem;
     border-radius: 1rem;
-    border: 0.5rem solid white;
-    background-color: lightgreen;
+    background: hsla(200,30%,80%);
+    background: linear-gradient(180deg,
+     hsla(120,70%,70%) 0%, 
+     hsla(160,70%,60%) 100%);
 }
-
+.completeWindow .label{
+    padding: 0.5rem;
+}
 /* Option Buttons Container */
 .congratsOptions{
-    width: 100%;
     margin-top: 1rem;
     display: inline-flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+.congratsOptionsContainer{
+    padding: 0.5rem;
 }
 
 /* Media Queries */

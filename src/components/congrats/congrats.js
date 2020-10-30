@@ -17,19 +17,20 @@ class Congrats extends React.Component{
     render(){
         return(
             <div id="complete">
-                <div className="completeWindow">
+                <div className="completeWindow controlBox">
 
-                    <h1>{ pageText.messages.congrats[ this.props.language ] }</h1>
+                    <h1 className="label">{ pageText.messages.congrats[ this.props.language ] }</h1>
 
                     <Mascot
                         character="polarbear"
                         type="congrats"
                         language={this.props.language}
+                        message='congrats'
                     />
 
-                    <div className="congratsOptionsContainer">
-                        <h2>{ pageText.messages.congrats[ this.props.language ] }</h2>
-                        <div className="congratsOptions">
+                    
+                        
+                        <div className="congratsOptions label">
 
                             <button onClick={this.props.readAgain }>
                                 { pageText.buttons.readAgain[ this.props.language ] }
@@ -42,7 +43,7 @@ class Congrats extends React.Component{
                             </Link>
 
                         </div>
-                    </div>
+                    
 
                     
 

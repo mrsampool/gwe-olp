@@ -12,6 +12,7 @@ import pageText from '../../data/pageText';
 
 // Sub-Components
 import LibraryReadBy from '../libraryReadBy/libraryReadBy';
+import CloseButton from '../closeButton/closeButton';
 
 class Summary extends React.Component{
     constructor(props){
@@ -19,6 +20,7 @@ class Summary extends React.Component{
         this.closeCurrent = this.closeCurrent.bind(this);
     }
     closeCurrent(){
+        console.log('close');
         this.props.closeCurrent();
     }
     scrollIn(){
@@ -41,52 +43,51 @@ class Summary extends React.Component{
         if (this.props.currentBook){
             const book = Media[this.props.currentBook];
         return(
-            <div className="Summary" id="Summary">
+                <div className="Summary controlBox" id="Summary">
 
-                <button className="close"
-                    onClick={this.closeCurrent}
-                    >X
-                </button>
-                
-                <div className="summaryBody">
-
-                    <div className="summaryGraphic" >
-                        <img id="summaryGraphic" src={ this.getSummaryGraphic(book.label) } alt="Book Cover" />
-                    </div>
+                    <CloseButton closeCurrent={this.closeCurrent} type='summary'/>
                     
-                    <div className='summaryRight'>
+                    <div className="summaryBody">
+
+                        <div className="summaryGraphic" >
+                            <img id="summaryGraphic" src={ this.getSummaryGraphic(book.label) } alt="Book Cover" />
+                        </div>
                         
-                        <div className='summaryText'>
+                        <div className='summaryRight'>
                             
-                            <div className="summaryTitleAuthor">
-                                <h2 className="summaryTitle">{book.title[ this.props.language ] }</h2>
-                                <h3 className="summaryAuthor">{ pageText.labels.byAuthor( book.author, this.props.language ) }</h3>
+                            <div className='summaryText'>
+                                
+                                <div className="summaryTitleAuthor label">
+                                    <h2 className="summaryTitle">{book.title[ this.props.language ] }</h2>
+                                    <hr/>
+                                    <h3 className="summaryAuthor">{ pageText.labels.byAuthor( book.author, this.props.language ) }</h3>
+                                </div>
+                                
+                                <p className='summaryDesc label'>{book.description[ this.props.language ] }</p>
+                                
+                                <LibraryReadBy
+                                    readBy={
+                                        book.reader ?
+                                        book.reader[this.props.language] 
+                                        : 0
+                                    }
+                                    narration={book.narration}
+                                    language={ this.props.language }
+                                />
                             </div>
+
+                            <Link to={`/read/${book.label}`}>
+                                <button>
+                                    { pageText.buttons.startReading[ this.props.language ] }
+                                </button>
+                            </Link>
                             
-                            <p className='summaryDesc'>{book.description[ this.props.language ] }</p>
-                            
-                            <LibraryReadBy
-                                readBy={
-                                    book.reader ?
-                                    book.reader[this.props.language] 
-                                    : 0
-                                }
-                                narration={book.narration}
-                                language={ this.props.language }
-                            />
                         </div>
 
-                        <Link to={`/read/${book.label}`}>
-                            <button>
-                                { pageText.buttons.startReading[ this.props.language ] }
-                            </button>
-                        </Link>
-                        
                     </div>
 
                 </div>
-
-            </div>
+            
         )
         }
         else{

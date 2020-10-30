@@ -1,4 +1,5 @@
-import React from react;
+import React from 'react';
+import pageText from '../../data/pageText';
 
 class AboutGWE extends React.Component{
     render(){
@@ -9,7 +10,7 @@ class AboutGWE extends React.Component{
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    About GWE
+                    { pageText.buttons.aboutGWE[this.props.language] }
                 </a>
             </button>
         )

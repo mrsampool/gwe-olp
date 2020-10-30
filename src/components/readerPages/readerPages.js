@@ -11,6 +11,7 @@ import Loading from '../loading/loading';
 import './readerPages.css';
 
 import '../nextPage/nextPage.css';
+import pageText from '../../data/pageText';
 
 class ReaderPages extends React.Component{
     constructor(props){
@@ -39,16 +40,14 @@ class ReaderPages extends React.Component{
             pageImgFrame.className = 'pageImgFrame wide';
             readerContent.className = 'ReaderContent wideContent';
         }
+
+        this.props.updateLoadStatus('initialPage', 1)
+
         // Start Next Audio
         if (this.props.status === 'playing'){
             const audio = document.getElementById('narrator');
             audio.play();
         }
-        // Update Load Statuses
-        this.props.updateLoadStatus( 'initialPage', 1);
-
-        const narrator = document.getElementById('narrator');
-        narrator.load();
 
         if (!this.props.narration){
             this.props.updateLoadStatus( 'readerPhoto', 1);
@@ -74,8 +73,10 @@ class ReaderPages extends React.Component{
     getTranslation(book,page){
         if ( Media[book]['translations'] ){
             return Media[book]['translations'][page].map( phrase =>{
-                return <p>{phrase}</p>
+                return <p className="label">{phrase}</p>
             })
+        } else {
+            return <p className="label">{pageText.messages.spanishComing}</p>
         }
     }
     componentDidMount(){
@@ -119,7 +120,7 @@ class ReaderPages extends React.Component{
 
                     {
                         this.props.language !== 'eng' ?
-                        <div className="translatedText">
+                        <div className="translatedText controlBox">
                             { this.getTranslation( this.props.book, this.props.page ) }
                         </div>
                         : ''

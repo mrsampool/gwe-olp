@@ -11,6 +11,7 @@
 /* Image Container & Image */
 .mascotCharacter{
     width: 15em;
+    height: fit-content;
 }
 .mascotCharacter img{
     width: 100%;
@@ -19,6 +20,7 @@
 
 /* Speech Bubble */
 .speechBubble{
+    left: 0%;
     width: 10em;
     background-color: white;
 }

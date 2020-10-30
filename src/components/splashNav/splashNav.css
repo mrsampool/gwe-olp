@@ -6,4 +6,19 @@
     /* Display & Size */
     display: flex;
     flex-direction: column;
+    /* Animation */
+    animation: slideLeft 1.5s ease-out;
+}
+
+@keyframes slideLeft{
+    0%{
+        transform: translateX(200%);
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .splashNav{
+        bottom: 5%;
+        top: auto;
+    }
 }

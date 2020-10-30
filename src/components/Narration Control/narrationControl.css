@@ -1,29 +1,13 @@
 /*  Container  */
 .NarrationControl{
+    /* Display */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* Size */
     height: 100%;
-    text-align: center;
-    top: 70px;
     padding: 0.25rem;
     margin: 0.5rem;
-    color: dimgray;
-
-    background-color: hsla(0,0%,100%,0.2);
-    
-    justify-content: center;
-
-    border-radius: 1rem;
-
-    color: white;
-    box-shadow: 0 0 1rem dimgray;
-}
-.NarrationControl p{
-    color: dimgray;
-    font-weight: bold;
-    background-color: aliceblue;
-    border-radius: 1rem;
 }
 
 /* Button Container */
@@ -31,13 +15,38 @@
     display: inline-flex;
     align-items: center;
 }
-/* Play Button */
-.playButton{
-    padding: 0.4rem 0.4rem 0.4rem 0.6rem;
-    border-width: 0.2rem;
+
+/* CONTROL BUTTONS */
+
+/* Active Buttons */
+.playButton, .pauseButton, .replayButton{
+    display: inline-flex;
     margin: 0.25rem;
     box-shadow: 0 0 0.5rem;
 }
+.playButton{
+    padding: 0.4rem 0.4rem 0.4rem 0.6rem;
+}
+.pauseButton{
+    padding: 0.4rem 0.6rem 0.4rem 0.6rem;
+}
+.replayButton{
+    padding: 0.5rem 0.6rem 0.5rem 0.4rem;
+}
+/* Disabled Buttons */
+.playButton.disabled, .pauseButton.disabled, .replayButton.disabled{
+    background: hsla(200,0%,80%);
+    background: linear-gradient(180deg, 
+        hsla(200,0%,80%) 0%, 
+        hsla(200,0%,50%) 100%);
+    border-color:  hsl(200,0%,70%);
+    box-shadow: none;
+}
+
+/* CONTROL BUTTON SYMBOLS */
+
+/* Play Button Symbol */
+/* Active */
 .playSymbol{
     width: 0; 
     height: 0; 
@@ -47,22 +56,13 @@
     border-bottom: 0.5em solid transparent;
     border-left: 1em solid white;
 }
-.playButton.disabled{
-    background-color: gray;
-    border-color: dimgray;
-    box-shadow: none;
-}
+/* Disabled */
 .playButton.disabled .playSymbol{
     border-left-color: dimgray;
 }
-/* Pause Button */
-.pauseButton{
-    display: inline-flex;
-    border-width: 0.2rem;
-    padding: 0.4rem 0.6rem 0.4rem 0.6rem;
-    margin: 0.25rem;
-    box-shadow: 0 0 0.5rem;
-}
+
+/* Pause Button Symbol */
+/* Active */
 .pauseSymbol{
     background-color: white;
     width: 0.3em; 
@@ -70,22 +70,13 @@
 
     margin: 0.1rem;
 }
-.pauseButton.disabled{
-    background-color: gray;
-    border-color: dimgray;
-    box-shadow: none;
-}
+/* Disabled */
 .pauseButton.disabled .pauseSymbol{
     background-color: dimgray;
 }
-/* Replay Button */
-.replayButton{
-    display: inline-flex;
-    border-width: 0.2rem;
-    padding: 0.4rem 0.6rem 0.4rem 0.4rem;
-    margin: 0.25rem;
-    box-shadow: 0 0 0.5rem;
-}
+
+/* Replay Symbol */
+/* Active */
 .replaySymbolBar{
     background-color: white;
     width: 0.3em; 
@@ -100,24 +91,10 @@
     border-bottom: 0.5em solid transparent;
     border-right: 1em solid white;
 }
-.replayButton.disabled{
-    background-color: gray;
-    border-color: dimgray;
-    box-shadow: none;
-}
+/* Disabled */
 .replayButton.disabled .replaySymbolBar{
     background-color: dimgray;
 }
 .replayButton.disabled .replaySymbolTriangle{
     border-right-color: dimgray;
-}
-
-@media only screen and (max-width: 400px){
-    .NarrationControl{
-        width: 100%;
-        margin-top: 0;;
-    }
-    .narrControls{
-        justify-content: space-evenly;
-    }
 }

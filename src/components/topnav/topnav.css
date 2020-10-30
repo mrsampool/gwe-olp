@@ -1,32 +1,42 @@
 .TopNav{
-    z-index: 3;
-
+    /* Display */
     display: flex;
     align-items: center;
     justify-content: center;
-
+    flex-wrap: wrap;
+    /* Size */
     width: 100%;
     height: fit-content;
-
-    background-color: white;    
+    padding-bottom: 0.25rem;
+    /* Background & Border */
+    background-color: white;
+    border-bottom: 0.5rem solid #52AA5E;
 }
 
-.logo{
-    margin: 1rem;
-    width: 10em;
-    background-color: aliceblue;
+.logoWrap{
+    margin: 0.5rem;
+    width: 12em;
     padding: 0.25rem;
 }
 
-.logo img{
+.logoWrap img{
     width: 95%;
 }
 
+.topButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 .navButtons{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
+
+/*
 
 @media only screen and (max-width: 450px){
     .TopNav{
@@ -45,3 +55,5 @@
         height: auto;
     }
 }
+
+*/

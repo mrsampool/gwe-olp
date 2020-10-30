@@ -620,7 +620,7 @@ const Media = {
                 eng: 'Buried Sunlight',
                 spa: 'Luz Enterrada'
             },
-            author: 'Molly Brown & Penny Chisholm',
+            author: 'Molly Bang & Penny Chisholm',
             label: 'buriedSunlight',
             reader: {
                 eng: 'Magnificent "Mags" Farrell',
@@ -951,7 +951,7 @@ const Media = {
                 eng: 'Rivers of Sunlight',
                 spa: 'Ríos de Luz'
             },
-            author: 'Molly Brown & Penny Chisholm',
+            author: 'Molly Bang & Penny Chisholm',
             label: 'riversOfSunlight',
             reader: {
                 eng: 'Lori Gleria',

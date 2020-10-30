@@ -19,7 +19,6 @@
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(.54,.88,.76,.94);
 }
-
 @keyframes slide-in{
     from {
         right: 100vw;
@@ -27,6 +26,7 @@
         right: 0vw;
     }
 }
+
 .summaryBody{
     display: inline-flex;
     width: fit-content;
@@ -74,23 +74,21 @@
 }
 .summaryGraphic img{
     height: 100%;
+    width: auto;
     border-radius: 1rem;
     border: 0.25rem solid white;
     box-shadow: 0 0 1rem dimgray;
 }
 
-@media only screen and (max-width: 950px){
-    .summaryBody{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: fit-content;
+@media only screen and (max-width: 825px){
+    .Summary{
+        width: min-content;
     }
 }
 
 @media only screen and (max-width: 600px){
     .Summary{
-        width: 100%;
+        width: 80%;
     }
     .summaryGraphic{
         width: 80%;
@@ -113,17 +111,9 @@
     }
 }
 
-@media only screen and (max-width: 400px){
-    .Summary{
-        margin: 0;
-        width: 90%;
-    }
-}
-
 @media only screen and (max-height: 500px) and (orientation: landscape){
-    .summaryBody{
-        display: inline-flex;
-        flex-wrap: nowrap;
+    .Summary{
+        width: min-content;
     }
     .summaryGraphic{
         height: 90vh;

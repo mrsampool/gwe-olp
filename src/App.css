@@ -15,9 +15,18 @@
   height: 100%;
   width: 100%;
   font-weight: 400;
-  background-color: white;
+  background-attachment: fixed;
   margin: 0;
   box-sizing: border-box;
+
+  /*
+
+  background: hsla(200,30%,80%);
+    background: linear-gradient(180deg, hsla(200,70%,80%) 0%, hsla(200,70%,50%) 100%);
+    */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .page{

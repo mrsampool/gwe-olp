@@ -34,9 +34,9 @@ class ReaderStart extends React.Component{
     render(){
         const book = Media[this.props.book];
         return(
-            <div className="ReaderStart">
+            <div className="ReaderStart controlBox">
                 
-                <div className="readerTitleAuthor">
+                <div className="readerTitleAuthor label">
                     
                     <h1 className="readerTitle">
                         {book.title[this.props.language]}
@@ -49,7 +49,7 @@ class ReaderStart extends React.Component{
                     </h2>
                 </div>
 
-                <div className="readerReadBy">
+                <div className="readerReadBy label">
 
                     { this.getReaderPhoto( book.reader[this.props.language] ) }
 

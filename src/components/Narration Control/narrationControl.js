@@ -1,5 +1,6 @@
 import React from 'react';
 import pageText from '../../data/pageText';
+import Translate from '../translate/translate';
 
 import './narrationControl.css';
 
@@ -25,22 +26,11 @@ class NarrationControl extends React.Component{
             play.classList.remove('disabled');
             pause.classList.add('disabled');
         }
-
-        /*
-
-        if (this.props.pageHasPlayed){
-            restart.classList.remove('disabled');
-        } else if (!this.props.pageHasPlayed){
-            restart.classList.add('disabled');
-        }
-
-        */
-        
     }
     render(){
         return(
-            <div className="NarrationControl" id="controls">
-                <p>{ pageText.labels.narration[ this.props.language ] }</p>
+            <div className="NarrationControl controlBox" id="controls">
+                <p className="label">{ pageText.labels.narration[ this.props.language ] }</p>
 
                 <div className="narrControls">
 
@@ -67,6 +57,12 @@ class NarrationControl extends React.Component{
                     </button>
 
                 </div>
+
+                <Translate
+                    language={this.props.language}
+                    changeLanguage={this.props.changeLanguage}
+                    restartPage={this.props.restartPage}
+                />
 
 
 

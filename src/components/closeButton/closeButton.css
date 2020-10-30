@@ -1,0 +1,17 @@
+.closeButton{
+    position: absolute;
+    right: 0.5rem;
+    top: .75rem;
+    /* Size */
+    padding: 0rem 0.6rem 0.5rem 0.5rem;
+    /* Background & Border */
+    background: hsla(120,30%,80%);
+    background: linear-gradient(180deg, 
+        hsla(0,40%,70%) 0%, 
+        hsla(0,40%,50%) 100%);
+    border-color: hsla(0,50%,60%);
+}
+.closeButton p{
+    font-size: 2rem;
+    line-height: 1;
+}
