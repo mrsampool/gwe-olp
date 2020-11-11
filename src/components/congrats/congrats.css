@@ -4,6 +4,7 @@
     width: 100%;
     height: 100%;
     display: none;
+    /* display: none; */
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -27,7 +28,6 @@
 }
 /* Option Buttons Container */
 .congratsOptions{
-    margin-top: 1rem;
     display: inline-flex;
     justify-content: center;
     flex-wrap: wrap;

@@ -7,7 +7,7 @@ import SplashBubbles from '../splashBubbles/splashBubbles';
 import './splashGraphics.css';
 
 // Image
-import TRAIN from './TRAIN.png';
+import BG from './splash.jpg';
 
 class SplashGraphics extends React.Component{
     render(){
@@ -15,7 +15,7 @@ class SplashGraphics extends React.Component{
             <div className="splashGraphics">
 
                 <div className="splashBG">
-                    <img src={ TRAIN } alt=''/>
+                    <img src={ BG } id='splashBGimg' alt=''/>
                 </div>
 
                 <SplashBubbles/>

@@ -4,7 +4,7 @@ import React from 'react';
 import './libraryBottom.css';
 import Mascot from '../mascot/mascot';
 
-import libraryBGlandscapeBottom from './libraryBGlandscapeBottom.jpg';
+import libraryBottom from './libraryBottom.jpg';
 
 class LibraryBottom extends React.Component{
     render(){
@@ -12,7 +12,7 @@ class LibraryBottom extends React.Component{
             <div className="libraryBottom">
 
                 <div className="libraryBottomBG">
-                    <img id="libraryBottom" src={libraryBGlandscapeBottom}/>
+                    <img id="libraryBottom" src={libraryBottom}/>
                 </div>
 
                 <Mascot

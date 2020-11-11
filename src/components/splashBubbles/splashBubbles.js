@@ -3,33 +3,36 @@ import React from 'react';
 // Style Sheet
 import './splashBubbles.css';
 
+// Images
+import bubbles from '../splashGraphics/bubbles.png';
+
 class SplashBubbles extends React.Component{
     render(){
         return(
             <div className="splashBubbles">
 
                 <div className="bubbleContainer">
-                    <div className="bubble"/>
+                    <img className="bubble" src={bubbles}/>
                 </div>
 
                 <div className="bubbleContainer two">
-                    <div className="bubble"/>
+                    <img className="bubble" src={bubbles}/>
                 </div>
 
                 <div className="bubbleContainer three">
-                    <div className="bubble"/>
+                    <img className="bubble" src={bubbles}/>
                 </div>
 
                 <div className="bubbleContainer four">
-                    <div className="bubble"/>
+                    <img className="bubble" src={bubbles}/>
                 </div>
 
                 <div className="bubbleContainer five">
-                    <div className="bubble"/>
+                    <img className="bubble" src={bubbles}/>
                 </div>
 
                 <div className="bubbleContainer six">
-                    <div className="bubble"/>
+                    <img className="bubble" src={bubbles}/>
                 </div>
 
             </div>

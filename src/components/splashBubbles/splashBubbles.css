@@ -1,5 +1,4 @@
 .bubbleContainer{
-    display: none;
     /* Position */
     position: absolute;
     bottom: 75%;
@@ -12,15 +11,13 @@
     animation: bubbleFloatRight 3s infinite ease-in;
 }
 .bubble{
-    display: none;
     content: '';
     /* Position */
     /* Size & Shape */
-    width: 7rem;
-    height: 7rem;
+    width: 9rem;
+    height: auto;
     border-radius: 100%;
     /* Color */
-    background-color: aliceblue;
     
     animation: bubbleFloatUp 3s infinite ease-out, fade 3s infinite linear;
 }

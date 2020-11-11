@@ -29,7 +29,17 @@ class LibraryReadBy extends React.Component{
                         <div className="libReadByName">
                             <p>{ pageText.labels.readBy[ this.props.language ] }</p> 
                             <p>{this.props.readBy}</p>
+
+                            <hr/>
+
+                            <div className='runtime'>
+                                <p>{pageText.labels.runTime[this.props.language]}:</p>
+                                <p>{this.props.runTime}</p>
+                            </div>
+
                         </div>
+
+
 
                     </div>
 

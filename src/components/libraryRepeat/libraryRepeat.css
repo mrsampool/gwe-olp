@@ -4,10 +4,11 @@
     flex-direction: column;
     align-items: center;
     /* Background */
-    background-image: url('./libraryBGlandscapeRepeat.jpg');
+    background-image: url('./libraryRepeat.jpg');
     background-position: bottom;
     background-repeat: repeat-y;
     background-size: 100%;
+    padding-bottom: 0rem;
 }
 
 /* Page Title */
@@ -33,9 +34,21 @@
         transform: scale(1.2);
     }
 }
-
-@media only screen and (max-width: 500px){
+@media only screen and (min-width: 3000px){
     .libraryRepeat{
-        background-image: url('./libraryBGportraitRepeat.jpg');
+        background-image: url('./libraryRepeat5k.jpg');
+    }
+}
+/* Medium Screens & Small Screen Landscape */
+@media only screen and (max-width: 950px){
+    .libraryRepeat{
+        padding-bottom: 7rem;
+        background-image: url('./libraryRepeat1k.jpg');
+    }
+}
+/* Small Screen Portrait */
+@media only screen and (max-width: 600px){
+    .libraryRepeat{
+        background-image: url('./libraryRepeatPortrait.jpg');
     }
 }

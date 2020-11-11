@@ -72,6 +72,7 @@ class Summary extends React.Component{
                                         : 0
                                     }
                                     narration={book.narration}
+                                    runTime={book.runTime ? book.runTime[this.props.language] : ''}
                                     language={ this.props.language }
                                 />
                             </div>

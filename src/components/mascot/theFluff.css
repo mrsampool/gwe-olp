@@ -1,0 +1,64 @@
+/* Variables */
+.Mascot.fluff{
+    --penguinBody-width: 10vw;
+    --penguinBody-height: calc( var(--penguinBody-width) * 3.5);
+
+    --penguinWrap-width: var(--penguinBody-width);
+    --penguinWrap-height: var(--penguinBody-height);
+}
+
+/* Full Wrap */
+.Mascot.fluff{
+    position: absolute;
+    width: var(--penguinWrap-width);
+    height: var(--penguinWrap-height);
+    right: 10%;
+    bottom: 10px;
+}
+
+/* Character Wrap */
+.Mascot.fluff .mascotCharacter{
+    bottom: 0;
+    width: var(--penguinBody-width);
+    height: var(--penguinBody-height);
+}
+
+/*Speech Bubble */
+.Mascot.fluff .speechBubble{
+    /* Position */
+    position: absolute;
+    top: 0;
+    left: -13rem;
+}
+
+/* Character Image Layers */
+.Mascot.fluff .mascotCharacter img{
+    position: absolute;
+}
+#fluffBody{
+    position: absolute;
+    bottom: 0;
+    width: var(--penguinBody-width);
+    height: var(--penguinBody-height);
+}
+#fluffLeftArmTop, #fluffRightArmTop{
+    position: absolute;
+    height: calc(var(--penguinBody-height) / 2);
+    width: auto;
+    bottom: calc( var(--penguinBody-height) / 3 );
+}
+#fluffLeftArmTop{
+    position: absolute;
+    right: calc( var(--penguinBody-width) / 2.5);
+    
+}
+#fluffRightArmTop{
+    position: absolute;
+    left: calc( var(--penguinBody-width) / 2);
+}
+#fluffShadow{
+    position: absolute;
+    bottom: -2%;
+    width: var(--penguinBody-width);
+    height: auto;
+}

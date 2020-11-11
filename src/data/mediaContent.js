@@ -16,6 +16,10 @@ const Media = {
                 spa: '¿Cómo afectan nuestras acciones individuales al mundo? Molly Bang presenta el reto de manejar los recursos naturales de nuestro planeta, usando como ejemplo el área verde comunal de una aldea, y las necesidades crecientes de los aldeanos que la comparten.'
             },
             narration: true,
+            runTime: {
+                eng: '6 min',
+                spa: '5 min'
+            },
             translations: {
                 1: [
                     `TERRENO COMÚN`,
@@ -193,6 +197,10 @@ const Media = {
             },
             pages: 15,
             narration: true,
+            runTime: {
+                eng: '5 min',
+                spa: '5 min'
+            },
             translations: {
                 1: [
                     `MI LUZ`,
@@ -396,6 +404,10 @@ const Media = {
             },
             pages: 15,
             narration: true,
+            runTime: {
+                eng: '6 min',
+                spa: '6 min'
+            },
             translations: {
                 1: [
                     `LUZ VIVIENTE`,
@@ -632,6 +644,10 @@ const Media = {
             },
             pages: 18,
             narration: true,
+            runTime: {
+                eng: '12 min',
+                spa: '11 min'
+            },
             translations: {
                 1: [
                     `LUZ ENTERRADO:`,
@@ -963,6 +979,10 @@ const Media = {
             },
             pages: 18,
             narration: true,
+            runTime: {
+                eng: '10 min',
+                spa: '13 min'
+            },
             translations: {
                 1: [
                     `RÍOS DE LUZ`,
@@ -1406,7 +1426,8 @@ const headshots = {
     'Lori Gleria': `${process.env.PUBLIC_URL}/assets/images/headshots/LoriGleria.png`,
     'Magnificent "Mags" Farrell': `${process.env.PUBLIC_URL}/assets/images/headshots/MagsFarrell.png`,
     'Suki Wampler': `${process.env.PUBLIC_URL}/assets/images/headshots/SukiWampler.png`,
-    'Marcela Salmón': `${process.env.PUBLIC_URL}/assets/images/headshots/MarcelaSalmon.jpg`
+    'Marcela Salmón': `${process.env.PUBLIC_URL}/assets/images/headshots/MarcelaSalmon.jpg`,
+    'Molly Bang': `${process.env.PUBLIC_URL}/assets/images/headshots/MollyBang.jpg`
 }
 
 const MediaList = [

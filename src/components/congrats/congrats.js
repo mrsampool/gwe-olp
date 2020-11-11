@@ -26,6 +26,7 @@ class Congrats extends React.Component{
                         type="congrats"
                         language={this.props.language}
                         message='congrats'
+                        id='congratsPenguin'
                     />
 
                     

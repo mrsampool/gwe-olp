@@ -1,55 +1,58 @@
-/*   LIBRARY MASCOT (PENGUIN)   */
 
-/* Container */
-.Mascot.library{
-    position: absolute;
-    bottom: 2rem;
-    width: 20%;
-    height: fit-content;
-    margin: 1rem 0 0 0;
-}
-/* Character Container */
-#libraryPenguin{
-    width: 100%;
+/* DEFAULT ANIMATION */
+/*Character Container */
+.Mascot.library #libraryPenguin{
     animation: hop 1s linear infinite;
 }
-/* Character Image */
-.Mascot.library .mascotCharacter img{
-    width: 100%;
+/* Left Arm */
+.Mascot.library #fluffLeftArmTop{
+    animation: leftArmHop 1s infinite linear;
 }
-/*Speech Bubble */
+/* Right Arm */
+.Mascot.library #fluffRightArmTop{
+    animation: rightArmHop 1s infinite linear;
+}
+/* Speech Bubble */
 .Mascot.library .speechBubble{
-    /* Position */
-    position: absolute;
-    top: -5rem;
-    left: -5rem;
-    /* animation */
     animation: bounce 1s linear infinite;
 }
+.Mascot.library #fluffShadow{
+    animation: hopShadow 1s linear infinite;
+}
+
 
 /* HOVER ANIMATION */
 /* Character Container */
 .Mascot.library:hover #libraryPenguin{
     animation: hopfast 250ms ease-in infinite;
 }
+/* Left Arm */
+.Mascot.library:hover #fluffLeftArmTop{
+    animation: leftArmHopFast 250ms ease-in infinite;
+}
+/* Right Arm */
+.Mascot.library:hover #fluffRightArmTop{
+    animation: rightArmHopFast 250ms ease-in infinite;
+}
 /* Speech Bubble */
 .Mascot.library:hover .speechBubble{
     animation: bouncefast 250ms ease-in infinite;
 }
 
+
+
 /* MEDIA QUERIES */
-/* SMALL SCREENS */
-/* Portrait */
 @media only screen and (max-width: 600px){
     .Mascot.library{
+        --penguinBody-width: 20vw;
     }
+    .Mascot.library .speechBubble{
+        right: 0;
+        left: auto;
+        top: -10rem;
+    }
+}
 
-}
-/* Landscape */
-@media only screen and (max-height: 500px){
-    .Mascot.library{
-    }
-}
 
 /*   ANIMATIONS   */
 /* Hop (Penguin) */
@@ -91,6 +94,34 @@
         transform: scale(1.1,1);
     }
 }
+/* LEFT ARM */
+@keyframes leftArmHop{
+    10%{
+        transform: rotate(45deg) translate(-20%);
+    }
+    20%{
+        transform: rotate(0deg);
+    }
+}
+@keyframes leftArmHopFast{
+    50%{
+        transform: rotate(45deg) translate(-20%);
+    }
+}
+/* RIGHT ARM */
+@keyframes rightArmHop{
+    10%{
+        transform: rotate(-45deg) translate(10%,0%);
+    }
+    20%{
+        transform: rotate(0deg) ;
+    }
+}
+@keyframes rightArmHopFast{
+    50%{
+        transform: rotate(-45deg) translate(10%,-20%);
+    }
+}
 
 /* Bounce (Speech Bubble) */
 @keyframes bounce {
@@ -110,5 +141,17 @@
     }
     50%{
         transform: translate(0,-.75rem);
+    }
+}
+@keyframes hopShadow {
+    0% {
+        transform: scale(1);
+    }
+
+    10%{
+        transform: scale(1.5);
+    }
+    15%,100%{
+        transform: scale(1);
     }
 }

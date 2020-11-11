@@ -11,9 +11,6 @@ import Congrats from '../../components/congrats/congrats';
 import ReaderControlBar from '../../components/readerControlBar/readerControlBar';
 import ReaderContent from '../../components/readerContent/readerContent';
 
-// Background Image
-import libraryBGlandscapeRepeat from './libraryBGlandscapeRepeat.jpg';
-
 
 class Read extends React.Component{
     constructor(props){

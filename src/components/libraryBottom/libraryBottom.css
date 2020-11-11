@@ -3,6 +3,7 @@
     position: relative;
     /* Position & Display */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     /* Size */
@@ -18,7 +19,7 @@
     width: 100%;
     height: auto;
     object-position: bottom;
-    content: url('./libraryBGlandscapeBottom.jpg');
+    content: url('./libraryBottom.jpg');
 }
 
 .penguinWrap{
@@ -33,11 +34,11 @@
 
 /* SMALL SCREENS */
 /* Portrait */
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 600px){
     .penguinWrap{
         width: 40%;
     }
     #libraryBottom{
-        content: url('./libraryBGportraitBottom.jpg');
+        content: url('./libraryBottomPortrait.jpg');
     }
 }

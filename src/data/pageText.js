@@ -69,7 +69,7 @@ const pageText = {
             spa: 'Sobre GWE'
         },
         startLearning: {
-            eng: 'Start Learning',
+            eng: 'Jump Onboard',
             spa: 'Comienza a Aprender'
         },
         startReading: {
@@ -110,6 +110,10 @@ const pageText = {
         narrComing: {
             eng: 'Narration Coming Soon',
             spa: 'Narración Próximamente'
+        },
+        runTime: {
+            eng: 'Run Time',
+            spa: 'Duración'
         }
     },
     pageTitles: {
